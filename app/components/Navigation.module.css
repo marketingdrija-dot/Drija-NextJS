@@ -1,0 +1,42 @@
+.navigation {
+      display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.navigation li {
+    padding: 0 15px;
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 80px;
+    margin: 1rem;
+}
+
+/* Elementos de la lista */
+.navigation ul li {
+  position: relative;
+  padding: 15px 20px; /* Espaciado interno para que respire el texto */
+}
+
+.navigation ul li::after {
+  content: '';
+  position: absolute;
+  left: 0; /* Ubica la línea a la izquierda del texto */
+  top: 0;
+  bottom: 0; /* Fuerza a la línea a medir exactamente el 100% del alto del li */
+  width: 2px; /* Grosor de la línea */
+  background-color: #acacac; /* Color de la línea */
+}
+
+/* Opcional: Elimina la línea del último elemento para que quede prolijo */
+.navigation ul li:last-child::after {
+  display: none;
+}
+
+.logo {
+    margin-right: 2rem;
+}
