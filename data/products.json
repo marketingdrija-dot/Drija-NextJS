@@ -6,6 +6,7 @@
     "shortDescription": "Capacidad amplia, dispensador de agua y control digital de temperatura.",
     "description": "Refrigerador French Door con acabado en acero inoxidable, sistema No Frost y compartimentos modulares para máxima organización. Ideal para familias que buscan eficiencia energética y diseño contemporáneo.",
     "categorySlug": "refrigeradores",
+    "subcategorySlug": "french-door",
     "sku": "RF-450-FD",
     "isNew": true,
     "featured": true,
@@ -40,6 +41,7 @@
     "shortDescription": "Diseño clásico con excelente relación espacio-consumo.",
     "description": "Refrigerador Top Mount compacto con bandejas ajustables, iluminación LED y control mecánico confiable. Perfecto para espacios medianos.",
     "categorySlug": "refrigeradores",
+    "subcategorySlug": "ejecutivas",
     "sku": "RF-320-TM",
     "featured": true,
     "images": [
@@ -61,6 +63,160 @@
           { "label": "Capacity", "value": "320 L" },
           { "label": "Shelves", "value": "Adjustable glass" }
         ]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-emp-60",
+    "slug": "refrigerador-empotrable-60cm",
+    "name": "Refrigerador Empotrable 60 cm",
+    "shortDescription": "Integración perfecta con mobiliario de cocina.",
+    "description": "Refrigerador empotrable de 60 cm con puertas planas y ventilación frontal. Ideal para cocinas integradas de alto diseño.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "empotrables",
+    "sku": "RF-EMP-60",
+    "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "Refrigerador empotrable DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Built-in Refrigerator 60 cm",
+        "shortDescription": "Seamless integration with kitchen cabinetry.",
+        "description": "60 cm built-in refrigerator with flush doors and front ventilation. Ideal for high-design integrated kitchens.",
+        "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "DRIJA built-in refrigerator" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-emp-90",
+    "slug": "refrigerador-empotrable-90cm",
+    "name": "Refrigerador Empotrable 90 cm",
+    "shortDescription": "Mayor capacidad con acabado panelable.",
+    "description": "Modelo empotrable de 90 cm compatible con paneles personalizados y sistema No Frost.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "empotrables",
+    "sku": "RF-EMP-90",
+    "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "Refrigerador empotrable 90 cm DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Built-in Refrigerator 90 cm",
+        "shortDescription": "Greater capacity with panel-ready finish.",
+        "description": "90 cm built-in model compatible with custom panels and No Frost system.",
+        "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "DRIJA 90 cm built-in refrigerator" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-ej-400",
+    "slug": "refrigerador-ejecutivo-400l",
+    "name": "Refrigerador Ejecutivo 400L",
+    "shortDescription": "Diseño premium para oficinas y espacios compactos.",
+    "description": "Refrigerador ejecutivo con acabado negro, control digital y compartimentos modulares.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "ejecutivas",
+    "sku": "RF-EJ-400",
+    "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "Refrigerador ejecutivo DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Executive Refrigerator 400L",
+        "shortDescription": "Premium design for offices and compact spaces.",
+        "description": "Executive refrigerator with black finish, digital control, and modular compartments.",
+        "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "DRIJA executive refrigerator" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-fd-520",
+    "slug": "refrigerador-french-door-520l",
+    "name": "Refrigerador French Door 520L",
+    "shortDescription": "Máxima capacidad con dispensador premium.",
+    "description": "French Door de gran formato con cajones modulables y tecnología Inverter.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "french-door",
+    "sku": "RF-520-FD",
+    "featured": true,
+    "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "Refrigerador French Door 520L DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "French Door Refrigerator 520L",
+        "shortDescription": "Maximum capacity with premium dispenser.",
+        "description": "Large-format French Door with modular drawers and Inverter technology.",
+        "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "DRIJA French Door 520L" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-sbs-550",
+    "slug": "refrigerador-side-by-side-550l",
+    "name": "Refrigerador Side by Side 550L",
+    "shortDescription": "Puertas paralelas con dispensador de agua e hielo.",
+    "description": "Side by Side con pantalla táctil, zona convertible y sistema antibacterias.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "side-by-side",
+    "sku": "RF-550-SBS",
+    "isNew": true,
+    "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "Refrigerador Side by Side DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Side by Side Refrigerator 550L",
+        "shortDescription": "Parallel doors with water and ice dispenser.",
+        "description": "Side by Side with touch display, convertible zone, and antibacterial system.",
+        "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "DRIJA Side by Side refrigerator" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-sbs-480",
+    "slug": "refrigerador-side-by-side-480l",
+    "name": "Refrigerador Side by Side 480L",
+    "shortDescription": "Organización vertical para familias activas.",
+    "description": "Modelo Side by Side con estantes ajustables y control independiente de temperatura.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "side-by-side",
+    "sku": "RF-480-SBS",
+    "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "Side by Side 480L DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Side by Side Refrigerator 480L",
+        "shortDescription": "Vertical organization for active families.",
+        "description": "Side by Side model with adjustable shelves and independent temperature control.",
+        "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "DRIJA Side by Side 480L" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-twin-280",
+    "slug": "refrigerador-twin-280l",
+    "name": "Refrigerador Twin 280L",
+    "shortDescription": "Dos puertas superiores y congelador inferior.",
+    "description": "Refrigerador Twin compacto con excelente eficiencia energética.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "twin",
+    "sku": "RF-280-TW",
+    "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "Refrigerador Twin DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Twin Refrigerator 280L",
+        "shortDescription": "Two top doors and bottom freezer.",
+        "description": "Compact Twin refrigerator with excellent energy efficiency.",
+        "images": [{ "src": "/images/products/refrigerador-320.jpg", "alt": "DRIJA Twin refrigerator" }]
+      }
+    }
+  },
+  {
+    "id": "prod-rf-twin-350",
+    "slug": "refrigerador-twin-350l",
+    "name": "Refrigerador Twin 350L",
+    "shortDescription": "Formato Twin con mayor capacidad de congelación.",
+    "description": "Ideal para hogares que priorizan acceso rápido a refrigerados y congelados.",
+    "categorySlug": "refrigeradores",
+    "subcategorySlug": "twin",
+    "sku": "RF-350-TW",
+    "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "Refrigerador Twin 350L DRIJA" }],
+    "translations": {
+      "en": {
+        "name": "Twin Refrigerator 350L",
+        "shortDescription": "Twin format with greater freezer capacity.",
+        "description": "Ideal for homes that prioritize quick access to refrigerated and frozen items.",
+        "images": [{ "src": "/images/products/refrigerador-450.jpg", "alt": "DRIJA Twin 350L" }]
       }
     }
   },

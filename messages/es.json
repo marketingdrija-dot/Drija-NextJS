@@ -31,6 +31,15 @@
     "heroCtaWhereToBuy": "Dónde comprar",
     "heroAside": "Innovación, diseño y rendimiento para la cocina del futuro."
   },
+  "categoryPage": {
+    "viewProduct": "Ver producto",
+    "catalogTitle": "Catálogo",
+    "viewOnline": "Ver en línea",
+    "downloadCatalog": "Descargar catálogo",
+    "categoriesTab": "Categoría",
+    "newArrivalsTab": "Lo nuevo",
+    "otherProducts": "Otros productos"
+  },
   "products": {
     "pageTitle": "Categorías",
     "pageDescription": "Encuentra el electrodoméstico ideal para cada espacio de tu hogar.",

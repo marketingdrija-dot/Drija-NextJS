@@ -1,0 +1,59 @@
+{
+  "refrigeradores": {
+    "categorySlug": "refrigeradores",
+    "heroImage": {
+      "src": "/images/categories/refrigeradores-hero.jpg",
+      "alt": "Refrigeradores DRIJA en cocina moderna"
+    },
+    "catalog": {
+      "onlineUrl": "/productos",
+      "downloadUrl": "/catalogo/refrigeradores.pdf",
+        "image": {
+        "src": "/images/categories/refrigeradores-hero.jpg",
+        "alt": "Catálogo de refrigeradores DRIJA"
+      }
+    },
+    "subcategories": [
+      {
+        "id": "sub-rf-empotrables",
+        "slug": "empotrables",
+        "name": "Empotrables",
+        "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "Empotrables" },
+        "order": 1,
+        "translations": { "en": { "name": "Built-in", "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "Built-in" } } }
+      },
+      {
+        "id": "sub-rf-ejecutivas",
+        "slug": "ejecutivas",
+        "name": "Ejecutivas",
+        "icon": { "src": "/images/products/refrigerador-320.jpg", "alt": "Ejecutivas" },
+        "order": 2,
+        "translations": { "en": { "name": "Executive", "icon": { "src": "/images/products/refrigerador-320.jpg", "alt": "Executive" } } }
+      },
+      {
+        "id": "sub-rf-french-door",
+        "slug": "french-door",
+        "name": "French Door",
+        "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "French Door" },
+        "order": 3,
+        "translations": { "en": { "name": "French Door", "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "French Door" } } }
+      },
+      {
+        "id": "sub-rf-side-by-side",
+        "slug": "side-by-side",
+        "name": "Side by Side",
+        "icon": { "src": "/images/products/refrigerador-320.jpg", "alt": "Side by Side" },
+        "order": 4,
+        "translations": { "en": { "name": "Side by Side", "icon": { "src": "/images/products/refrigerador-320.jpg", "alt": "Side by Side" } } }
+      },
+      {
+        "id": "sub-rf-twin",
+        "slug": "twin",
+        "name": "Twin",
+        "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "Twin" },
+        "order": 5,
+        "translations": { "en": { "name": "Twin", "icon": { "src": "/images/products/refrigerador-450.jpg", "alt": "Twin" } } }
+      }
+    ]
+  }
+}

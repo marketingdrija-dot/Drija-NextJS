@@ -31,6 +31,15 @@
     "heroCtaWhereToBuy": "Where to buy",
     "heroAside": "Innovation, design and performance for the kitchen of the future."
   },
+  "categoryPage": {
+    "viewProduct": "View product",
+    "catalogTitle": "Catalog",
+    "viewOnline": "View online",
+    "downloadCatalog": "Download catalog",
+    "categoriesTab": "Category",
+    "newArrivalsTab": "New arrivals",
+    "otherProducts": "Other products"
+  },
   "products": {
     "pageTitle": "Categories",
     "pageDescription": "Find the ideal appliance for every space in your home.",

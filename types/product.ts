@@ -25,6 +25,8 @@ export type Product = {
   shortDescription: string;
   description: string;
   categorySlug: string;
+  /** Subcategoría dentro de la categoría (ej. french-door, side-by-side) */
+  subcategorySlug?: string;
   sku: string;
   isNew?: boolean;
   featured?: boolean;

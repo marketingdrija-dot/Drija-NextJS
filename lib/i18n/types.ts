@@ -33,6 +33,15 @@ export type Dictionary = {
     heroCtaWhereToBuy: string;
     heroAside: string;
   };
+  categoryPage: {
+    viewProduct: string;
+    catalogTitle: string;
+    viewOnline: string;
+    downloadCatalog: string;
+    categoriesTab: string;
+    newArrivalsTab: string;
+    otherProducts: string;
+  };
   products: {
     pageTitle: string;
     pageDescription: string;

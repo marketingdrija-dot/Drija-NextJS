@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "es": {
+      "src": "/images/where-to-buy/hero-es.jpg",
+      "alt": "Dónde comprar DRIJA"
+    },
+    "en": {
+      "src": "/images/where-to-buy/hero-en.jpg",
+      "alt": "Where to buy DRIJA"
+    }
+  }
+}
