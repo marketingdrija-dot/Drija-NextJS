@@ -64,8 +64,12 @@ export type Dictionary = {
   retailers: {
     pageTitle: string;
     pageDescription: string;
+    sidebarTitle: string;
     visitWebsite: string;
     technicalService: string;
+    expandCountry: string;
+    collapseCountry: string;
+    noStores: string;
   };
   support: {
     pageTitle: string;

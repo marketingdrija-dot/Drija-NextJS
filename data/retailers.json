@@ -4,78 +4,149 @@
     "countryCode": "PA",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "pa-novey", "name": "Novey", "url": "https://www.novey.com.pa" },
-      { "id": "pa-cochez", "name": "Cochez", "url": "https://www.cochez.com.pa" },
-      { "id": "pa-multimax", "name": "Multimax", "url": "https://www.multimax.net" },
-      { "id": "pa-raenco", "name": "Raenco", "url": "https://www.raenco.com" }
-    ]
+      { "id": "pa-carbone", "name": "Carbone", "url": "https://www.carbone.com.pa", "logo": "/images/retailers/pa-carbone.png" },
+      { "id": "pa-cochez", "name": "Cochez", "url": "https://www.cochez.com.pa", "logo": "/images/retailers/pa-cochez.png" },
+      { "id": "pa-doit", "name": "Doit Center", "url": "https://www.doitcenter.com.pa", "logo": "/images/retailers/pa-doit.png" },
+      { "id": "pa-evision", "name": "eVision", "url": "https://www.evisiondigital.com", "logo": "/images/retailers/pa-evision.png" },
+      { "id": "pa-felipe-motta", "name": "Felipe Motta", "url": "https://www.felipemotta.com", "logo": "/images/retailers/pa-felipe-motta.png" },
+      { "id": "pa-gera", "name": "Gera", "url": "https://www.gera.com.pa", "logo": "/images/retailers/pa-gera.png" },
+      { "id": "pa-jap", "name": "JAP Supplies", "url": "https://www.japsupplies.com", "logo": "/images/retailers/pa-jap.png" },
+      { "id": "pa-market-house", "name": "Market House", "url": "https://www.markethouse.com.pa", "logo": "/images/retailers/pa-market-house.png" },
+      { "id": "pa-multimax", "name": "Multimax", "url": "https://www.multimax.net", "logo": "/images/retailers/pa-multimax.png" },
+      { "id": "pa-novey", "name": "Novey", "url": "https://www.novey.com.pa", "logo": "/images/retailers/pa-novey.png" },
+      { "id": "pa-panafoto", "name": "Panafoto", "url": "https://www.panafoto.com", "logo": "/images/retailers/pa-panafoto.png" },
+      { "id": "pa-photura", "name": "Photura", "url": "https://www.photura.com", "logo": "/images/retailers/pa-photura.png" },
+      { "id": "pa-pricesmart", "name": "PriceSmart", "url": "https://www.pricesmart.com", "logo": "/images/retailers/pa-pricesmart.png" },
+      { "id": "pa-raenco", "name": "Raenco", "url": "https://www.raenco.com", "logo": "/images/retailers/pa-raenco.png" },
+      { "id": "pa-redelag", "name": "Redelag", "url": "https://www.redelag.com", "logo": "/images/retailers/pa-redelag.png" },
+      { "id": "pa-selecto", "name": "Selecto", "url": "https://www.superselectos.com", "logo": "/images/retailers/pa-selecto.png" },
+      { "id": "pa-siena", "name": "Siena", "url": "https://www.sienapac.com", "logo": "/images/retailers/pa-siena.png" },
+      { "id": "pa-spiegel", "name": "Spiegel", "url": "https://www.spiegel.com.pa", "logo": "/images/retailers/pa-spiegel.png" },
+      { "id": "pa-tech-house", "name": "Tech House", "url": "https://www.techhouse.com.pa", "logo": "/images/retailers/pa-tech-house.png" },
+      { "id": "pa-tecnobyte", "name": "Tecnobyte", "url": "https://www.tecnobyte.com.pa", "logo": "/images/retailers/pa-tecnobyte.png" },
+      { "id": "pa-tandur", "name": "Tandur", "url": "https://www.tandur.com.pa", "logo": "/images/retailers/pa-tandur.png" }
+    ],
+    "translations": { "en": { "country": "Panama" } }
   },
   {
     "country": "República Dominicana",
     "countryCode": "DO",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "do-plaza-lama", "name": "Plaza Lama", "url": "https://www.plazalama.com.do" },
-      { "id": "do-corripio", "name": "Corripio", "url": "https://www.tiendascorripio.com.do" },
-      { "id": "do-jumbo", "name": "Jumbo", "url": "https://www.jumbo.com.do" }
-    ]
+      { "id": "do-plaza-lama", "name": "Plaza Lama", "url": "https://www.plazalama.com.do", "logo": "/images/retailers/do-plaza-lama.png" },
+      { "id": "do-corripio", "name": "Corripio", "url": "https://www.tiendascorripio.com.do", "logo": "/images/retailers/do-corripio.png" },
+      { "id": "do-jumbo", "name": "Jumbo", "url": "https://www.jumbo.com.do", "logo": "/images/retailers/do-jumbo.png" }
+    ],
+    "translations": { "en": { "country": "Dominican Republic" } }
   },
   {
     "country": "Venezuela",
     "countryCode": "VE",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "ve-daka", "name": "Daka", "url": "https://www.daka.com.ve" },
-      { "id": "ve-farmatodo", "name": "Farmatodo Hogar", "url": "https://www.farmatodo.com.ve" }
-    ]
+      { "id": "ve-daka", "name": "Daka", "url": "https://www.daka.com.ve", "logo": "/images/retailers/ve-daka.png" },
+      { "id": "ve-farmatodo", "name": "Farmatodo Hogar", "url": "https://www.farmatodo.com.ve", "logo": "/images/retailers/ve-farmatodo.png" }
+    ],
+    "translations": { "en": { "country": "Venezuela" } }
   },
   {
     "country": "Costa Rica",
     "countryCode": "CR",
     "technicalServiceUrl": "https://wa.link/qqyeyx",
     "retailers": [
-      { "id": "cr-monge", "name": "Grupo Monge", "url": "https://www.grupomonge.com" },
-      { "id": "cr-inteca", "name": "Inteca", "url": "https://www.inteca.com" }
-    ]
+      { "id": "cr-monge", "name": "Grupo Monge", "url": "https://www.grupomonge.com", "logo": "/images/retailers/cr-monge.png" },
+      { "id": "cr-inteca", "name": "Inteca", "url": "https://www.inteca.com", "logo": "/images/retailers/cr-inteca.png" }
+    ],
+    "translations": { "en": { "country": "Costa Rica" } }
   },
   {
     "country": "El Salvador",
     "countryCode": "SV",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "sv-prado", "name": "Almacenes Prado", "url": "https://www.almacenesprado.com" }
-    ]
+      { "id": "sv-prado", "name": "Almacenes Prado", "url": "https://www.almacenesprado.com", "logo": "/images/retailers/sv-prado.png" }
+    ],
+    "translations": { "en": { "country": "El Salvador" } }
   },
   {
     "country": "Guatemala",
     "countryCode": "GT",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "gt-max", "name": "MAX", "url": "https://www.max.com.gt" }
-    ]
+      { "id": "gt-max", "name": "MAX", "url": "https://www.max.com.gt", "logo": "/images/retailers/gt-max.png" }
+    ],
+    "translations": { "en": { "country": "Guatemala" } }
   },
   {
     "country": "Honduras",
     "countryCode": "HN",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "hn-diunsa", "name": "Diunsa", "url": "https://www.diunsa.hn" }
-    ]
+      { "id": "hn-diunsa", "name": "Diunsa", "url": "https://www.diunsa.hn", "logo": "/images/retailers/hn-diunsa.png" }
+    ],
+    "translations": { "en": { "country": "Honduras" } }
   },
   {
     "country": "Nicaragua",
     "countryCode": "NI",
     "technicalServiceUrl": "https://wa.link/b191ah",
     "retailers": [
-      { "id": "ni-la-colonia", "name": "La Colonia", "url": "https://www.lacolonia.com.ni" }
-    ]
+      { "id": "ni-la-colonia", "name": "La Colonia", "url": "https://www.lacolonia.com.ni", "logo": "/images/retailers/ni-la-colonia.png" }
+    ],
+    "translations": { "en": { "country": "Nicaragua" } }
   },
   {
     "country": "Aruba",
     "countryCode": "AW",
     "technicalServiceUrl": "https://wa.link/nvs51b",
     "retailers": [
-      { "id": "aw-kooyman", "name": "Kooyman", "url": "https://www.kooymanbv.com" }
-    ]
+      { "id": "aw-kooyman", "name": "Kooyman", "url": "https://www.kooymanbv.com", "logo": "/images/retailers/aw-kooyman.png" }
+    ],
+    "translations": { "en": { "country": "Aruba" } }
+  },
+  {
+    "country": "Barbados",
+    "countryCode": "BB",
+    "technicalServiceUrl": "https://wa.link/nvs51b",
+    "retailers": [
+      { "id": "bb-jordan", "name": "Jordan's Supermarket", "url": "https://www.jordans.com.bb", "logo": "/images/retailers/bb-jordan.png" }
+    ],
+    "translations": { "en": { "country": "Barbados" } }
+  },
+  {
+    "country": "Curacao",
+    "countryCode": "CW",
+    "technicalServiceUrl": "https://wa.link/nvs51b",
+    "retailers": [
+      { "id": "cw-kooyman", "name": "Kooyman", "url": "https://www.kooyman.com", "logo": "/images/retailers/cw-kooyman.png" }
+    ],
+    "translations": { "en": { "country": "Curaçao" } }
+  },
+  {
+    "country": "Trinidad y Tobago",
+    "countryCode": "TT",
+    "technicalServiceUrl": "https://wa.link/nvs51b",
+    "retailers": [
+      { "id": "tt-furniture", "name": "Furniture Plus", "url": "https://www.furnitureplus.com", "logo": "/images/retailers/tt-furniture.png" }
+    ],
+    "translations": { "en": { "country": "Trinidad and Tobago" } }
+  },
+  {
+    "country": "St Maarten",
+    "countryCode": "SX",
+    "technicalServiceUrl": "https://wa.link/nvs51b",
+    "retailers": [
+      { "id": "sx-pond", "name": "Pond Island", "url": "https://www.pondisland.com", "logo": "/images/retailers/sx-pond.png" }
+    ],
+    "translations": { "en": { "country": "St Maarten" } }
+  },
+  {
+    "country": "Bonaire",
+    "countryCode": "BQ",
+    "technicalServiceUrl": "https://wa.link/nvs51b",
+    "retailers": [
+      { "id": "bq-kooyman", "name": "Kooyman", "url": "https://www.kooyman.com", "logo": "/images/retailers/bq-kooyman.png" }
+    ],
+    "translations": { "en": { "country": "Bonaire" } }
   }
 ]

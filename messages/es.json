@@ -62,8 +62,12 @@
   "retailers": {
     "pageTitle": "Dónde comprar",
     "pageDescription": "Encuéntranos en las principales tiendas de tu país.",
-    "visitWebsite": "Ir al sitio web",
-    "technicalService": "Servicio técnico en"
+    "sidebarTitle": "Dónde comprar",
+    "visitWebsite": "IR AL SITIO WEB",
+    "technicalService": "Servicio técnico en",
+    "expandCountry": "Ver tiendas en",
+    "collapseCountry": "Ocultar tiendas en",
+    "noStores": "No hay tiendas disponibles para este país."
   },
   "support": {
     "pageTitle": "¿Cómo podemos ayudarte?",

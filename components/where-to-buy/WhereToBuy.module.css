@@ -1,0 +1,19 @@
+.sidebar {
+  max-height: none;
+}
+
+@media (min-width: 1024px) {
+  .sidebar nav ul {
+    max-height: calc(100vh - 12rem);
+    overflow-y: auto;
+  }
+
+  .sidebar nav ul::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .sidebar nav ul::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 4px;
+  }
+}

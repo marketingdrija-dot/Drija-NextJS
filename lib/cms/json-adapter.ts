@@ -14,6 +14,7 @@ import {
 import type { BlogPost } from "@/types/blog";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
+import { localizeCountryRetailers } from "@/lib/i18n/localize-retailers";
 import type { CountryRetailers } from "@/types/retailer";
 import type { SupportCategory } from "@/types/support";
 
@@ -101,8 +102,8 @@ export const jsonCmsAdapter: CmsAdapter = {
     return localizeBlogPost(post, resolveLocale(locale));
   },
 
-  async getRetailers() {
-    return retailers;
+  async getRetailers(locale) {
+    return localizeCountryRetailers(retailers, resolveLocale(locale));
   },
 
   async getSupportCategories(locale) {

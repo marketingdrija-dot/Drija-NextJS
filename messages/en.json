@@ -62,8 +62,12 @@
   "retailers": {
     "pageTitle": "Where to buy",
     "pageDescription": "Find us at leading stores in your country.",
-    "visitWebsite": "Visit website",
-    "technicalService": "Technical service in"
+    "sidebarTitle": "Where to buy",
+    "visitWebsite": "VISIT WEBSITE",
+    "technicalService": "Technical service in",
+    "expandCountry": "View stores in",
+    "collapseCountry": "Hide stores in",
+    "noStores": "No stores available for this country."
   },
   "support": {
     "pageTitle": "How can we help you?",

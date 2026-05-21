@@ -24,6 +24,6 @@ export interface CmsAdapter {
   getCategoryBySlug(slug: string, locale?: Locale): Promise<Category | null>;
   getBlogPosts(options?: Pick<CmsQueryOptions, "featured" | "locale">): Promise<BlogPost[]>;
   getBlogPostBySlug(slug: string, locale?: Locale): Promise<BlogPost | null>;
-  getRetailers(): Promise<CountryRetailers[]>;
+  getRetailers(locale?: Locale): Promise<CountryRetailers[]>;
   getSupportCategories(locale?: Locale): Promise<SupportCategory[]>;
 }
