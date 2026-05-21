@@ -27,7 +27,7 @@ export function Header() {
   ];
 
   return (
-    <header className={`${styles.hero} sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur`}>
+    <header className={`${styles.hero} sticky top-0 z-50 border-neutral-200 backdrop-blur`}>
       <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8`}>
         <Link href={href("/")} className="shrink-0" aria-label={dict.common.homeLabel}>
           <Image
@@ -42,11 +42,11 @@ export function Header() {
 
         <Navigation />
 
-        <div className="flex items-center gap-3">
+        <div className="text-white flex items-center gap-3">
           <LocaleSwitcher />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-neutral-300 p-2 lg:hidden"
+            className={`${styles['navigation-menu-items']} inline-flex items-center justify-center rounded-md border border-neutral-300 p-2 lg:hidden`}
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}

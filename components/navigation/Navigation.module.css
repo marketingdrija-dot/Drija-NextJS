@@ -1,0 +1,56 @@
+.navList {
+  --nav-separator-height: 2.25rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.navList > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Separador vertical entre ítems (solo desktop) */
+.navList > li:not(:last-child) {
+  margin-right: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.navList > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: var(--nav-separator-height);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #fff;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.navLink {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  color: #fff !important;
+  background-color: #000;
+  border-radius: 26px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #fff !important;
+  background-color: #82b841;
+}
+
+.navLinkActive {
+  color: #fff !important;
+  background-color: #82b841;
+}

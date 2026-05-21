@@ -3,9 +3,26 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useI18n } from "@/lib/i18n/context";
-import { isActivePath } from "@/lib/i18n/paths";
+import { isActivePath, stripLocalePrefix } from "@/lib/i18n/paths";
 import { cn } from "@/lib/utils";
-import styles from './Navigation.module.css';
+import styles from "./Navigation.module.css";
+
+function isNavItemActive(pathname: string, href: string): boolean {
+  if (isActivePath(pathname, href)) return true;
+
+  const path = stripLocalePrefix(pathname);
+  const target = stripLocalePrefix(href);
+
+  if (target === "/productos") {
+    return path.startsWith("/categories") || path.startsWith("/products");
+  }
+
+  if (target === "/blog") {
+    return path.startsWith("/blog/");
+  }
+
+  return false;
+}
 
 export function Navigation() {
   const pathname = usePathname();
@@ -20,23 +37,26 @@ export function Navigation() {
   ];
 
   return (
-    <nav aria-label="Principal" className="hidden items-center gap-8 lg:flex">
-      <ul className="flex items-center gap-6">
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className={cn(
-                "navigation-items text-sm font-semibold uppercase tracking-wide transition-colors",
-                isActivePath(pathname, link.href)
-                  ? "text-drija-green"
-                  : "text-neutral-700 hover:text-drija-green",
-              )}
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+    <nav aria-label="Principal" className="hidden items-center lg:flex">
+      <ul className={styles.navList}>
+        {links.map((link) => {
+          const active = isNavItemActive(pathname, link.href);
+
+          return (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={cn(
+                  styles.navLink,
+                  active && styles.navLinkActive,
+                )}
+                aria-current={active ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

@@ -37,7 +37,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <div
-      className="absolute inset-0 h-full w-full"
+      className="relative aspect-[16/9] w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       role="region"
@@ -48,7 +48,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
         <div
           key={slide.src}
           className={cn(
-            "absolute inset-0 h-full w-full transition-opacity duration-700 ease-in-out",
+            "absolute inset-0 h-full w-full transition-opacity duration-700",
             index === activeIndex
               ? "opacity-100"
               : "pointer-events-none opacity-0",
@@ -61,7 +61,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
             fill
             priority={index === 0}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-contain object-center"
           />
         </div>
       ))}
@@ -71,7 +71,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           <button
             type="button"
             onClick={prev}
-            className="absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:left-6"
+            className="hidden absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:left-6"
             aria-label="Imagen anterior"
           >
             <svg
@@ -88,7 +88,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           <button
             type="button"
             onClick={next}
-            className="absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:right-6"
+            className="hidden absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:right-6"
             aria-label="Siguiente imagen"
           >
             <svg
