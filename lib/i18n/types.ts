@@ -85,13 +85,14 @@ export type Dictionary = {
     pageTitle: string;
     pageDescription: string;
     title: string;
+    subtitle: string;
     name: string;
     email: string;
     country: string;
     countryPlaceholder: string;
     phone: string;
     message: string;
-    terms: string;
+    termsAccept: string;
     termsLink: string;
     submit: string;
     sending: string;

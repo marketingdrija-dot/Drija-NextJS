@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useI18n } from "@/lib/i18n/context";
 import { siteConfig } from "@/lib/site";
@@ -22,7 +23,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            <p className="text-2xl font-bold text-white">DRIJA</p>
+            <Link href={href("/")} aria-label={dict.common.homeLabel}>
+              <Image
+                src="/logo-drija-blanco.svg"
+                alt="DRIJA"
+                width={140}
+                height={36}
+                className="h-9 w-auto"
+              />
+            </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed">
               {dict.footer.tagline}
             </p>

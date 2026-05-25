@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { getPageI18n } from "@/lib/i18n/server";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -21,18 +20,14 @@ export default async function ContactoPage({ params }: PageProps) {
 
   return (
     <>
-      <PageHeader title={dict.contact.pageTitle} />
+      <ContactForm />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <div className="lg:col-span-2">
-          <ContactForm />
-        </div>
-
-        <aside className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-          <h2 className="text-lg font-bold text-neutral-900">
+      <section className="border-t border-neutral-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-900">
             {dict.contact.needHelp}
           </h2>
-          <ul className="mt-4 space-y-3 text-sm">
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <li>
               <Link
                 href={href("/soporte")}
@@ -58,7 +53,7 @@ export default async function ContactoPage({ params }: PageProps) {
               </Link>
             </li>
           </ul>
-        </aside>
+        </div>
       </section>
     </>
   );

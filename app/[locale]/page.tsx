@@ -92,11 +92,7 @@ export default async function HomePage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="border-t border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
+      <ContactForm />
     </>
   );
 }

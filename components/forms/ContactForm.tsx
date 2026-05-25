@@ -1,18 +1,30 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n/context";
 import { CONTACT_COUNTRIES, type ContactFormPayload } from "@/types/contact";
 
+import styles from "./ContactForm.module.css";
+
 type ContactFormProps = {
   id?: string;
 };
 
-const initialState: ContactFormPayload = {
+type ContactFormState = {
+  name: string;
+  email: string;
+  country: ContactFormPayload["country"] | "";
+  phone: string;
+  message: string;
+  acceptTerms: boolean;
+};
+
+const initialState: ContactFormState = {
   name: "",
   email: "",
-  country: "Panamá",
+  country: "",
   phone: "",
   message: "",
   acceptTerms: false,
@@ -55,136 +67,174 @@ export function ContactForm({ id = "contacto" }: ContactFormProps) {
   }
 
   return (
-    <section
-      id={id}
-      className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8"
-    >
-      <h2 className="text-2xl font-bold text-neutral-900">{dict.contact.title}</h2>
-
-      <form
-        onSubmit={handleSubmit}
-        className="contact-form mt-6 grid gap-4 sm:grid-cols-2"
-      >
-        <label className="flex flex-col gap-1 text-sm font-medium text-neutral-700">
-          {dict.contact.name}
-          <input
-            required
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="rounded-lg border border-neutral-300 px-3 py-2"
-          />
-        </label>
-
-        <label className="flex flex-col gap-1 text-sm font-medium text-neutral-700">
-          {dict.contact.email}
-          <input
-            required
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="rounded-lg border border-neutral-300 px-3 py-2"
-          />
-        </label>
-
-        <label className="flex flex-col gap-1 text-sm font-medium text-neutral-700">
-          {dict.contact.country}
-          <select
-            required
-            name="country"
-            value={form.country}
-            onChange={(e) =>
-              setForm({
-                ...form,
-                country: e.target.value as ContactFormPayload["country"],
-              })
-            }
-            className="rounded-lg border border-neutral-300 px-3 py-2"
+    <section id={id} className={styles.section} aria-labelledby={`${id}-title`}>
+      <div className={`mx-auto max-w-7xl ${styles.grid}`}>
+        <div className={styles.formColumn}>
+          <h2
+            id={`${id}-title`}
+            className="text-3xl font-bold uppercase tracking-wide text-drija-green sm:text-4xl"
           >
-            <option value="">{dict.contact.countryPlaceholder}</option>
-            {CONTACT_COUNTRIES.map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </label>
+            {dict.contact.title}
+          </h2>
+          <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-neutral-900">
+            {dict.contact.subtitle}
+          </p>
 
-        <label className="flex flex-col gap-1 text-sm font-medium text-neutral-700">
-          {dict.contact.phone}
-          <input
-            required
-            type="tel"
-            name="phone"
-            value={form.phone}
-            onChange={(e) => setForm({ ...form, phone: e.target.value })}
-            className="rounded-lg border border-neutral-300 px-3 py-2"
-          />
-        </label>
-
-        <label className="flex flex-col gap-1 text-sm font-medium text-neutral-700 sm:col-span-2">
-          {dict.contact.message}
-          <textarea
-            required
-            name="message"
-            rows={5}
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-            className="rounded-lg border border-neutral-300 px-3 py-2"
-          />
-        </label>
-
-        <label className="flex items-start gap-2 text-sm text-neutral-700 sm:col-span-2">
-          <input
-            required
-            type="checkbox"
-            checked={form.acceptTerms}
-            onChange={(e) =>
-              setForm({ ...form, acceptTerms: e.target.checked })
-            }
-            className="mt-1"
-          />
-          <span>
-            {dict.contact.terms}{" "}
-            <Link
-              href={href("/avisos-legales")}
-              className="text-drija-green underline"
-            >
-              {dict.contact.termsLink}
-            </Link>
-            .
-          </span>
-        </label>
-
-        <div className="sm:col-span-2">
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="inline-flex w-full items-center justify-center rounded-full bg-drija-green px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-drija-green-dark disabled:opacity-60 sm:w-auto"
+          <form
+            onSubmit={handleSubmit}
+            className="contact-form mt-8 flex max-w-xl flex-col gap-5"
           >
-            {status === "loading" ? dict.contact.sending : dict.contact.submit}
-          </button>
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-bold uppercase text-neutral-900">
+                {dict.contact.name}
+              </span>
+              <input
+                required
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className={styles.field}
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-bold uppercase text-neutral-900">
+                {dict.contact.email}
+              </span>
+              <input
+                required
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className={styles.field}
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-bold uppercase text-neutral-900">
+                {dict.contact.country}
+              </span>
+              <div className={styles.selectWrap}>
+                <select
+                  required
+                  name="country"
+                  value={form.country}
+                  onChange={(e) =>
+                    setForm({
+                      ...form,
+                      country: e.target.value as ContactFormState["country"],
+                    })
+                  }
+                  className={`${styles.field} ${styles.select}`}
+                >
+                  <option value="">{dict.contact.countryPlaceholder}</option>
+                  {CONTACT_COUNTRIES.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-bold uppercase text-neutral-900">
+                {dict.contact.phone}
+              </span>
+              <input
+                required
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className={styles.field}
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-xs font-bold uppercase text-neutral-900">
+                {dict.contact.message}
+              </span>
+              <textarea
+                required
+                name="message"
+                rows={5}
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className={`${styles.field} ${styles.textarea}`}
+              />
+            </label>
+
+            <label className="flex items-start gap-2.5">
+              <input
+                required
+                type="checkbox"
+                checked={form.acceptTerms}
+                onChange={(e) =>
+                  setForm({ ...form, acceptTerms: e.target.checked })
+                }
+                className="mt-0.5 h-4 w-4 shrink-0 accent-drija-green"
+              />
+              <span className="text-xs font-bold uppercase leading-relaxed text-drija-green">
+                {dict.contact.termsAccept}{" "}
+                <Link
+                  href={href("/avisos-legales")}
+                  className="underline decoration-drija-green/60 underline-offset-2 hover:decoration-drija-green"
+                >
+                  {dict.contact.termsLink}
+                </Link>
+                .
+              </span>
+            </label>
+
+            <div>
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className={styles.submit}
+              >
+                {status === "loading" ? dict.contact.sending : dict.contact.submit}
+              </button>
+            </div>
+
+            {status === "success" && (
+              <p className="text-sm font-medium text-drija-green" role="status">
+                {dict.contact.success}
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm font-medium text-red-600" role="alert">
+                {errorMessage}
+              </p>
+            )}
+          </form>
         </div>
 
-        {status === "success" && (
-          <p
-            className="text-sm font-medium text-drija-green sm:col-span-2"
-            role="status"
-          >
-            {dict.contact.success}
-          </p>
-        )}
-        {status === "error" && (
-          <p
-            className="text-sm font-medium text-red-600 sm:col-span-2"
-            role="alert"
-          >
-            {errorMessage}
-          </p>
-        )}
-      </form>
+        <div className={styles.imageColumn} aria-hidden="true">
+          <div className={styles.imageFade} />
+          <Image
+            src="/images/contact/contact-us.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className={styles.image}
+            priority={false}
+          />
+        </div>
+      </div>
+
+      <div className={styles.mobileImage} aria-hidden="true">
+        <div className={styles.mobileImageFade} />
+        <Image
+          src="/images/contact/contact-us.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className={styles.image}
+        />
+      </div>
     </section>
   );
 }
