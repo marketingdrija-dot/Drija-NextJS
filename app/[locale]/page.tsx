@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { HeroSection } from "@/components/home/HeroSection";
+import { MundoDrijaSlider } from "@/components/home/MundoDrijaSlider";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { CategoryCard } from "@/components/products/CategoryCard";
 import { ProductCard } from "@/components/products/ProductCard";
 import { getCms } from "@/lib/cms";
 import { getHeroSlides } from "@/lib/hero";
+import { getMundoDrijaSlides } from "@/lib/mundo-drija";
 import { getPageI18n } from "@/lib/i18n/server";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -21,6 +23,7 @@ export default async function HomePage({ params }: PageProps) {
 
   const featuredCategories = categories.filter((c) => c.featured).slice(0, 6);
   const heroSlides = getHeroSlides(locale);
+  const mundoDrijaSlides = getMundoDrijaSlides();
 
   return (
     <>
@@ -91,6 +94,14 @@ export default async function HomePage({ params }: PageProps) {
           ))}
         </div>
       </section>
+
+      <MundoDrijaSlider
+        title={dict.home.worldDrija}
+        slides={mundoDrijaSlides}
+        prevLabel={dict.home.mundoDrijaPrev}
+        nextLabel={dict.home.mundoDrijaNext}
+        carouselLabel={dict.home.mundoDrijaCarousel}
+      />
 
       <ContactForm />
     </>

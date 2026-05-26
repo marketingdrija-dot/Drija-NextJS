@@ -3,7 +3,7 @@
 @theme {
   --color-drija-green: #82b841;
   --color-drija-green-dark: #6a9a34;
-  --font-sans: Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-montserrat), ui-sans-serif, sans-serif;
 }
 
 :root {

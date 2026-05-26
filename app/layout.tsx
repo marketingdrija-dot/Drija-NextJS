@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "@/styles/components.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -19,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className="flex min-h-screen flex-col antialiased">{children}</body>
+      <body
+        className={`${montserrat.variable} ${montserrat.className} flex min-h-screen flex-col antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

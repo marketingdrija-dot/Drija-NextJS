@@ -23,6 +23,9 @@ export type Dictionary = {
     newArrivals: string;
     featuredTitle: string;
     worldDrija: string;
+    mundoDrijaPrev: string;
+    mundoDrijaNext: string;
+    mundoDrijaCarousel: string;
     blogTitle: string;
     viewBlog: string;
     contactUs: string;
