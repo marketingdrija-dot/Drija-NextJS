@@ -35,10 +35,9 @@
   display: inline-block;
   padding: 10px 20px;
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.025em;
   color: #fff !important;
-  background-color: #000;
   border-radius: 26px;
   transition:
     color 0.2s ease,
