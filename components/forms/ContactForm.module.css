@@ -50,7 +50,7 @@
   flex: 1;
   min-height: 16rem;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0rem;
 }
 
 @media (min-width: 768px) {
