@@ -54,6 +54,7 @@
     "publishedAt": "2025-09-15",
     "author": "Equipo DRIJA",
     "image": { "src": "/images/blog/tecnologia-inverter.jpg", "alt": "Tecnología Inverter en cocina" },
+    "featured": true,
     "translations": {
       "en": {
         "title": "The Kitchen Revolution with Inverter Technology",
@@ -75,6 +76,7 @@
     "publishedAt": "2025-08-02",
     "author": "Equipo DRIJA",
     "image": { "src": "/images/blog/organizar-nevera.jpg", "alt": "Refrigerador organizado" },
+    "featured": false,
     "translations": {
       "en": {
         "title": "How to Organize Your Refrigerator to Reduce Food Waste",
@@ -82,6 +84,34 @@
         "content": "Assign zones by temperature: dairy on middle shelves, meats in the bottom drawer, and vegetables in humidity-controlled crispers.\n\nLabel transparent containers and rotate products with visible dates to minimize waste.",
         "categoryLabel": "Trends and Lifestyle",
         "image": { "src": "/images/blog/organizar-nevera.jpg", "alt": "Organized refrigerator" }
+      }
+    }
+  },
+  {
+    "id": "post-guia-lavado",
+    "slug": "guia-lavadora-secadora-para-tu-hogar",
+    "title": "Guía rápida: cómo elegir tu lavadora y secadora",
+    "excerpt": "Capacidad, programas y eficiencia energética son claves para acertar con tu centro de lavado. Te explicamos qué evaluar antes de comprar.",
+    "content": "Elegir una lavadora o un combo lavadora-secadora DRIJA empieza por conocer el volumen de ropa de tu hogar y el espacio disponible.\n\nPuntos a revisar:\n- Capacidad en kilogramos según el tamaño de la familia.\n- Programas para prendas delicadas, rápidos y de bajo consumo.\n- Nivel sonoro si el área de lavado está cerca de dormitorios o sala.\n- Ventilación y conexiones de agua y electricidad en el lugar de instalación.\n\nUna buena elección reduce tiempos de lavado, cuida las telas y mantiene el consumo bajo control durante todo el año.",
+    "category": "tendencias-y-estilo-de-vida",
+    "categoryLabel": "Tendencias y Estilo de Vida",
+    "publishedAt": "2025-07-20",
+    "author": "Equipo DRIJA",
+    "image": {
+      "src": "/images/blog/guia-lavadora.jpg",
+      "alt": "Lavadora DRIJA en área de lavado"
+    },
+    "featured": false,
+    "translations": {
+      "en": {
+        "title": "Quick Guide: How to Choose Your Washer and Dryer",
+        "excerpt": "Capacity, cycles, and energy efficiency are key to getting your laundry setup right. Here is what to evaluate before you buy.",
+        "content": "Choosing a DRIJA washer or washer-dryer combo starts with understanding your household laundry volume and available space.\n\nPoints to review:\n- Capacity in kilograms based on family size.\n- Cycles for delicates, quick wash, and low-consumption programs.\n- Noise level if the laundry area is near bedrooms or the living room.\n- Ventilation and water and power connections at the installation site.\n\nThe right choice saves time, protects fabrics, and keeps energy use under control year-round.",
+        "categoryLabel": "Trends and Lifestyle",
+        "image": {
+          "src": "/images/blog/guia-lavadora.jpg",
+          "alt": "DRIJA washer in a laundry room"
+        }
       }
     }
   }

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { LocaleSwitcher } from "@/components/navigation/LocaleSwitcher";
 import { useI18n } from "@/lib/i18n/context";
@@ -14,8 +14,16 @@ import styles from './Header.module.css';
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { dict, href } = useI18n();
   const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const mobileLinks = [
     { href: href("/"), label: dict.nav.home },
@@ -27,7 +35,13 @@ export function Header() {
   ];
 
   return (
-    <header className={`${styles.hero} sticky top-0 z-50 border-neutral-200 backdrop-blur`}>
+    <header
+      className={cn(
+        styles.hero,
+        scrolled && styles.heroScrolled,
+        "sticky top-0 z-50 border-b border-transparent",
+      )}
+    >
       <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8`}>
         <Link href={href("/")} className="shrink-0" aria-label={dict.common.homeLabel}>
           <Image

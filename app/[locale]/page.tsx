@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { HeroSection } from "@/components/home/HeroSection";
+import { FeaturedTabsSection } from "@/components/home/FeaturedTabsSection";
 import { MundoDrijaSlider } from "@/components/home/MundoDrijaSlider";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { CategoryCard } from "@/components/products/CategoryCard";
 import { ProductCard } from "@/components/products/ProductCard";
 import { getCms } from "@/lib/cms";
+import { getHomeBlogPosts } from "@/lib/blog-home";
+import { getFeaturedSlidesData } from "@/lib/featured-slides";
 import { getHeroSlides } from "@/lib/hero";
 import { getMundoDrijaSlides } from "@/lib/mundo-drija";
 import { getPageI18n } from "@/lib/i18n/server";
@@ -15,15 +18,18 @@ type PageProps = { params: Promise<{ locale: string }> };
 export default async function HomePage({ params }: PageProps) {
   const { locale, dict, href } = await getPageI18n(params);
   const cms = getCms();
-  const [categories, newProducts, featuredPosts] = await Promise.all([
+  const [categories, newProducts, blogPosts] = await Promise.all([
     cms.getCategories(locale),
     cms.getProducts({ featured: true, locale }),
-    cms.getBlogPosts({ featured: true, locale }),
+    cms.getBlogPosts({ locale }),
   ]);
+
+  const homeBlogPosts = getHomeBlogPosts(blogPosts);
 
   const featuredCategories = categories.filter((c) => c.featured).slice(0, 6);
   const heroSlides = getHeroSlides(locale);
   const mundoDrijaSlides = getMundoDrijaSlides();
+  const featuredSlides = getFeaturedSlidesData(locale);
 
   return (
     <>
@@ -89,11 +95,21 @@ export default async function HomePage({ params }: PageProps) {
           </Link>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredPosts.map((post) => (
+          {homeBlogPosts.map((post) => (
             <BlogCard key={post.id} post={post} locale={locale} />
           ))}
         </div>
       </section>
+
+      <FeaturedTabsSection
+        categoriasSlides={featuredSlides.categorias}
+        nuevoSlides={featuredSlides.nuevo}
+        categoriesLabel={dict.home.categories}
+        newArrivalsLabel={dict.home.newArrivals}
+        prevLabel={dict.home.featuredPrev}
+        nextLabel={dict.home.featuredNext}
+        carouselLabel={dict.home.featuredCarousel}
+      />
 
       <MundoDrijaSlider
         title={dict.home.worldDrija}

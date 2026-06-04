@@ -1,0 +1,80 @@
+{
+  "categorias": [
+    {
+      "id": "feat-cat-estufas",
+      "src": "/images/featured/categorias/AF_Banner_Estufas_Drija.jpg",
+      "alt": "Estufas DRIJA",
+      "title": "ESTUFAS",
+      "href": "/categories/estufas",
+      "translations": { "en": { "title": "RANGES", "alt": "DRIJA Ranges" } }
+    },
+    {
+      "id": "feat-cat-microondas",
+      "src": "/images/featured/categorias/Banner_Microondas_Drija.jpg",
+      "alt": "Microondas DRIJA",
+      "title": "MICROONDAS",
+      "href": "/categories/microondas",
+      "translations": { "en": { "title": "MICROWAVES", "alt": "DRIJA Microwaves" } }
+    },
+    {
+      "id": "feat-cat-hornos",
+      "src": "/images/featured/categorias/Banner_Hornos_Drija.jpg",
+      "alt": "Hornos DRIJA",
+      "title": "HORNOS",
+      "href": "/categories/hornos",
+      "translations": { "en": { "title": "OVENS", "alt": "DRIJA Ovens" } }
+    },
+    {
+      "id": "feat-cat-vineras",
+      "src": "/images/featured/categorias/Banner_Vineras_Drija.jpg",
+      "alt": "Vineras DRIJA",
+      "title": "VINERAS",
+      "href": "/categories/vineras",
+      "translations": { "en": { "title": "WINE COOLERS", "alt": "DRIJA Wine Coolers" } }
+    },
+    {
+      "id": "feat-cat-fregaderos",
+      "src": "/images/featured/categorias/Banner_Fregaderos_Drija_AF.jpg",
+      "alt": "Fregaderos DRIJA",
+      "title": "FREGADEROS",
+      "href": "/categories/fregaderos",
+      "translations": { "en": { "title": "SINKS", "alt": "DRIJA Sinks" } }
+    }
+  ],
+  "nuevo": [
+    {
+      "id": "feat-new-italia-90",
+      "src": "/images/featured/nuevo/Banner_Prisma_Italia_90_Drija.jpg",
+      "alt": "Italia 90 DRIJA",
+      "title": "ITALIA 90",
+      "href": "/categories/estufas",
+      "translations": { "en": { "title": "ITALIA 90", "alt": "DRIJA Italia 90" } }
+    },
+    {
+      "id": "feat-new-lavasciuga",
+      "src": "/images/featured/nuevo/Banner_LAVASCIUGA_1609_Drija.jpg",
+      "alt": "Lava-Sciuga 1609 DRIJA",
+      "title": "LAVASCIUGA 1609",
+      "href": "/categories/lavadoras",
+      "translations": { "en": { "title": "LAVASCIUGA 1609", "alt": "DRIJA Lava-Sciuga 1609" } }
+    },
+    {
+      "id": "feat-new-tempranillo",
+      "src": "/images/featured/nuevo/Banner_Tempranillo_8_Drija.jpg",
+      "alt": "Tempranillo 8 DRIJA",
+      "title": "TEMPRANILLO 8",
+      "href": "/categories/vineras",
+      "translations": { "en": { "title": "TEMPRANILLO 8", "alt": "DRIJA Tempranillo 8" } }
+    },
+    {
+      "id": "feat-new-prisma-isla",
+      "src": "/images/featured/nuevo/Banner_Prisma_Isla_Touch_90_Black_Drija.jpg",
+      "alt": "Prisma Isla Touch 90 Black DRIJA",
+      "title": "PRISMA ISLA TOUCH 90",
+      "href": "/categories/extractores",
+      "translations": {
+        "en": { "title": "PRISMA ISLA TOUCH 90", "alt": "DRIJA Prisma Isla Touch 90 Black" }
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { cn } from "@/lib/utils";
 import type { HeroSlide } from "@/types/hero";
 
-const INTERVAL_MS = 5000;
+const INTERVAL_MS = 4000;
 
 type HeroSliderProps = {
   slides: HeroSlide[];
@@ -29,9 +29,13 @@ export function HeroSlider({ slides }: HeroSliderProps) {
 
   useEffect(() => {
     if (count <= 1 || paused) return;
-    const timer = window.setInterval(next, INTERVAL_MS);
-    return () => window.clearInterval(timer);
-  }, [count, paused, next]);
+
+    const timer = window.setTimeout(() => {
+      setActiveIndex((current) => ((current + 1) % count + count) % count);
+    }, INTERVAL_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [activeIndex, count, paused]);
 
   if (count === 0) return null;
 
@@ -102,17 +106,17 @@ export function HeroSlider({ slides }: HeroSliderProps) {
             </svg>
           </button>
 
-          <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2.5">
             {slides.map((slide, index) => (
               <button
                 key={slide.src}
                 type="button"
                 onClick={() => goTo(index)}
                 className={cn(
-                  "h-2.5 rounded-full transition-all",
+                  "h-2 w-10 shrink-0 rounded-full transition-colors duration-300",
                   index === activeIndex
-                    ? "w-8 bg-drija-green"
-                    : "w-2.5 bg-white/80 hover:bg-white",
+                    ? "bg-drija-green"
+                    : "bg-white/75 hover:bg-white",
                 )}
                 aria-label={`Ir a imagen ${index + 1}`}
                 aria-current={index === activeIndex}

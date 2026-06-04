@@ -77,9 +77,6 @@ export function ContactForm({ id = "contacto" }: ContactFormProps) {
             >
               {dict.contact.title}
             </h2>
-            <p className="mt-1 text-sm font-semibold uppercase tracking-[0.2em] text-neutral-900">
-              {dict.contact.subtitle}
-            </p>
 
             <form
               onSubmit={handleSubmit}
