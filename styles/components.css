@@ -9,9 +9,29 @@
   );
 }
 
-/* Altura del hero: la imagen rellena este bloque (ancho 100%) */
+/*
+ * Hero assets: 1742×747 (~21:9).
+ * Ancho siempre 100%; en desktop altura limitada a 70vh con object-cover.
+ */
 .hero-banner {
-  min-height: clamp(280px, 42vw, 560px);
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1742 / 747;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .hero-slider {
+    width: 100%;
+    aspect-ratio: auto;
+    height: min(70vh, calc(100vw * 747 / 1742));
+    max-height: 70vh;
+  }
 }
 
 .prose-drija h2 {

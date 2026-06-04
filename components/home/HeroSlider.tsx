@@ -41,7 +41,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <div
-      className="relative aspect-[16/9] w-full overflow-hidden"
+      className="hero-slider relative w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       role="region"

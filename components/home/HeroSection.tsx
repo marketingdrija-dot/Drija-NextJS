@@ -7,7 +7,7 @@ type HeroSectionProps = {
 
 export function HeroSection({ slides }: HeroSectionProps) {
   return (
-    <section className="hero-gradient hero-banner relative w-full overflow-hidden border-b border-neutral-200">
+    <section className="hero-banner relative w-full overflow-hidden border-b border-neutral-200">
       <HeroSlider slides={slides} />
     </section>
   );
