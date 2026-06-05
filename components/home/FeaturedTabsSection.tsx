@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   InfiniteCarousel,
   InfiniteCarouselSlide,
 } from "@/components/ui/InfiniteCarousel";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import {
+  CAROUSEL_FEATURED_GAP_PX,
   useExtendedSlides,
   useInfiniteCarousel,
+  useSlidesPerView,
 } from "@/hooks/useInfiniteCarousel";
 import { useI18n } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
@@ -42,8 +44,17 @@ function FeaturedCarousel({
 }) {
   const { href } = useI18n();
   const count = slides.length;
+  const slidesPerView = useSlidesPerView();
   const extendedSlides = useExtendedSlides(slides);
-  const carousel = useInfiniteCarousel(count);
+  const carousel = useInfiniteCarousel(count, {
+    slidesPerView,
+    gapPx: CAROUSEL_FEATURED_GAP_PX,
+  });
+  const { resetToStart } = carousel;
+
+  useEffect(() => {
+    resetToStart();
+  }, [slidesPerView, count, resetToStart]);
 
   if (count === 0) return null;
 
@@ -64,19 +75,25 @@ function FeaturedCarousel({
       carouselLabel={carouselLabel}
       prevLabel={prevLabel}
       nextLabel={nextLabel}
+      gapPx={CAROUSEL_FEATURED_GAP_PX}
     >
       {extendedSlides.map((slide, index) => (
         <InfiniteCarouselSlide
           key={`${slide.id}-${index}`}
           width={carousel.slideWidth}
-          hidden={carousel.canLoop ? index !== carousel.trackIndex : index !== 0}
+          slideClassName={styles.slide}
+          hidden={
+            carousel.canLoop
+              ? index !== carousel.trackIndex
+              : index !== carousel.realIndex
+          }
         >
           <Link href={href(slide.href)} className={styles.card}>
             <OptimizedImage
               src={slide.src}
               alt={slide.alt}
               fill
-              sizes="(min-width: 1024px) 80vw, 90vw"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
               className={styles.cardImage}
               priority={index === (carousel.canLoop ? 1 : 0)}
             />

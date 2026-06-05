@@ -61,14 +61,36 @@
 
 .sliderArea {
   margin-top: 2rem;
+  margin-inline: auto;
+  max-width: 80rem;
   width: 100%;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .sliderArea {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sliderArea {
+    padding-inline: 2rem;
+  }
+}
+
+.slide {
+  position: relative;
+  flex-shrink: 0;
+  aspect-ratio: 16 / 9;
 }
 
 .card {
+  position: relative;
   display: block;
   height: 100%;
   width: 100%;
-  border-radius: 0rem;
+  border-radius: 1.25rem;
   overflow: hidden;
 }
 
