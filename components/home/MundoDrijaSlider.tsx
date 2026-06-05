@@ -7,6 +7,7 @@ import {
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import {
   useExtendedSlides,
+  useImagesReady,
   useInfiniteCarousel,
 } from "@/hooks/useInfiniteCarousel";
 import type { MundoDrijaSlide } from "@/types/mundo-drija";
@@ -29,8 +30,9 @@ export function MundoDrijaSlider({
   carouselLabel,
 }: MundoDrijaSliderProps) {
   const count = slides.length;
+  const imagesReady = useImagesReady(slides.map((slide) => slide.src));
   const extendedSlides = useExtendedSlides(slides);
-  const carousel = useInfiniteCarousel(count);
+  const carousel = useInfiniteCarousel(count, { enabled: imagesReady });
 
   if (count === 0) return null;
 
@@ -76,6 +78,7 @@ export function MundoDrijaSlider({
               fill
               sizes="(min-width: 1024px) 80vw, 90vw"
               className="object-contain object-center"
+              loading="eager"
               priority={index === (carousel.canLoop ? 1 : 0)}
             />
           </InfiniteCarouselSlide>

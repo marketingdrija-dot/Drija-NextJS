@@ -16,7 +16,7 @@ export async function ProductCard({ product, locale }: ProductCardProps) {
   const productHref = localizePath(`/products/${product.slug}`, locale);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-drija-green/40 hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-xl bg-white transition hover:-translate-y-0.5">
       <Link
         href={productHref}
         className="relative block aspect-square overflow-hidden bg-neutral-100"

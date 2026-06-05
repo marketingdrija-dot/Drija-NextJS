@@ -59,8 +59,13 @@ export type Dictionary = {
     sku: string;
     specs: string;
     whereToBuy: string;
+    buy: string;
     inquire: string;
     breadcrumbProducts: string;
+    relatedProducts: string;
+    prevImage: string;
+    nextImage: string;
+    technicalSpecs: string;
   };
   blog: {
     pageTitle: string;

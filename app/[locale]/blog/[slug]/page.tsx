@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         {formatDate(post.publishedAt, locale)} · {post.author}
       </p>
 
-      <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+      <div className="relative mt-8 aspect-[16/10] overflow-hidden rounded-2xl bg-neutral-100">
         <OptimizedImage
           src={post.image.src}
           alt={post.image.alt}

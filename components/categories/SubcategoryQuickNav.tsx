@@ -18,7 +18,7 @@ export function SubcategoryQuickNav({ subcategories }: SubcategoryQuickNavProps)
           <a
             key={sub.id}
             href={`#subcategoria-${sub.slug}`}
-            className="flex min-w-[5.5rem] shrink-0 flex-col items-center gap-2 rounded-xl border border-neutral-200 bg-neutral-50 px-3 py-3 transition hover:border-drija-green hover:shadow-sm sm:min-w-[6.5rem] sm:px-4"
+            className="flex min-w-[5.5rem] shrink-0 flex-col items-center gap-2 rounded-xl bg-neutral-50 px-3 py-3 transition sm:min-w-[6.5rem] sm:px-4"
           >
             <div className="relative h-14 w-14 sm:h-16 sm:w-16">
               <OptimizedImage

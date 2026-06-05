@@ -1,0 +1,95 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main {
+  position: relative;
+}
+
+.viewport {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background-color: #f5f5f5;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: flex;
+  height: 5rem;
+  width: 5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--drija-green);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.nav:hover {
+  opacity: 0.75;
+}
+
+.nav:focus-visible {
+  outline: 2px solid var(--drija-green);
+  outline-offset: 3px;
+}
+
+.navPrev {
+  left: 0.25rem;
+}
+
+.navNext {
+  right: 0.25rem;
+}
+
+.navIcon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.thumb {
+  position: relative;
+  height: 4.5rem;
+  width: 4.5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.thumb:hover {
+  opacity: 0.85;
+}
+
+.thumbActive {
+  border-color: var(--drija-green);
+}
+
+.thumb:focus-visible {
+  outline: 2px solid var(--drija-green);
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .thumb {
+    height: 5rem;
+    width: 5rem;
+  }
+}

@@ -44,7 +44,7 @@ export function CategoryCatalogBlock({
         </div>
 
         {catalog.image && (
-          <div className="relative mx-auto mt-8 aspect-[16/7] max-w-4xl overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
+          <div className="relative mx-auto mt-8 aspect-[16/7] max-w-4xl overflow-hidden rounded-2xl bg-white">
             <OptimizedImage
               src={catalog.image.src}
               alt={catalog.image.alt}

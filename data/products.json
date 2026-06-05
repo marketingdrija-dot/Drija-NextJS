@@ -3,26 +3,202 @@
     "id": "prod-extractores-sottile-90-b",
     "slug": "extractores-sottile-90-b",
     "name": "Sottile 90-B",
-    "shortDescription": "Sottile 90-B — línea DRIJA.",
-    "description": "Sottile 90-B forma parte de la línea DRIJA. Consulte especificaciones técnicas y disponibilidad en su país.",
+    "shortDescription": "Campana empotrable de 90 cm con extracción potente y panel digital.",
+    "description": "La campana Sottile 90-B combina un diseño empotrable discreto con una extracción eficiente para mantener el aire de tu cocina limpio. Ideal para proyectos contemporáneos, integra un panel digital de fácil uso, iluminación LED de bajo consumo y un sistema de filtrado doble que prolonga el rendimiento con mantenimiento mínimo. Su perfil de 90 cm ofrece cobertura amplia sobre la zona de cocción sin comprometer la estética del espacio.",
     "categorySlug": "extractores",
     "subcategorySlug": "canopio",
     "sku": "SOTTILE-90-B",
     "images": [
       {
         "src": "/images/products/extractores/sottile-90-b.jpg",
-        "alt": "Sottile 90-B DRIJA"
+        "alt": "Sottile 90-B DRIJA — vista frontal"
+      },
+      {
+        "src": "/images/products/extractores/sottile-90-b-side.jpg",
+        "alt": "Sottile 90-B DRIJA — vista lateral"
+      },
+      {
+        "src": "/images/products/extractores/sottile-90-b-detail.jpg",
+        "alt": "Sottile 90-B DRIJA — detalle del panel"
+      },
+      {
+        "src": "/images/products/extractores/sottile-90-b-install.jpg",
+        "alt": "Sottile 90-B DRIJA — instalación en cocina"
       }
+    ],
+    "specs": [
+      { "label": "Tamaño", "value": "90 cm" },
+      { "label": "Voltaje", "value": "110-120V / 60Hz" },
+      { "label": "Velocidades", "value": "3" },
+      { "label": "Iluminación", "value": "2 × 1.5W LED" },
+      { "label": "Material", "value": "Acero inoxidable" },
+      { "label": "Filtros", "value": "Aluminio + 2 carbón activo" }
+    ],
+    "features": [
+      {
+        "id": "feat-sottile-design",
+        "title": "Diseño empotrable invisible",
+        "description": "Se integra bajo el mueble superior para mantener líneas limpias y un aspecto minimalista en la cocina.",
+        "image": {
+          "src": "/images/products/extractores/features/design.jpg",
+          "alt": "Diseño empotrable Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-power",
+        "title": "Potente extracción",
+        "description": "Motor de alto rendimiento que elimina humo, vapores y olores de forma rápida y silenciosa.",
+        "image": {
+          "src": "/images/products/extractores/features/extraction.jpg",
+          "alt": "Extracción potente Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-panel",
+        "title": "Panel digital",
+        "description": "Controles táctiles intuitivos para ajustar velocidad e iluminación con precisión.",
+        "image": {
+          "src": "/images/products/extractores/features/panel.jpg",
+          "alt": "Panel digital Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-timer",
+        "title": "Reloj y temporizador de apagado",
+        "description": "Programa el apagado automático para seguir cocinando sin preocuparte por dejar la campana encendida.",
+        "image": {
+          "src": "/images/products/extractores/features/timer.jpg",
+          "alt": "Temporizador Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-carbon",
+        "title": "2 filtros de carbón activo",
+        "description": "Filtran partículas y olores persistentes para un ambiente más fresco después de cada preparación.",
+        "image": {
+          "src": "/images/products/extractores/features/carbon.jpg",
+          "alt": "Filtros de carbón Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-aluminum",
+        "title": "Filtro de aluminio",
+        "description": "Retiene grasa y residuos; es lavable y reutilizable para un mantenimiento sencillo.",
+        "image": {
+          "src": "/images/products/extractores/features/aluminum.jpg",
+          "alt": "Filtro de aluminio Sottile 90-B"
+        }
+      },
+      {
+        "id": "feat-sottile-warranty",
+        "title": "Respaldo",
+        "description": "Cuenta con garantía DRIJA de 1 año y soporte técnico en los mercados donde está disponible.",
+        "image": {
+          "src": "/images/products/extractores/features/warranty.jpg",
+          "alt": "Garantía Sottile 90-B"
+        }
+      }
+    ],
+    "relatedSlugs": [
+      "extractores-sottile-60-b",
+      "extractores-invisibile-76-i",
+      "extractores-compatto-90-black",
+      "extractores-retractil-touch-60"
     ],
     "translations": {
       "en": {
         "name": "Sottile 90-B",
-        "shortDescription": "Sottile 90-B — DRIJA line.",
-        "description": "Sottile 90-B is part of the DRIJA product line. Check technical specifications and availability in your country.",
+        "shortDescription": "90 cm built-in hood with powerful extraction and digital panel.",
+        "description": "The Sottile 90-B hood combines a discreet built-in design with efficient extraction to keep your kitchen air clean. Its digital panel, LED lighting and carbon filters make it a practical choice for modern spaces.",
         "images": [
           {
             "src": "/images/products/extractores/sottile-90-b.jpg",
-            "alt": "DRIJA Sottile 90-B"
+            "alt": "DRIJA Sottile 90-B — front view"
+          },
+          {
+            "src": "/images/products/extractores/sottile-90-b-side.jpg",
+            "alt": "DRIJA Sottile 90-B — side view"
+          },
+          {
+            "src": "/images/products/extractores/sottile-90-b-detail.jpg",
+            "alt": "DRIJA Sottile 90-B — panel detail"
+          },
+          {
+            "src": "/images/products/extractores/sottile-90-b-install.jpg",
+            "alt": "DRIJA Sottile 90-B — kitchen installation"
+          }
+        ],
+        "specs": [
+          { "label": "Size", "value": "90 cm" },
+          { "label": "Voltage", "value": "110-120V / 60Hz" },
+          { "label": "Speeds", "value": "3" },
+          { "label": "Lighting", "value": "2 × 1.5W LED" },
+          { "label": "Material", "value": "Stainless steel" },
+          { "label": "Filters", "value": "Aluminum + 2 active carbon" }
+        ],
+        "features": [
+          {
+            "id": "feat-sottile-design",
+            "title": "Invisible built-in design",
+            "description": "Fits under the upper cabinet to keep clean lines and a minimal kitchen look.",
+            "image": {
+              "src": "/images/products/extractores/features/design.jpg",
+              "alt": "Sottile 90-B built-in design"
+            }
+          },
+          {
+            "id": "feat-sottile-power",
+            "title": "Powerful extraction",
+            "description": "High-performance motor that removes smoke, steam and odors quickly and quietly.",
+            "image": {
+              "src": "/images/products/extractores/features/extraction.jpg",
+              "alt": "Sottile 90-B powerful extraction"
+            }
+          },
+          {
+            "id": "feat-sottile-panel",
+            "title": "Digital panel",
+            "description": "Intuitive touch controls to adjust speed and lighting with precision.",
+            "image": {
+              "src": "/images/products/extractores/features/panel.jpg",
+              "alt": "Sottile 90-B digital panel"
+            }
+          },
+          {
+            "id": "feat-sottile-timer",
+            "title": "Clock and shut-off timer",
+            "description": "Schedule automatic shut-off so you can keep cooking without leaving the hood on.",
+            "image": {
+              "src": "/images/products/extractores/features/timer.jpg",
+              "alt": "Sottile 90-B timer"
+            }
+          },
+          {
+            "id": "feat-sottile-carbon",
+            "title": "2 active carbon filters",
+            "description": "Filter particles and lingering odors for a fresher environment after every meal.",
+            "image": {
+              "src": "/images/products/extractores/features/carbon.jpg",
+              "alt": "Sottile 90-B carbon filters"
+            }
+          },
+          {
+            "id": "feat-sottile-aluminum",
+            "title": "Aluminum filter",
+            "description": "Traps grease and residue; washable and reusable for easy maintenance.",
+            "image": {
+              "src": "/images/products/extractores/features/aluminum.jpg",
+              "alt": "Sottile 90-B aluminum filter"
+            }
+          },
+          {
+            "id": "feat-sottile-warranty",
+            "title": "Support",
+            "description": "Includes a 1-year DRIJA warranty and technical support in available markets.",
+            "image": {
+              "src": "/images/products/extractores/features/warranty.jpg",
+              "alt": "Sottile 90-B warranty"
+            }
           }
         ]
       }

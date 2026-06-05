@@ -29,6 +29,8 @@ type InfiniteCarouselProps = {
   slideRatio?: number;
   gapPx?: number;
   size?: "default" | "compact";
+  wrapClassName?: string;
+  viewportClassName?: string;
   children: React.ReactNode;
 };
 
@@ -51,6 +53,8 @@ export function InfiniteCarousel({
   slideRatio = CAROUSEL_SLIDE_RATIO,
   gapPx = CAROUSEL_GAP_PX,
   size = "default",
+  wrapClassName,
+  viewportClassName,
   children,
 }: InfiniteCarouselProps) {
   if (slideCount === 0) return null;
@@ -60,13 +64,13 @@ export function InfiniteCarousel({
 
   return (
     <div
-      className={styles.wrap}
+      className={cn(styles.wrap, wrapClassName)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       <div
         ref={viewportRef}
-        className={styles.viewport}
+        className={cn(styles.viewport, viewportClassName)}
         role="region"
         aria-roledescription="carousel"
         aria-label={carouselLabel}

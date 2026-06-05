@@ -14,7 +14,7 @@ export function BlogCard({ post, locale }: BlogCardProps) {
   const postHref = localizePath(`/blog/${post.slug}`, locale);
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-xl bg-white transition hover:-translate-y-0.5">
       <Link
         href={postHref}
         className="relative block aspect-[16/10] overflow-hidden bg-neutral-100"

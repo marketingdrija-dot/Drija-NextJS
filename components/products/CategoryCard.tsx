@@ -16,7 +16,7 @@ export async function CategoryCard({ category, locale }: CategoryCardProps) {
   return (
     <Link
       href={localizePath(`/categories/${category.slug}`, locale)}
-      className="group flex flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-drija-green/40 hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-xl bg-white transition hover:-translate-y-0.5"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-white">
         <OptimizedImage

@@ -22,6 +22,8 @@ type UseInfiniteCarouselOptions = {
   gapPx?: number;
   /** Calcula el ancho de cada slide para mostrar N tarjetas a la vez */
   slidesPerView?: number;
+  /** Pausa autoplay y navegación hasta que las imágenes estén listas */
+  enabled?: boolean;
 };
 
 export function useInfiniteCarousel(
@@ -31,6 +33,7 @@ export function useInfiniteCarousel(
   const slideRatio = options.slideRatio ?? CAROUSEL_SLIDE_RATIO;
   const gapPx = options.gapPx ?? CAROUSEL_GAP_PX;
   const slidesPerView = options.slidesPerView;
+  const enabled = options.enabled !== false;
   const count = slideCount;
   const canLoop = count > 1;
   const maxTrackIndex = count + 1;
@@ -91,16 +94,16 @@ export function useInfiniteCarousel(
   }, [trackIndex, transitionEnabled]);
 
   const prev = useCallback(() => {
-    if (!canLoop || trackIndex <= 0) return;
+    if (!enabled || !canLoop || trackIndex <= 0) return;
     setTransitionEnabled(true);
     setTrackIndex((i) => i - 1);
-  }, [canLoop, trackIndex]);
+  }, [enabled, canLoop, trackIndex]);
 
   const next = useCallback(() => {
-    if (!canLoop || trackIndex >= maxTrackIndex) return;
+    if (!enabled || !canLoop || trackIndex >= maxTrackIndex) return;
     setTransitionEnabled(true);
     setTrackIndex((i) => Math.min(i + 1, maxTrackIndex));
-  }, [canLoop, trackIndex, maxTrackIndex]);
+  }, [enabled, canLoop, trackIndex, maxTrackIndex]);
 
   useEffect(() => {
     const el = viewportRef.current;
@@ -115,14 +118,14 @@ export function useInfiniteCarousel(
   }, []);
 
   useEffect(() => {
-    if (!canLoop || paused || trackIndex >= maxTrackIndex) return;
+    if (!enabled || !canLoop || paused || trackIndex >= maxTrackIndex) return;
 
     const timer = window.setTimeout(() => {
       next();
     }, CAROUSEL_AUTOPLAY_MS);
 
     return () => window.clearTimeout(timer);
-  }, [trackIndex, canLoop, paused, maxTrackIndex, next]);
+  }, [enabled, trackIndex, canLoop, paused, maxTrackIndex, next]);
 
   const resetToStart = useCallback(() => {
     setTransitionEnabled(false);
@@ -176,6 +179,44 @@ export function useSlidesPerView(
   }, [base, sm, lg]);
 
   return slidesPerView;
+}
+
+export function useImagesReady(sources: string[]) {
+  const key = sources.join("\0");
+  const [ready, setReady] = useState(!key);
+
+  useEffect(() => {
+    if (!key) {
+      setReady(true);
+      return;
+    }
+
+    const uniqueSources = [...new Set(key.split("\0"))];
+    setReady(false);
+    let cancelled = false;
+    let pending = uniqueSources.length;
+
+    const settle = () => {
+      pending -= 1;
+      if (!cancelled && pending <= 0) {
+        setReady(true);
+      }
+    };
+
+    for (const src of uniqueSources) {
+      const img = new window.Image();
+      img.decoding = "async";
+      img.onload = settle;
+      img.onerror = settle;
+      img.src = src;
+    }
+
+    return () => {
+      cancelled = true;
+    };
+  }, [key]);
+
+  return ready;
 }
 
 export function useExtendedSlides<T>(slides: T[]) {

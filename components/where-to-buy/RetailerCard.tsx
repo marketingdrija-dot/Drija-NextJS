@@ -29,7 +29,7 @@ export function RetailerCard({ retailer, visitWebsiteLabel }: RetailerCardProps)
       href={retailer.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col overflow-hidden rounded-sm border border-neutral-200 bg-neutral-100 transition hover:border-drija-green hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-sm bg-neutral-100 transition"
     >
       <div className="relative aspect-square">
         <OptimizedImage
@@ -40,7 +40,7 @@ export function RetailerCard({ retailer, visitWebsiteLabel }: RetailerCardProps)
           className="object-contain p-4 "
         />
       </div>
-      <div className="flex items-center justify-center gap-1.5 border-t border-neutral-200 bg-white px-2 py-2.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-800 transition group-hover:text-drija-green sm:text-xs">
+      <div className="flex items-center justify-center gap-1.5 bg-white px-2 py-2.5 text-[10px] font-semibold uppercase tracking-wide text-neutral-800 transition group-hover:text-drija-green sm:text-xs">
         <span>{visitWebsiteLabel}</span>
         <ArrowDownRightIcon />
       </div>

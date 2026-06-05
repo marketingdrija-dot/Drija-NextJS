@@ -2,7 +2,12 @@ import type { Locale } from "@/lib/i18n/config";
 import type { ContentTranslations } from "@/types/content-i18n";
 import type { BlogPost } from "@/types/blog";
 import type { Category } from "@/types/category";
-import type { Product, ProductImage, ProductSpec } from "@/types/product";
+import type {
+  Product,
+  ProductFeatureBlock,
+  ProductImage,
+  ProductSpec,
+} from "@/types/product";
 import type { SupportArticle, SupportCategory } from "@/types/support";
 
 type WithTranslations<T> = T & {
@@ -43,6 +48,10 @@ export function localizeProduct(product: WithTranslations<Product>, locale: Loca
       description: en.description ?? product.description,
       images: (en.images ?? product.images) as ProductImage[],
       specs: (en.specs ?? product.specs) as ProductSpec[] | undefined,
+      features: (en.features ?? product.features) as
+        | ProductFeatureBlock[]
+        | undefined,
+      specsHtml: en.specsHtml ?? product.specsHtml,
     };
   }
 

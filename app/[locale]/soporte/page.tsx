@@ -40,7 +40,7 @@ export default async function SoportePage({ params }: PageProps) {
             <Link
               key={item.label}
               href={item.href}
-              className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-6 text-center text-sm font-bold uppercase tracking-wide hover:border-drija-green hover:text-drija-green"
+              className="rounded-xl bg-neutral-50 px-4 py-6 text-center text-sm font-bold uppercase tracking-wide hover:text-drija-green"
             >
               {item.label}
             </Link>
@@ -51,7 +51,7 @@ export default async function SoportePage({ params }: PageProps) {
           {categories.map((category) => (
             <section
               key={category.id}
-              className="rounded-2xl border border-neutral-200 bg-white p-6"
+              className="rounded-2xl bg-white p-6"
             >
               <h2 className="text-xl font-bold text-neutral-900">
                 {category.name}{" "}
@@ -62,7 +62,7 @@ export default async function SoportePage({ params }: PageProps) {
               <ul className="mt-4 space-y-3">
                 {category.articles.map((article) => (
                   <li key={article.id}>
-                    <details className="group rounded-lg border border-neutral-200 px-4 py-3">
+                    <details className="group rounded-lg bg-neutral-50 px-4 py-3">
                       <summary className="cursor-pointer font-medium text-neutral-800 marker:content-none">
                         <span className="flex items-center justify-between gap-4">
                           {article.question}

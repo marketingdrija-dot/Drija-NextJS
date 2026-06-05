@@ -57,8 +57,13 @@
     "sku": "SKU",
     "specs": "Especificaciones",
     "whereToBuy": "Dónde comprar",
+    "buy": "Comprar",
     "inquire": "Consultar",
-    "breadcrumbProducts": "Productos"
+    "breadcrumbProducts": "Productos",
+    "relatedProducts": "Productos relacionados",
+    "prevImage": "Imagen anterior",
+    "nextImage": "Siguiente imagen",
+    "technicalSpecs": "Especificaciones técnicas"
   },
   "blog": {
     "pageTitle": "Mundo DRIJA",

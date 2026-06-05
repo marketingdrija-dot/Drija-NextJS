@@ -19,7 +19,7 @@ export function CategoryProductRow({
   const href = localizePath(`/products/${product.slug}`, locale);
 
   return (
-    <article className="flex min-w-[min(100%,320px)] shrink-0 items-center gap-4 rounded-lg border border-neutral-200 bg-white p-3 shadow-sm sm:min-w-[380px] lg:min-w-[420px]">
+    <article className="flex min-w-[min(100%,320px)] shrink-0 items-center gap-4 rounded-lg bg-white p-3 sm:min-w-[380px] lg:min-w-[420px]">
       <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-md bg-neutral-100 sm:h-24 sm:w-24">
         {image && (
           <OptimizedImage

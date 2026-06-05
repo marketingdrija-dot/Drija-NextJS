@@ -38,7 +38,7 @@ export function ProductRowCarousel({
         <button
           type="button"
           onClick={() => scroll("left")}
-          className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-drija-green text-white shadow-md transition hover:bg-drija-green-dark sm:-left-4 sm:h-10 sm:w-10"
+          className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-drija-green text-white transition hover:bg-drija-green-dark sm:-left-4 sm:h-10 sm:w-10"
           aria-label="Anterior"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,7 +65,7 @@ export function ProductRowCarousel({
         <button
           type="button"
           onClick={() => scroll("right")}
-          className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-drija-green text-white shadow-md transition hover:bg-drija-green-dark sm:-right-4 sm:h-10 sm:w-10"
+          className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-drija-green text-white transition hover:bg-drija-green-dark sm:-right-4 sm:h-10 sm:w-10"
           aria-label="Siguiente"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

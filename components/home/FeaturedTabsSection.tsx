@@ -10,6 +10,7 @@ import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import {
   CAROUSEL_FEATURED_GAP_PX,
   useExtendedSlides,
+  useImagesReady,
   useInfiniteCarousel,
   useSlidesPerView,
 } from "@/hooks/useInfiniteCarousel";
@@ -45,10 +46,13 @@ function FeaturedCarousel({
   const { href } = useI18n();
   const count = slides.length;
   const slidesPerView = useSlidesPerView();
+  const imageSources = slides.map((slide) => slide.src);
+  const imagesReady = useImagesReady(imageSources);
   const extendedSlides = useExtendedSlides(slides);
   const carousel = useInfiniteCarousel(count, {
     slidesPerView,
     gapPx: CAROUSEL_FEATURED_GAP_PX,
+    enabled: imagesReady,
   });
   const { resetToStart } = carousel;
 
@@ -76,6 +80,7 @@ function FeaturedCarousel({
       prevLabel={prevLabel}
       nextLabel={nextLabel}
       gapPx={CAROUSEL_FEATURED_GAP_PX}
+      viewportClassName={styles.sliderViewport}
     >
       {extendedSlides.map((slide, index) => (
         <InfiniteCarouselSlide
@@ -95,6 +100,7 @@ function FeaturedCarousel({
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
               className={styles.cardImage}
+              loading="eager"
               priority={index === (carousel.canLoop ? 1 : 0)}
             />
             <span className={styles.cardTitle}>{slide.title}</span>
@@ -143,7 +149,7 @@ export function FeaturedTabsSection({
         </div>
       </div>
 
-      <div className={styles.sliderArea} role="tabpanel">
+      <div className={styles.sliderShell} role="tabpanel">
         <FeaturedCarousel
           key={activeTab}
           slides={activeSlides}

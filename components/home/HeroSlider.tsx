@@ -75,7 +75,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           <button
             type="button"
             onClick={prev}
-            className="hidden absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:left-6"
+            className="hidden absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:left-6"
             aria-label="Imagen anterior"
           >
             <svg
@@ -92,7 +92,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
           <button
             type="button"
             onClick={next}
-            className="hidden absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 shadow-md transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:right-6"
+            className="hidden absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:right-6"
             aria-label="Siguiente imagen"
           >
             <svg

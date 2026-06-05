@@ -59,22 +59,26 @@
   background-color: var(--drija-green);
 }
 
-.sliderArea {
+.sliderShell {
   margin-top: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.sliderViewport {
   margin-inline: auto;
   max-width: 80rem;
-  width: 100%;
   padding-inline: 1rem;
 }
 
 @media (min-width: 640px) {
-  .sliderArea {
+  .sliderViewport {
     padding-inline: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .sliderArea {
+  .sliderViewport {
     padding-inline: 2rem;
   }
 }
@@ -112,5 +116,4 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }

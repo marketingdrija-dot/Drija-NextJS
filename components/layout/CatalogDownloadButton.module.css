@@ -18,14 +18,12 @@
   line-height: 1.15;
   text-align: center;
   text-decoration: none;
-  box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.18);
   transform: translateY(-50%);
-  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .button:hover {
   background-color: var(--color-drija-green-dark, #6a9a34);
-  box-shadow: -3px 3px 16px rgba(0, 0, 0, 0.22);
 }
 
 .button:focus-visible {

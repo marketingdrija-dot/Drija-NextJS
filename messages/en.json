@@ -57,8 +57,13 @@
     "sku": "SKU",
     "specs": "Specifications",
     "whereToBuy": "Where to buy",
+    "buy": "Buy",
     "inquire": "Inquire",
-    "breadcrumbProducts": "Products"
+    "breadcrumbProducts": "Products",
+    "relatedProducts": "Related products",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "technicalSpecs": "Technical specifications"
   },
   "blog": {
     "pageTitle": "DRIJA World",

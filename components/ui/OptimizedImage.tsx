@@ -13,6 +13,7 @@ type OptimizedImageProps = {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  loading?: "lazy" | "eager";
 };
 
 export function OptimizedImage({
@@ -24,6 +25,7 @@ export function OptimizedImage({
   className,
   priority,
   sizes = "(max-width: 768px) 100vw, 50vw",
+  loading,
 }: OptimizedImageProps) {
   const [error, setError] = useState(false);
 
@@ -52,6 +54,7 @@ export function OptimizedImage({
         className={cn("object-contain", className)}
         sizes={sizes}
         priority={priority}
+        loading={priority ? undefined : loading}
         onError={() => setError(true)}
       />
     );
@@ -66,6 +69,7 @@ export function OptimizedImage({
       className={cn("object-cover", className)}
       sizes={sizes}
       priority={priority}
+      loading={priority ? undefined : loading}
       onError={() => setError(true)}
     />
   );
