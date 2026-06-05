@@ -6,6 +6,13 @@
     "switchTo": "Español",
     "current": "English"
   },
+  "market": {
+    "label": "Country or region",
+    "title": "Market:",
+    "disclaimer": "Product and content availability may vary depending on the selected market.",
+    "region": "region",
+    "emptyCatalog": "No categories available for this market."
+  },
   "nav": {
     "home": "Home",
     "products": "Products",

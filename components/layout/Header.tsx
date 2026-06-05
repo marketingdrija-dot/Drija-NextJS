@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { LocaleSwitcher } from "@/components/navigation/LocaleSwitcher";
+import { MarketBar } from "@/components/navigation/MarketBar";
 import { useI18n } from "@/lib/i18n/context";
 import { isActivePath } from "@/lib/i18n/paths";
 import { cn } from "@/lib/utils";
@@ -42,21 +43,24 @@ export function Header() {
         "sticky top-0 z-50 border-b border-transparent",
       )}
     >
+      <MarketBar />
+
       <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8`}>
         <Link href={href("/")} className="shrink-0" aria-label={dict.common.homeLabel}>
           <Image
             src="/logo.svg"
             alt="DRIJA"
-            width={140}
-            height={36}
+            width={151}
+            height={38}
             priority
             className="h-9 w-auto"
+            style={{ width: "auto" }}
           />
         </Link>
 
         <Navigation />
 
-        <div className="text-white flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <LocaleSwitcher />
           <button
             type="button"

@@ -4,197 +4,317 @@
     "slug": "refrigeradores",
     "name": "Refrigeradores",
     "description": "Refrigeración eficiente para conservar frescura y organizar tu cocina.",
-    "image": { "src": "/images/categories/refrigeradores.jpg", "alt": "Refrigeradores DRIJA" },
+    "image": {
+      "src": "/images/categories/refrigeradores.jpg",
+      "alt": "Refrigeradores DRIJA"
+    },
     "featured": true,
     "order": 1,
     "translations": {
       "en": {
         "name": "Refrigerators",
         "description": "Efficient refrigeration to preserve freshness and organize your kitchen.",
-        "image": { "src": "/images/categories/refrigeradores.jpg", "alt": "DRIJA Refrigerators" }
+        "image": {
+          "src": "/images/categories/refrigeradores.jpg",
+          "alt": "DRIJA Refrigerators"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-extractores",
     "slug": "extractores",
     "name": "Extractores",
     "description": "Campanas y extractores que mantienen el aire limpio mientras cocinas.",
-    "image": { "src": "/images/categories/extractores.jpg", "alt": "Extractores DRIJA" },
+    "image": {
+      "src": "/images/categories/extractores.jpg",
+      "alt": "Extractores DRIJA"
+    },
     "featured": true,
     "order": 2,
     "translations": {
       "en": {
         "name": "Range Hoods",
         "description": "Hoods and extractors that keep the air clean while you cook.",
-        "image": { "src": "/images/categories/extractores.jpg", "alt": "DRIJA Range Hoods" }
+        "image": {
+          "src": "/images/categories/extractores.jpg",
+          "alt": "DRIJA Range Hoods"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-hornos",
     "slug": "hornos",
     "name": "Hornos",
     "description": "Hornos eléctricos y a gas para resultados uniformes en cada preparación.",
-    "image": { "src": "/images/categories/hornos.jpg", "alt": "Hornos DRIJA" },
+    "image": {
+      "src": "/images/categories/hornos.jpg",
+      "alt": "Hornos DRIJA"
+    },
     "featured": true,
     "order": 3,
     "translations": {
       "en": {
         "name": "Ovens",
         "description": "Electric and gas ovens for consistent results in every dish.",
-        "image": { "src": "/images/categories/hornos.jpg", "alt": "DRIJA Ovens" }
+        "image": {
+          "src": "/images/categories/hornos.jpg",
+          "alt": "DRIJA Ovens"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-vineras",
     "slug": "vineras",
     "name": "Vineras",
     "description": "Conserva tus vinos a la temperatura ideal con diseño elegante.",
-    "image": { "src": "/images/categories/vineras.jpg", "alt": "Vineras DRIJA" },
+    "image": {
+      "src": "/images/categories/vineras.jpg",
+      "alt": "Vineras DRIJA"
+    },
     "order": 4,
     "translations": {
       "en": {
         "name": "Wine Coolers",
         "description": "Store your wines at the ideal temperature with elegant design.",
-        "image": { "src": "/images/categories/vineras.jpg", "alt": "DRIJA Wine Coolers" }
+        "image": {
+          "src": "/images/categories/vineras.jpg",
+          "alt": "DRIJA Wine Coolers"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "cat-estufas",
     "slug": "estufas",
     "name": "Estufas",
     "description": "Estufas a gas e inducción con quemadores de alto rendimiento.",
-    "image": { "src": "/images/categories/estufas.jpg", "alt": "Estufas DRIJA" },
+    "image": {
+      "src": "/images/categories/estufas.jpg",
+      "alt": "Estufas DRIJA"
+    },
     "order": 5,
     "translations": {
       "en": {
         "name": "Ranges",
         "description": "Gas and induction ranges with high-performance burners.",
-        "image": { "src": "/images/categories/estufas.jpg", "alt": "DRIJA Ranges" }
+        "image": {
+          "src": "/images/categories/estufas.jpg",
+          "alt": "DRIJA Ranges"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-calentadores",
     "slug": "calentadores-de-agua",
     "name": "Calentadores de agua",
     "description": "Agua caliente confiable para todo el hogar.",
-    "image": { "src": "/images/categories/calentadores.jpg", "alt": "Calentadores de agua DRIJA" },
+    "image": {
+      "src": "/images/categories/calentadores.jpg",
+      "alt": "Calentadores de agua DRIJA"
+    },
     "order": 6,
     "translations": {
       "en": {
         "name": "Water Heaters",
         "description": "Reliable hot water for the entire home.",
-        "image": { "src": "/images/categories/calentadores.jpg", "alt": "DRIJA Water Heaters" }
+        "image": {
+          "src": "/images/categories/calentadores.jpg",
+          "alt": "DRIJA Water Heaters"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-microondas",
     "slug": "microondas",
     "name": "Microondas",
     "description": "Cocción rápida con tecnología moderna y fácil limpieza.",
-    "image": { "src": "/images/categories/microondas.jpg", "alt": "Microondas DRIJA" },
+    "image": {
+      "src": "/images/categories/microondas.jpg",
+      "alt": "Microondas DRIJA"
+    },
     "order": 7,
     "translations": {
       "en": {
         "name": "Microwaves",
         "description": "Fast cooking with modern technology and easy cleaning.",
-        "image": { "src": "/images/categories/microondas.jpg", "alt": "DRIJA Microwaves" }
+        "image": {
+          "src": "/images/categories/microondas.jpg",
+          "alt": "DRIJA Microwaves"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "cat-fregaderos",
     "slug": "fregaderos",
     "name": "Fregaderos",
     "description": "Fregaderos y accesorios resistentes para tu área de lavado.",
-    "image": { "src": "/images/categories/fregaderos.jpg", "alt": "Fregaderos DRIJA" },
+    "image": {
+      "src": "/images/categories/fregaderos.jpg",
+      "alt": "Fregaderos DRIJA"
+    },
     "order": 8,
     "translations": {
       "en": {
         "name": "Sinks",
         "description": "Durable sinks and accessories for your wash area.",
-        "image": { "src": "/images/categories/fregaderos.jpg", "alt": "DRIJA Sinks" }
+        "image": {
+          "src": "/images/categories/fregaderos.jpg",
+          "alt": "DRIJA Sinks"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-hielo",
     "slug": "fabricador-de-hielo",
     "name": "Fabricador de Hielo",
     "description": "Hielo listo cuando lo necesitas para reuniones y el día a día.",
-    "image": { "src": "/images/categories/hielo.jpg", "alt": "Fabricador de hielo DRIJA" },
+    "image": {
+      "src": "/images/categories/hielo.jpg",
+      "alt": "Fabricador de hielo DRIJA"
+    },
     "order": 9,
     "translations": {
       "en": {
         "name": "Ice Makers",
         "description": "Ice ready when you need it for gatherings and everyday use.",
-        "image": { "src": "/images/categories/hielo.jpg", "alt": "DRIJA Ice Makers" }
+        "image": {
+          "src": "/images/categories/hielo.jpg",
+          "alt": "DRIJA Ice Makers"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-pequenos",
     "slug": "pequenos-electrodomesticos",
     "name": "Pequeños Electrodomésticos",
     "description": "Air fryers, cafeteras y más para complementar tu cocina.",
-    "image": { "src": "/images/categories/pequenos.jpg", "alt": "Pequeños electrodomésticos DRIJA" },
+    "image": {
+      "src": "/images/categories/pequenos.jpg",
+      "alt": "Pequeños electrodomésticos DRIJA"
+    },
     "order": 10,
     "translations": {
       "en": {
         "name": "Small Appliances",
         "description": "Air fryers, coffee makers, and more to complement your kitchen.",
-        "image": { "src": "/images/categories/pequenos.jpg", "alt": "DRIJA Small Appliances" }
+        "image": {
+          "src": "/images/categories/pequenos.jpg",
+          "alt": "DRIJA Small Appliances"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-dispensadores",
     "slug": "dispensadores-de-agua",
     "name": "Dispensadores de Agua",
     "description": "Agua fría, caliente e hielo en un solo equipo.",
-    "image": { "src": "/images/categories/dispensadores.jpg", "alt": "Dispensadores de agua DRIJA" },
+    "image": {
+      "src": "/images/categories/dispensadores.jpg",
+      "alt": "Dispensadores de agua DRIJA"
+    },
     "order": 11,
     "translations": {
       "en": {
         "name": "Water Dispensers",
         "description": "Cold, hot, and ice water in a single unit.",
-        "image": { "src": "/images/categories/dispensadores.jpg", "alt": "DRIJA Water Dispensers" }
+        "image": {
+          "src": "/images/categories/dispensadores.jpg",
+          "alt": "DRIJA Water Dispensers"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-lavadoras",
     "slug": "lavadoras",
     "name": "Lavadoras",
     "description": "Lavadoras y lava-secas con ciclos inteligentes.",
-    "image": { "src": "/images/categories/lavadoras.jpg", "alt": "Lavadoras DRIJA" },
+    "image": {
+      "src": "/images/categories/lavadoras.jpg",
+      "alt": "Lavadoras DRIJA"
+    },
     "order": 12,
     "translations": {
       "en": {
         "name": "Washers",
         "description": "Washers and washer-dryers with smart cycles.",
-        "image": { "src": "/images/categories/lavadoras.jpg", "alt": "DRIJA Washers" }
+        "image": {
+          "src": "/images/categories/lavadoras.jpg",
+          "alt": "DRIJA Washers"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "cat-centros",
     "slug": "centros-de-bebidas",
     "name": "Centros de bebidas",
     "description": "Organiza y enfría bebidas con estilo.",
-    "image": { "src": "/images/categories/centros-bebidas.jpg", "alt": "Centros de bebidas DRIJA" },
+    "image": {
+      "src": "/images/categories/centros-bebidas.jpg",
+      "alt": "Centros de bebidas DRIJA"
+    },
     "order": 13,
     "translations": {
       "en": {
         "name": "Beverage Centers",
         "description": "Organize and chill beverages with style.",
-        "image": { "src": "/images/categories/centros-bebidas.jpg", "alt": "DRIJA Beverage Centers" }
+        "image": {
+          "src": "/images/categories/centros-bebidas.jpg",
+          "alt": "DRIJA Beverage Centers"
+        }
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   }
 ]

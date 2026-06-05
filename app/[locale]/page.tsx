@@ -4,9 +4,10 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturedTabsSection } from "@/components/home/FeaturedTabsSection";
 import { MundoDrijaSlider } from "@/components/home/MundoDrijaSlider";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { CategoryCard } from "@/components/products/CategoryCard";
-import { ProductCard } from "@/components/products/ProductCard";
+import { FilteredCategoryGrid } from "@/components/catalog/FilteredCategoryGrid";
+import { FilteredProductGrid } from "@/components/catalog/FilteredProductGrid";
 import { getCms } from "@/lib/cms";
+import { getFullCatalog } from "@/lib/cms/catalog";
 import { getHomeBlogPosts } from "@/lib/blog-home";
 import { getFeaturedSlidesData } from "@/lib/featured-slides";
 import { getHeroSlides } from "@/lib/hero";
@@ -17,16 +18,15 @@ type PageProps = { params: Promise<{ locale: string }> };
 
 export default async function HomePage({ params }: PageProps) {
   const { locale, dict, href } = await getPageI18n(params);
-  const cms = getCms();
-  const [categories, newProducts, blogPosts] = await Promise.all([
-    cms.getCategories(locale),
-    cms.getProducts({ featured: true, locale }),
-    cms.getBlogPosts({ locale }),
+  const [{ categories, products }, blogPosts] = await Promise.all([
+    getFullCatalog(locale),
+    getCms().getBlogPosts({ locale }),
   ]);
+  const newProducts = products.filter((product) => product.featured);
 
   const homeBlogPosts = getHomeBlogPosts(blogPosts);
 
-  const featuredCategories = categories.filter((c) => c.featured).slice(0, 6);
+  const featuredCategories = categories.filter((category) => category.featured);
   const heroSlides = getHeroSlides(locale);
   const mundoDrijaSlides = getMundoDrijaSlides();
   const featuredSlides = getFeaturedSlidesData(locale);
@@ -52,11 +52,12 @@ export default async function HomePage({ params }: PageProps) {
             {dict.home.viewAll}
           </Link>
         </div>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {featuredCategories.map((category) => (
-            <CategoryCard key={category.id} category={category} locale={locale} />
-          ))}
-        </div>
+        <FilteredCategoryGrid
+          categories={featuredCategories}
+          products={products}
+          emptyMessage={dict.market.emptyCatalog}
+          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        />
       </section>
 
       <section className="border-y border-neutral-200 bg-neutral-50">
@@ -69,11 +70,11 @@ export default async function HomePage({ params }: PageProps) {
               {dict.home.featuredTitle}
             </h2>
           </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {newProducts.slice(0, 4).map((product) => (
-              <ProductCard key={product.id} product={product} locale={locale} />
-            ))}
-          </div>
+          <FilteredProductGrid
+            categories={categories}
+            products={newProducts}
+            limit={4}
+          />
         </div>
       </section>
 

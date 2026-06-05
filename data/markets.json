@@ -1,0 +1,73 @@
+[
+  {
+    "id": "market-car",
+    "name": "Caribbean",
+    "code": "CAR",
+    "type": "region",
+    "order": 1
+  },
+  {
+    "id": "market-cr",
+    "name": "Costa Rica",
+    "code": "CR",
+    "type": "country",
+    "order": 2
+  },
+  {
+    "id": "market-sv",
+    "name": "El Salvador",
+    "code": "SV",
+    "type": "country",
+    "order": 3
+  },
+  {
+    "id": "market-gt",
+    "name": "Guatemala",
+    "code": "GT",
+    "type": "country",
+    "order": 4
+  },
+  {
+    "id": "market-hn",
+    "name": "Honduras",
+    "code": "HN",
+    "type": "country",
+    "order": 5
+  },
+  {
+    "id": "market-ni",
+    "name": "Nicaragua",
+    "code": "NI",
+    "type": "country",
+    "order": 6
+  },
+  {
+    "id": "market-pa",
+    "name": "Panamá",
+    "code": "PA",
+    "type": "country",
+    "isDefault": true,
+    "order": 7
+  },
+  {
+    "id": "market-do",
+    "name": "República Dominicana",
+    "code": "DO",
+    "type": "country",
+    "order": 8
+  },
+  {
+    "id": "market-ve",
+    "name": "Venezuela",
+    "code": "VE",
+    "type": "country",
+    "order": 9
+  },
+  {
+    "id": "market-mx",
+    "name": "México",
+    "code": "MX",
+    "type": "country",
+    "order": 10
+  }
+]

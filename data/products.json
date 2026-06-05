@@ -27,12 +27,30 @@
       }
     ],
     "specs": [
-      { "label": "Tamaño", "value": "90 cm" },
-      { "label": "Voltaje", "value": "110-120V / 60Hz" },
-      { "label": "Velocidades", "value": "3" },
-      { "label": "Iluminación", "value": "2 × 1.5W LED" },
-      { "label": "Material", "value": "Acero inoxidable" },
-      { "label": "Filtros", "value": "Aluminio + 2 carbón activo" }
+      {
+        "label": "Tamaño",
+        "value": "90 cm"
+      },
+      {
+        "label": "Voltaje",
+        "value": "110-120V / 60Hz"
+      },
+      {
+        "label": "Velocidades",
+        "value": "3"
+      },
+      {
+        "label": "Iluminación",
+        "value": "2 × 1.5W LED"
+      },
+      {
+        "label": "Material",
+        "value": "Acero inoxidable"
+      },
+      {
+        "label": "Filtros",
+        "value": "Aluminio + 2 carbón activo"
+      }
     ],
     "features": [
       {
@@ -129,12 +147,30 @@
           }
         ],
         "specs": [
-          { "label": "Size", "value": "90 cm" },
-          { "label": "Voltage", "value": "110-120V / 60Hz" },
-          { "label": "Speeds", "value": "3" },
-          { "label": "Lighting", "value": "2 × 1.5W LED" },
-          { "label": "Material", "value": "Stainless steel" },
-          { "label": "Filters", "value": "Aluminum + 2 active carbon" }
+          {
+            "label": "Size",
+            "value": "90 cm"
+          },
+          {
+            "label": "Voltage",
+            "value": "110-120V / 60Hz"
+          },
+          {
+            "label": "Speeds",
+            "value": "3"
+          },
+          {
+            "label": "Lighting",
+            "value": "2 × 1.5W LED"
+          },
+          {
+            "label": "Material",
+            "value": "Stainless steel"
+          },
+          {
+            "label": "Filters",
+            "value": "Aluminum + 2 active carbon"
+          }
         ],
         "features": [
           {
@@ -203,7 +239,13 @@
         ]
       }
     },
-    "featured": true
+    "featured": true,
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "HN",
+      "CAR"
+    ]
   },
   {
     "id": "prod-extractores-sottile-60-b",
@@ -232,7 +274,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-invisibile-76-i",
@@ -261,7 +306,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-retractil-touch-60",
@@ -290,7 +338,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-compatto-90-black",
@@ -319,7 +370,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-retractil-touch-90",
@@ -348,7 +402,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-retractil-touch-76",
@@ -377,7 +434,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-slim-touch-90-acero",
@@ -406,7 +466,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-slim-touch-76-acero",
@@ -435,7 +498,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-slim-touch-90-black",
@@ -464,7 +530,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-slim-touch-76-black",
@@ -493,7 +562,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-slim-touch-60-black",
@@ -522,7 +594,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-compatto-90-acero",
@@ -551,7 +626,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-compatto-76-black",
@@ -580,7 +658,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-compatto-60-black",
@@ -609,7 +690,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-trapecio-90-black",
@@ -638,7 +722,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-triangulo-90",
@@ -667,7 +754,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-triangulo-76",
@@ -696,7 +786,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-piramide-90-black",
@@ -725,7 +818,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-quadrato-90-black-acero",
@@ -754,7 +850,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-quadrato-isla-76-black",
@@ -783,7 +882,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-trapezio-90-black",
@@ -812,7 +914,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-triangulo-60",
@@ -841,7 +946,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-quadrato-76-black-acero",
@@ -870,7 +978,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-reactangulo-90-black",
@@ -899,7 +1010,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-resctangulo-76-black",
@@ -928,7 +1042,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-prisma-touch-90-black-acero",
@@ -957,7 +1074,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-prisma-touch-76-black-acero",
@@ -986,7 +1106,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-prisma-touch-60-black-acero",
@@ -1015,7 +1138,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-galaxy-90-black-acero",
@@ -1044,7 +1170,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-extractores-galaxy-76-black-acero",
@@ -1073,7 +1202,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-atlantic-76-b",
@@ -1103,7 +1235,10 @@
         ]
       }
     },
-    "featured": true
+    "featured": true,
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-america-90-air-a",
@@ -1132,7 +1267,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-pacific-76-air-a",
@@ -1161,7 +1299,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-caribe-76-air-a",
@@ -1190,7 +1331,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-america-90-air",
@@ -1219,7 +1363,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-indico-60-air",
@@ -1248,7 +1395,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-pacifico-76-air",
@@ -1277,7 +1427,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-caribe-76-air",
@@ -1306,7 +1459,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-latino-60-black",
@@ -1335,7 +1491,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-roma-76-gas-grill",
@@ -1364,7 +1523,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-europa-60-gas-grill-air",
@@ -1393,7 +1555,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-norteamerica-90",
@@ -1422,7 +1587,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-hornos-europa-60-gas-grill",
@@ -1451,7 +1619,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-glass-b-18fd4p",
@@ -1481,7 +1652,10 @@
         ]
       }
     },
-    "featured": true
+    "featured": true,
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-glass-b-18cd4p",
@@ -1510,7 +1684,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-dark-i-18fd4p",
@@ -1539,7 +1716,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-dark-i-18cd4p",
@@ -1568,7 +1748,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-mirror-3",
@@ -1597,7 +1780,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-3",
@@ -1626,7 +1812,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-mirror-18d4p",
@@ -1655,7 +1844,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox-18d4p",
@@ -1684,7 +1876,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox-20d3p",
@@ -1713,7 +1908,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-19d4p",
@@ -1742,7 +1940,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-18d4p",
@@ -1771,7 +1972,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox-18d3p",
@@ -1800,7 +2004,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-mirror-18",
@@ -1829,7 +2036,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-white-23",
@@ -1858,7 +2068,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-23",
@@ -1887,7 +2100,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox-23",
@@ -1916,7 +2132,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-mirror-20-cfah",
@@ -1945,7 +2164,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-20cfah",
@@ -1974,7 +2196,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black-18",
@@ -2003,7 +2228,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox-18",
@@ -2032,7 +2260,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-mirror",
@@ -2061,7 +2292,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-inox",
@@ -2090,7 +2324,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-black",
@@ -2119,7 +2356,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-silver",
@@ -2148,7 +2388,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-twin-36d4piph",
@@ -2177,7 +2420,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-refrigeradores-twin-36d4pd",
@@ -2206,7 +2452,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fabricador-de-hielo-fh45-black",
@@ -2235,7 +2484,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fabricador-de-hielo-fh-36-black",
@@ -2264,7 +2516,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fabricador-de-hielo-fh18-inox",
@@ -2293,7 +2548,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fabricador-de-hielo-fh12-inox-black",
@@ -2322,7 +2580,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-microondas-veneto-62l-black-i",
@@ -2351,7 +2612,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-veneto-62l-black",
@@ -2380,7 +2646,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-palermo-62l",
@@ -2409,7 +2680,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-napoli-25l-black",
@@ -2438,7 +2714,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-sorrento-25l-black",
@@ -2467,7 +2748,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-florencia-25l-black",
@@ -2496,7 +2782,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-microondas-varenna-42l-i",
@@ -2525,7 +2816,12 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "PA",
+      "CR",
+      "CAR"
+    ]
   },
   {
     "id": "prod-dispensadores-de-agua-acqua",
@@ -2554,7 +2850,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-dispensadores-de-agua-lusso",
@@ -2583,7 +2882,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-lavadoras-lavasciuga-1609",
@@ -2613,7 +2915,10 @@
         ]
       }
     },
-    "featured": true
+    "featured": true,
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-lavadoras-lavatrice-1305",
@@ -2642,7 +2947,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-centros-de-bebidas-livenza-178-b",
@@ -2671,7 +2979,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-centros-de-bebidas-piave-70-b",
@@ -2700,7 +3011,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-mocca-8t-b",
@@ -2729,7 +3043,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-afogatto-12t-b",
@@ -2758,7 +3075,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-bruschetta-25-l-b",
@@ -2787,7 +3107,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-bucatini-19-b",
@@ -2816,7 +3139,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-munich-28",
@@ -2845,7 +3171,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-calzone",
@@ -2874,7 +3203,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-cartoccio",
@@ -2903,7 +3235,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-pequenos-electrodomesticos-miscelatore",
@@ -2932,7 +3267,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-calentadores-de-agua-clt10l-black",
@@ -2961,7 +3299,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-calentadores-de-agua-clt13l",
@@ -2990,7 +3331,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-calentadores-de-agua-clt17l",
@@ -3019,7 +3363,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-calentadores-de-agua-clt21l",
@@ -3048,7 +3395,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-murano-61",
@@ -3077,7 +3427,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-murano-76",
@@ -3106,7 +3459,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-murano-84",
@@ -3135,7 +3491,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-cirella-68",
@@ -3164,7 +3523,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-amalfi-76",
@@ -3193,7 +3555,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-amalfi-84",
@@ -3222,7 +3587,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-bolonia-61",
@@ -3251,7 +3619,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-bolonia-76",
@@ -3280,7 +3651,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-bolonia-84",
@@ -3309,7 +3683,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-capri-76",
@@ -3338,7 +3715,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-capri-84",
@@ -3367,7 +3747,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-lucca-84",
@@ -3396,7 +3779,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-siena-75",
@@ -3425,7 +3811,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-siena-84",
@@ -3454,7 +3843,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-pisa-black",
@@ -3483,7 +3875,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-pisa-gold",
@@ -3512,7 +3907,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-fregaderos-frantoio-hp",
@@ -3541,7 +3939,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-venecia-90",
@@ -3570,7 +3971,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-venecia-76",
@@ -3599,7 +4003,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-sicilia-76",
@@ -3628,7 +4035,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-sicilia-touch-90",
@@ -3657,7 +4067,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-sicilia-touch-60",
@@ -3686,7 +4099,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-sicilia-30",
@@ -3715,7 +4131,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-90-a",
@@ -3744,7 +4163,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-60-a",
@@ -3773,7 +4195,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-30-a",
@@ -3802,7 +4227,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-90",
@@ -3831,7 +4259,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-76",
@@ -3860,7 +4291,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-berlin-90",
@@ -3889,7 +4323,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-berlin-76",
@@ -3918,7 +4355,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-60",
@@ -3947,7 +4387,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-berlin-60",
@@ -3976,7 +4419,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-berlin-30",
@@ -4005,7 +4451,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-bari-30",
@@ -4034,7 +4483,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-munich-90",
@@ -4063,7 +4515,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-munich-76",
@@ -4092,7 +4547,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-munich-60",
@@ -4121,7 +4579,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-munich-30",
@@ -4150,7 +4611,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-italia-90",
@@ -4179,7 +4643,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-italia-76",
@@ -4208,7 +4675,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-lazio-90",
@@ -4237,7 +4707,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-milan-60-pro",
@@ -4266,7 +4739,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-ferrara-60-pro",
@@ -4295,7 +4771,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-toscana-91",
@@ -4324,7 +4803,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-toscana-60-pro",
@@ -4353,7 +4835,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-toscana-30",
@@ -4382,7 +4867,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-milan-91",
@@ -4411,7 +4899,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-milan-30",
@@ -4440,7 +4931,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-estufas-turin-60",
@@ -4469,7 +4963,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "ALL"
+    ]
   },
   {
     "id": "prod-vineras-lambrusco-160",
@@ -4498,7 +4995,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-chianti-154",
@@ -4527,7 +5028,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-dolce-110",
@@ -4556,7 +5061,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-ciro-46",
@@ -4585,7 +5094,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-bere-20",
@@ -4614,7 +5127,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-chiaretto-31",
@@ -4643,7 +5160,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-syrah-20",
@@ -4672,7 +5193,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-malbec-7",
@@ -4701,7 +5226,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-rosso-8",
@@ -4730,7 +5259,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-merlot-29",
@@ -4759,7 +5292,11 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   },
   {
     "id": "prod-vineras-tempranillo-8",
@@ -4788,6 +5325,10 @@
           }
         ]
       }
-    }
+    },
+    "availableMarkets": [
+      "MX",
+      "VE"
+    ]
   }
 ]

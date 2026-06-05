@@ -1,19 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
-import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
-import { localizePath } from "@/lib/i18n/paths";
+import { useI18n } from "@/lib/i18n/context";
 import type { Product } from "@/types/product";
 
 type ProductCardProps = {
   product: Product;
-  locale: Locale;
 };
 
-export async function ProductCard({ product, locale }: ProductCardProps) {
-  const dict = await getDictionary(locale);
+export function ProductCard({ product }: ProductCardProps) {
+  const { dict, href } = useI18n();
   const image = product.images[0];
-  const productHref = localizePath(`/products/${product.slug}`, locale);
+  const productHref = href(`/products/${product.slug}`);
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-xl bg-white transition hover:-translate-y-0.5">

@@ -2,6 +2,7 @@
  * CMS adapter interface — swap JSON loaders for Sanity (or another CMS) later.
  */
 import type { Locale } from "@/lib/i18n/config";
+import type { MarketCode } from "@/types/market";
 import type { BlogPost } from "@/types/blog";
 import type { Category } from "@/types/category";
 import type { Product } from "@/types/product";
@@ -14,7 +15,10 @@ export type CmsQueryOptions = {
   locale?: Locale;
   categorySlug?: string;
   featured?: boolean;
+  /** @deprecated Prefer client-side market filter via Zustand */
   countryCode?: string;
+  /** Optional server-side market filter (Sanity / API) */
+  marketCode?: MarketCode;
 };
 
 export interface CmsAdapter {

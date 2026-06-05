@@ -1,21 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
-import type { Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
-import { localizePath } from "@/lib/i18n/paths";
+import { useI18n } from "@/lib/i18n/context";
 import type { Category } from "@/types/category";
 
 type CategoryCardProps = {
   category: Category;
-  locale: Locale;
 };
 
-export async function CategoryCard({ category, locale }: CategoryCardProps) {
-  const dict = await getDictionary(locale);
+export function CategoryCard({ category }: CategoryCardProps) {
+  const { dict, href } = useI18n();
 
   return (
     <Link
-      href={localizePath(`/categories/${category.slug}`, locale)}
+      href={href(`/categories/${category.slug}`)}
       className="group flex flex-col overflow-hidden rounded-xl bg-white transition hover:-translate-y-0.5"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-white">

@@ -1,4 +1,5 @@
 import type { ContentTranslations } from "@/types/content-i18n";
+import type { MarketCode } from "@/types/market";
 
 export type CategoryTranslations = {
   name?: string;
@@ -15,5 +16,7 @@ export type Category = {
   productCount?: number;
   featured?: boolean;
   order?: number;
+  /** Markets where the category is offered. Use "ALL" for every market. */
+  availableMarkets?: MarketCode[];
   translations?: ContentTranslations<CategoryTranslations>;
 };

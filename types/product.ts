@@ -4,6 +4,7 @@ export type ProductImage = {
 };
 
 import type { ContentTranslations } from "@/types/content-i18n";
+import type { MarketCode } from "@/types/market";
 
 export type ProductSpec = {
   label: string;
@@ -48,7 +49,12 @@ export type Product = {
   specsHtml?: string;
   /** Slugs de productos relacionados; si no hay, se infieren de la categoría */
   relatedSlugs?: string[];
-  /** ISO country codes where product is available; empty = all markets */
+  /**
+   * Markets where the product is sold. One product document — no duplicates.
+   * Use "ALL" for global availability.
+   */
+  availableMarkets?: MarketCode[];
+  /** @deprecated Use availableMarkets. Kept for JSON migration only. */
   countries?: string[];
   translations?: ContentTranslations<ProductTranslations>;
 };

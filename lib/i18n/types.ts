@@ -8,6 +8,13 @@ export type Dictionary = {
     switchTo: string;
     current: string;
   };
+  market: {
+    label: string;
+    title: string;
+    disclaimer: string;
+    region: string;
+    emptyCatalog: string;
+  };
   nav: {
     home: string;
     products: string;

@@ -11,8 +11,10 @@ import {
   localizeProduct,
   localizeSupportCategory,
 } from "@/lib/i18n/localize-content";
+import { filterProductsByMarket } from "@/lib/markets/filter";
 import type { BlogPost } from "@/types/blog";
 import type { Category } from "@/types/category";
+import type { MarketCode } from "@/types/market";
 import type { Product } from "@/types/product";
 import { localizeCountryRetailers } from "@/lib/i18n/localize-retailers";
 import type { CountryRetailers } from "@/types/retailer";
@@ -28,15 +30,12 @@ function resolveLocale(locale?: Locale): Locale {
   return locale ?? defaultLocale;
 }
 
-function filterByCountry<T extends { countries?: string[] }>(
+function applyMarketFilter<T extends Product>(
   items: T[],
-  countryCode?: string,
+  marketCode?: MarketCode,
 ): T[] {
-  if (!countryCode) return items;
-  return items.filter(
-    (item) =>
-      !item.countries?.length || item.countries.includes(countryCode),
-  );
+  if (!marketCode) return items;
+  return filterProductsByMarket(items, marketCode) as T[];
 }
 
 export const jsonCmsAdapter: CmsAdapter = {
@@ -44,9 +43,11 @@ export const jsonCmsAdapter: CmsAdapter = {
     categorySlug,
     featured,
     countryCode,
+    marketCode,
     locale,
   }: CmsQueryOptions = {}) {
     const loc = resolveLocale(locale);
+    const resolvedMarket = marketCode ?? (countryCode as MarketCode | undefined);
     let result = [...products];
     if (categorySlug) {
       result = result.filter((p) => p.categorySlug === categorySlug);
@@ -54,7 +55,7 @@ export const jsonCmsAdapter: CmsAdapter = {
     if (featured) {
       result = result.filter((p) => p.featured);
     }
-    return filterByCountry(result, countryCode).map((p) =>
+    return applyMarketFilter(result, resolvedMarket).map((p) =>
       localizeProduct(p, loc),
     );
   },
