@@ -68,9 +68,8 @@ export function ContactForm({ id = "contacto" }: ContactFormProps) {
 
   return (
     <section id={id} className={styles.section} aria-labelledby={`${id}-title`}>
-      <div className={styles.inner}>
-        <div className={styles.grid}>
-          <div className={styles.formColumn}>
+      <div className={styles.layout}>
+        <div className={styles.formColumn}>
             <h2
               id={`${id}-title`}
               className="text-3xl font-bold uppercase tracking-wide text-drija-green sm:text-4xl"
@@ -212,18 +211,17 @@ export function ContactForm({ id = "contacto" }: ContactFormProps) {
                 </p>
               )}
             </form>
-          </div>
+        </div>
 
-          <div className={styles.imageColumn} aria-hidden="true">
-            <div className={styles.imageFrame}>
-              <Image
-                src="/images/contact/contact-us.jpg"
-                alt=""
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className={styles.image}
-              />
-            </div>
+        <div className={styles.imageColumn} aria-hidden="true">
+          <div className={styles.imageFrame}>
+            <Image
+              src="/images/contact/contact-us.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className={styles.image}
+            />
           </div>
         </div>
       </div>

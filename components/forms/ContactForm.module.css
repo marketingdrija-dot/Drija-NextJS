@@ -1,47 +1,49 @@
 .section {
   background-color: #fff;
+  overflow: hidden;
 }
 
-.inner {
-  margin-inline: auto;
-  max-width: 80rem;
-  padding: 3rem 1rem;
-}
-
-@media (min-width: 640px) {
-  .inner {
-    padding: 3.5rem 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .inner {
-    padding: 4rem 2rem;
-  }
-}
-
-.grid {
+.layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 2rem;
   align-items: stretch;
 }
 
 @media (min-width: 768px) {
-  .grid {
+  .layout {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 2.5rem;
   }
 }
 
 .formColumn {
   display: flex;
   flex-direction: column;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .formColumn {
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .formColumn {
+    padding: 4rem 2.5rem 4rem max(1rem, calc((100vw - 80rem) / 2 + 2rem));
+  }
 }
 
 .imageColumn {
+  position: relative;
   display: flex;
-  min-height: 0;
+  min-height: 16rem;
+}
+
+@media (min-width: 768px) {
+  .imageColumn {
+    min-height: 0;
+    height: 100%;
+  }
 }
 
 .imageFrame {
@@ -50,7 +52,6 @@
   flex: 1;
   min-height: 16rem;
   overflow: hidden;
-  border-radius: 0rem;
 }
 
 @media (min-width: 768px) {
@@ -62,7 +63,7 @@
 
 .image {
   object-fit: cover;
-  object-position: center;
+  object-position: 60% left;
 }
 
 .field {
