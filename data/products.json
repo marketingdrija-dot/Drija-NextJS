@@ -241,10 +241,7 @@
     },
     "featured": true,
     "availableMarkets": [
-      "PA",
-      "CR",
-      "HN",
-      "CAR"
+      "ALL"
     ]
   },
   {
@@ -1211,7 +1208,7 @@
     "id": "prod-hornos-atlantic-76-b",
     "slug": "hornos-atlantic-76-b",
     "name": "Atlantic 76-B",
-    "shortDescription": "Atlantic 76-B — línea DRIJA.",
+    "shortDescription": "Torre horno-microondas de 76 cm con acabado negro y controles digitales para cocinas modernas.",
     "description": "Atlantic 76-B forma parte de la línea DRIJA. Consulte especificaciones técnicas y disponibilidad en su país.",
     "categorySlug": "hornos",
     "subcategorySlug": "torre-horno-microondas",
@@ -1225,7 +1222,7 @@
     "translations": {
       "en": {
         "name": "Atlantic 76-B",
-        "shortDescription": "Atlantic 76-B — DRIJA line.",
+        "shortDescription": "76 cm oven-microwave tower with black finish and digital controls for modern kitchens.",
         "description": "Atlantic 76-B is part of the DRIJA product line. Check technical specifications and availability in your country.",
         "images": [
           {
@@ -1628,7 +1625,7 @@
     "id": "prod-refrigeradores-glass-b-18fd4p",
     "slug": "refrigeradores-glass-b-18fd4p",
     "name": "Glass-B 18FD4P",
-    "shortDescription": "Glass-B 18FD4P — línea DRIJA.",
+    "shortDescription": "Refrigerador empotrable de 18 pies con puerta de vidrio y distribución interior optimizada.",
     "description": "Glass-B 18FD4P forma parte de la línea DRIJA. Consulte especificaciones técnicas y disponibilidad en su país.",
     "categorySlug": "refrigeradores",
     "subcategorySlug": "empotrables",
@@ -1642,7 +1639,7 @@
     "translations": {
       "en": {
         "name": "Glass-B 18FD4P",
-        "shortDescription": "Glass-B 18FD4P — DRIJA line.",
+        "shortDescription": "18 cu. ft. built-in refrigerator with glass door and optimized interior layout.",
         "description": "Glass-B 18FD4P is part of the DRIJA product line. Check technical specifications and availability in your country.",
         "images": [
           {
@@ -2891,7 +2888,7 @@
     "id": "prod-lavadoras-lavasciuga-1609",
     "slug": "lavadoras-lavasciuga-1609",
     "name": "LavaSciuga 1609",
-    "shortDescription": "LavaSciuga 1609 — línea DRIJA.",
+    "shortDescription": "Lavadora-secadora compacta con programas automáticos y alto rendimiento en espacios reducidos.",
     "description": "LavaSciuga 1609 forma parte de la línea DRIJA. Consulte especificaciones técnicas y disponibilidad en su país.",
     "categorySlug": "lavadoras",
     "subcategorySlug": "lava-seca",
@@ -2905,7 +2902,7 @@
     "translations": {
       "en": {
         "name": "LavaSciuga 1609",
-        "shortDescription": "LavaSciuga 1609 — DRIJA line.",
+        "shortDescription": "Compact washer-dryer with automatic programs and strong performance in small spaces.",
         "description": "LavaSciuga 1609 is part of the DRIJA product line. Check technical specifications and availability in your country.",
         "images": [
           {

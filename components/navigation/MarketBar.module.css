@@ -1,6 +1,6 @@
 .bar {
-  border-bottom: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+  border-bottom: 1px solid rgb(0 0 0 / 12%);
+  background-color: var(--drija-green);
 }
 
 .inner {
@@ -29,5 +29,5 @@
   margin: 0;
   font-size: 0.75rem;
   line-height: 1.45;
-  color: #525252;
+  color: #fff;
 }

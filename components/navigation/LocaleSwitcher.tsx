@@ -16,15 +16,15 @@ export function LocaleSwitcher() {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="hidden text-xs font-medium uppercase tracking-wide text-neutral-500 sm:inline">
+      <span className="hidden text-xs font-semibold uppercase tracking-wide text-white/90 sm:inline">
         {dict.locale.current}
       </span>
       <Link
         href={targetHref}
         hrefLang={targetLocale}
         className={cn(
-          "inline-flex items-center rounded-full border border-neutral-300 px-3 py-1.5 text-xs font-bold uppercase tracking-wide transition",
-          "hover:border-drija-green hover:text-drija-green",
+          "inline-flex items-center rounded-full border border-white/50 bg-white/10 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white transition",
+          "hover:border-drija-green hover:bg-drija-green hover:text-white",
         )}
         aria-label={`Switch to ${dict.locale.switchTo}`}
       >

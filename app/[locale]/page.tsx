@@ -12,6 +12,11 @@ import { getHomeBlogPosts } from "@/lib/blog-home";
 import { getFeaturedSlidesData } from "@/lib/featured-slides";
 import { getHeroSlides } from "@/lib/hero";
 import { getMundoDrijaSlides } from "@/lib/mundo-drija";
+import {
+  buildHomeFeaturedProducts,
+  HOME_FEATURED_MIN,
+  HOME_FEATURED_PRIORITY_SLUG,
+} from "@/lib/home-featured";
 import { getPageI18n } from "@/lib/i18n/server";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -22,7 +27,7 @@ export default async function HomePage({ params }: PageProps) {
     getFullCatalog(locale),
     getCms().getBlogPosts({ locale }),
   ]);
-  const newProducts = products.filter((product) => product.featured);
+  const homeFeaturedProducts = buildHomeFeaturedProducts(products);
 
   const homeBlogPosts = getHomeBlogPosts(blogPosts);
 
@@ -72,8 +77,11 @@ export default async function HomePage({ params }: PageProps) {
           </div>
           <FilteredProductGrid
             categories={categories}
-            products={newProducts}
+            products={homeFeaturedProducts}
+            allProducts={products}
+            fillMin={HOME_FEATURED_MIN}
             limit={4}
+            prioritySlugs={[HOME_FEATURED_PRIORITY_SLUG]}
           />
         </div>
       </section>
