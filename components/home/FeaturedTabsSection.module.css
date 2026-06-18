@@ -72,19 +72,20 @@
 
 .sliderViewport {
   margin-inline: auto;
-  max-width: 80rem;
-  padding-inline: 1rem;
+  width: 100%;
+  max-width: none;
+  padding-inline: clamp(3.25rem, 5vw, 5.5rem);
 }
 
 @media (min-width: 640px) {
   .sliderViewport {
-    padding-inline: 1.5rem;
+    padding-inline: clamp(3.5rem, 4.5vw, 6rem);
   }
 }
 
 @media (min-width: 1024px) {
   .sliderViewport {
-    padding-inline: 2rem;
+    padding-inline: clamp(4rem, 3.5vw, 5rem);
   }
 }
 
@@ -93,13 +94,15 @@
 }
 
 .swiperSlide {
-  height: auto;
+  height: 40vh;
+  min-height: 14rem;
 }
 
 .slide {
   position: relative;
   flex-shrink: 0;
-  aspect-ratio: 16 / 9;
+  height: 40vh;
+  min-height: 14rem;
 }
 
 .card {
@@ -107,7 +110,6 @@
   display: block;
   height: 100%;
   width: 100%;
-  aspect-ratio: 16 / 9;
   border-radius: 1.25rem;
   overflow: hidden;
 }
@@ -115,11 +117,29 @@
 .cardImage {
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) {
+  .card:hover .cardImage {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardImage {
+    transition: none;
+  }
+
+  .card:hover .cardImage {
+    transform: none;
+  }
 }
 
 .cardTitle {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,6 +150,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
+  pointer-events: none;
 }
 
 .nav {
@@ -171,19 +192,19 @@
 }
 
 .navPrev {
-  left: 10px;
+  left: clamp(0.25rem, 1vw, 1rem);
 }
 
 .navNext {
-  right: 10px;
+  right: clamp(0.25rem, 1vw, 1rem);
 }
 
 @media (min-width: 640px) {
   .navPrev {
-    left: 20px;
+    left: clamp(0.5rem, 1.5vw, 1.25rem);
   }
 
   .navNext {
-    right: 20px;
+    right: clamp(0.5rem, 1.5vw, 1.25rem);
   }
 }

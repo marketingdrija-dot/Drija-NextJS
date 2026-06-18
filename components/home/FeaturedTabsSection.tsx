@@ -79,7 +79,7 @@ function FeaturedSwiper({
           modules={[Autoplay]}
           className={styles.swiper}
           slidesPerView={1}
-          spaceBetween={24}
+          spaceBetween={16}
           loop={slides.length > 3}
           speed={600}
           autoplay={{
@@ -90,9 +90,11 @@ function FeaturedSwiper({
           breakpoints={{
             640: {
               slidesPerView: 2,
+              spaceBetween: 16,
             },
-            1024: {
+            768: {
               slidesPerView: 3,
+              spaceBetween: 20,
             },
           }}
           onSwiper={setSwiper}
@@ -104,7 +106,7 @@ function FeaturedSwiper({
                   src={slide.src}
                   alt={slide.alt}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 90vw"
                   className={styles.cardImage}
                   loading={index < 3 ? "eager" : "lazy"}
                   priority={index === 0}
