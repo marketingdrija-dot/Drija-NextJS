@@ -21,6 +21,15 @@
     "support": "Support",
     "contact": "Contact us"
   },
+  "search": {
+    "openLabel": "Search products",
+    "closeLabel": "Close search",
+    "placeholder": "Search the full catalog",
+    "noResults": "No products found",
+    "loading": "Loading catalog…",
+    "error": "Could not load the catalog. Please try again.",
+    "resultsLabel": "Search results"
+  },
   "home": {
     "categories": "Categories",
     "categoriesTitle": "Browse by product line",

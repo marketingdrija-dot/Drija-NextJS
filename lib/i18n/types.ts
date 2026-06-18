@@ -23,6 +23,15 @@ export type Dictionary = {
     support: string;
     contact: string;
   };
+  search: {
+    openLabel: string;
+    closeLabel: string;
+    placeholder: string;
+    noResults: string;
+    loading: string;
+    error: string;
+    resultsLabel: string;
+  };
   home: {
     categories: string;
     categoriesTitle: string;

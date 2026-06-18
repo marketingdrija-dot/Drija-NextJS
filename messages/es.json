@@ -21,6 +21,15 @@
     "support": "Soporte",
     "contact": "Contáctenos"
   },
+  "search": {
+    "openLabel": "Buscar productos",
+    "closeLabel": "Cerrar búsqueda",
+    "placeholder": "Buscar en todo el catálogo",
+    "noResults": "No se encontraron productos",
+    "loading": "Cargando catálogo…",
+    "error": "No se pudo cargar el catálogo. Inténtelo de nuevo.",
+    "resultsLabel": "Resultados de búsqueda"
+  },
   "home": {
     "categories": "Categorías",
     "categoriesTitle": "Explora por línea de producto",
