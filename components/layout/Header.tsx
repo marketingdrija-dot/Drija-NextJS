@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Navigation } from "@/components/navigation/Navigation";
 import { LocaleSwitcher } from "@/components/navigation/LocaleSwitcher";
+import { MarketSelector } from "@/components/navigation/MarketSelector";
 import { MarketBar } from "@/components/navigation/MarketBar";
 import { useI18n } from "@/lib/i18n/context";
 import { isActivePath } from "@/lib/i18n/paths";
@@ -58,33 +59,36 @@ export function Header() {
           />
         </Link>
 
-        <Navigation />
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <LocaleSwitcher />
-          <button
-            type="button"
-            className={`${styles['navigation-menu-items']} inline-flex items-center justify-center rounded-md border border-neutral-300 p-2 lg:hidden`}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span className="sr-only">{dict.common.openMenu}</span>
-            <svg
-              className="h-5 w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              {open ? (
-                <path d="M6 6l12 12M18 6L6 18" />
-              ) : (
-                <path d="M4 7h16M4 12h16M4 17h16" />
-              )}
-            </svg>
-          </button>
+        <div className={styles.navCluster}>
+          <Navigation />
+          <div className={styles.headerTools}>
+            <MarketSelector />
+            <LocaleSwitcher />
+          </div>
         </div>
+
+        <button
+          type="button"
+          className={`${styles["navigation-menu-items"]} inline-flex items-center justify-center rounded-md border border-neutral-300 p-2 lg:hidden`}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="sr-only">{dict.common.openMenu}</span>
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            {open ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            )}
+          </svg>
+        </button>
       </div>
 
       <div
