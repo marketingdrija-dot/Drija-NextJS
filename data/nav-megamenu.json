@@ -1,0 +1,19 @@
+{
+  "viewAllPath": "/categorias",
+  "featuredCard": {
+    "categorySlug": "refrigeradores",
+    "href": "/categories/refrigeradores",
+    "translations": {
+      "es": {
+        "title": "Refrigeración que eleva tu cocina",
+        "description": "Diseños empotrables y de libre instalación con eficiencia, capacidad y acabados premium.",
+        "ctaLabel": "Explorar refrigeradores"
+      },
+      "en": {
+        "title": "Refrigeration that elevates your kitchen",
+        "description": "Built-in and freestanding designs with efficiency, capacity and premium finishes.",
+        "ctaLabel": "Explore refrigerators"
+      }
+    }
+  }
+}

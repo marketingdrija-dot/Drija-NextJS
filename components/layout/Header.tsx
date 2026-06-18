@@ -9,6 +9,11 @@ import { LocaleSwitcher } from "@/components/navigation/LocaleSwitcher";
 import { MarketSelector } from "@/components/navigation/MarketSelector";
 import { MarketBar } from "@/components/navigation/MarketBar";
 import {
+  CategoriesMegaMenuPanel,
+  CategoriesMenuRoot,
+  CategoriesMobileAccordion,
+} from "@/components/navigation/CategoriesMegaMenu";
+import {
   GlobalSearchPanel,
   GlobalSearchRoot,
   GlobalSearchTrigger,
@@ -34,7 +39,6 @@ export function Header() {
 
   const mobileLinks = [
     { href: href("/"), label: dict.nav.home },
-    { href: href("/productos"), label: dict.nav.products },
     { href: href("/blog"), label: dict.nav.blog },
     { href: href("/donde-comprar"), label: dict.nav.whereToBuy },
     { href: href("/soporte"), label: dict.nav.support },
@@ -42,8 +46,9 @@ export function Header() {
   ];
 
   return (
-    <GlobalSearchRoot>
-      <header
+    <CategoriesMenuRoot>
+      <GlobalSearchRoot>
+        <header
         className={cn(
           styles.hero,
           scrolled && styles.heroScrolled,
@@ -99,6 +104,7 @@ export function Header() {
         </div>
 
         <GlobalSearchPanel />
+        <CategoriesMegaMenuPanel />
 
         <div
           id="mobile-menu"
@@ -108,6 +114,7 @@ export function Header() {
           )}
         >
           <ul className="flex flex-col px-4 py-3">
+            <CategoriesMobileAccordion onNavigate={() => setOpen(false)} />
             {mobileLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -127,6 +134,7 @@ export function Header() {
           </ul>
         </div>
       </header>
-    </GlobalSearchRoot>
+      </GlobalSearchRoot>
+    </CategoriesMenuRoot>
   );
 }

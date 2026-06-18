@@ -33,7 +33,7 @@
 
 .navLink {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 0px 20px;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.025em;
@@ -50,6 +50,23 @@
 }
 
 .navLinkActive {
+  color: #fff !important;
+  background-color: #82b841;
+}
+
+.navCategoriesTrigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.navCategoriesTrigger:hover .navLink,
+.navCategoriesTrigger:focus-visible .navLink {
   color: #fff !important;
   background-color: #82b841;
 }

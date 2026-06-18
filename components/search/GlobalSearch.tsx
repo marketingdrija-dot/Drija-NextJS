@@ -12,6 +12,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { useProductSearch } from "@/hooks/useProductSearch";
 import { useProductSearchCatalog } from "@/hooks/useProductSearchCatalog";
@@ -107,6 +108,11 @@ export function GlobalSearchTrigger() {
   );
 }
 
+const searchPanelVariants = {
+  hidden: { opacity: 0, y: -12 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export function GlobalSearchPanel() {
   const router = useRouter();
   const { dict, href, locale } = useI18n();
@@ -181,9 +187,10 @@ export function GlobalSearchPanel() {
   }, [handleClose, open, triggerRef]);
 
   useEffect(() => {
-    if (open) {
-      window.setTimeout(() => inputRef.current?.focus(), 0);
-    }
+    if (!open) return;
+    requestAnimationFrame(() => {
+      inputRef.current?.focus();
+    });
   }, [open]);
 
   useEffect(() => {
@@ -219,106 +226,116 @@ export function GlobalSearchPanel() {
     }
   };
 
-  if (!open) return null;
-
   return (
-    <div className={styles.panel} ref={panelRef}>
-      <div className={styles.panelInner}>
-        <div className={styles.inputWrap}>
-          <input
-            ref={inputRef}
-            type="search"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            onKeyDown={handleInputKeyDown}
-            className={styles.input}
-            placeholder={dict.search.placeholder}
-            role="combobox"
-            aria-expanded={showResults && results.length > 0}
-            aria-controls={listboxId}
-            aria-autocomplete="list"
-            aria-activedescendant={
-              activeIndex >= 0
-                ? `${listboxId}-option-${activeIndex}`
-                : undefined
-            }
-            autoComplete="off"
-          />
-          <SearchIcon className={styles.inputIcon} />
+    <AnimatePresence>
+      {open ? (
+        <motion.div
+          ref={panelRef}
+          className="pointer-events-none absolute left-0 top-full z-[70] w-full px-4 pt-2 sm:px-6 lg:px-8"
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={searchPanelVariants}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+        >
+          <div className="pointer-events-auto relative mx-auto max-w-7xl">
+            <div className={styles.inputWrap}>
+              <input
+                ref={inputRef}
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                onKeyDown={handleInputKeyDown}
+                className={styles.input}
+                placeholder={dict.search.placeholder}
+                role="combobox"
+                aria-expanded={showResults && results.length > 0}
+                aria-controls={listboxId}
+                aria-autocomplete="list"
+                aria-activedescendant={
+                  activeIndex >= 0
+                    ? `${listboxId}-option-${activeIndex}`
+                    : undefined
+                }
+                autoComplete="off"
+              />
+              <SearchIcon className={styles.inputIcon} />
 
-          {showResults ? (
-            <div className={styles.results}>
-              {results.length === 0 ? (
-                <p className={styles.status} role="status">
-                  {dict.search.noResults}
-                </p>
-              ) : (
-                <ul
-                  id={listboxId}
-                  className={styles.resultList}
-                  role="listbox"
-                  aria-label={dict.search.resultsLabel}
-                >
-                  {results.map((result, index) => (
-                    <li
-                      key={result.id}
-                      id={`${listboxId}-option-${index}`}
-                      className={styles.resultItem}
-                      role="presentation"
+              {showResults ? (
+                <div className={styles.results}>
+                  {results.length === 0 ? (
+                    <p className={styles.status} role="status">
+                      {dict.search.noResults}
+                    </p>
+                  ) : (
+                    <ul
+                      id={listboxId}
+                      className={styles.resultList}
+                      role="listbox"
+                      aria-label={dict.search.resultsLabel}
                     >
-                      <Link
-                        href={result.url}
-                        role="option"
-                        aria-selected={index === activeIndex}
-                        className={cn(
-                          styles.resultLink,
-                          index === activeIndex && styles.resultLinkActive,
-                        )}
-                        onMouseEnter={() => setActiveIndex(index)}
-                        onClick={handleClose}
-                      >
-                        <div className={styles.thumb}>
-                          {result.imageSrc ? (
-                            <OptimizedImage
-                              src={result.imageSrc}
-                              alt={result.imageAlt}
-                              fill
-                              sizes="48px"
-                              className="object-contain"
-                            />
-                          ) : (
-                            <span className={styles.thumbFallback}>
-                              DRIJA
-                            </span>
-                          )}
-                        </div>
-                        <div className={styles.resultBody}>
-                          <p className={styles.resultName}>{result.name}</p>
-                          <p className={styles.resultCategory}>
-                            {result.categoryName}
-                          </p>
-                        </div>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+                      {results.map((result, index) => (
+                        <li
+                          key={result.id}
+                          id={`${listboxId}-option-${index}`}
+                          className={styles.resultItem}
+                          role="presentation"
+                        >
+                          <Link
+                            href={result.url}
+                            role="option"
+                            aria-selected={index === activeIndex}
+                            className={cn(
+                              styles.resultLink,
+                              index === activeIndex && styles.resultLinkActive,
+                            )}
+                            onMouseEnter={() => setActiveIndex(index)}
+                            onClick={handleClose}
+                          >
+                            <div className={styles.thumb}>
+                              {result.imageSrc ? (
+                                <OptimizedImage
+                                  src={result.imageSrc}
+                                  alt={result.imageAlt}
+                                  fill
+                                  sizes="48px"
+                                  className="object-contain"
+                                />
+                              ) : (
+                                <span className={styles.thumbFallback}>
+                                  DRIJA
+                                </span>
+                              )}
+                            </div>
+                            <div className={styles.resultBody}>
+                              <p className={styles.resultName}>{result.name}</p>
+                              <p className={styles.resultCategory}>
+                                {result.categoryName}
+                              </p>
+                            </div>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ) : null}
+
+              {loading ? (
+                <p className={styles.status} role="status">
+                  {dict.search.loading}
+                </p>
+              ) : null}
+
+              {error ? (
+                <p className={styles.status} role="alert">
+                  {dict.search.error}
+                </p>
+              ) : null}
             </div>
-          ) : null}
-
-          {loading ? (
-            <p className={styles.status} role="status">
-              {dict.search.loading}
-            </p>
-          ) : null}
-
-          {error ? (
-            <p className={styles.status} role="alert">
-              {dict.search.error}
-            </p>
-          ) : null}
-        </div>
-      </div>
-    </div>
+          </div>
+        </motion.div>
+      ) : null}
+    </AnimatePresence>
   );
 }

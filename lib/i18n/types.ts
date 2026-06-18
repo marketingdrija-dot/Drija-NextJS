@@ -18,6 +18,7 @@ export type Dictionary = {
   nav: {
     home: string;
     products: string;
+    viewAllCategories: string;
     blog: string;
     whereToBuy: string;
     support: string;
