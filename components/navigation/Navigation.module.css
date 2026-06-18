@@ -9,6 +9,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  overflow: visible;
 }
 
 /* Separador vertical entre ítems (solo desktop) */
@@ -55,18 +56,37 @@
 }
 
 .navCategoriesTrigger {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
+  position: relative;
+  display: inline-block;
   border: 0;
   background: transparent;
   padding: 0;
+  margin: 0;
   cursor: pointer;
+  vertical-align: middle;
 }
 
 .navCategoriesTrigger:hover .navLink,
 .navCategoriesTrigger:focus-visible .navLink {
   color: #fff !important;
   background-color: #82b841;
+}
+
+.navCategoriesChevron {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid #82b841;
+  border-bottom: 2px solid #82b841;
+  pointer-events: none;
+  transform: translateX(-50%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.navCategoriesChevronOpen {
+  transform: translateX(-50%) translateY(1px) rotate(45deg);
+  top: 45px;
+    scale: 1.5;
 }

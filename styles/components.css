@@ -11,7 +11,7 @@
 
 /*
  * Hero assets: 1742×747 (~21:9).
- * Ancho siempre 100%; en desktop altura limitada a 70vh con object-cover.
+ * Ancho siempre 100%; en desktop altura 75vh con object-cover.
  */
 .hero-banner {
   width: 100%;
@@ -29,8 +29,8 @@
   .hero-slider {
     width: 100%;
     aspect-ratio: auto;
-    height: min(70vh, calc(100vw * 747 / 1742));
-    max-height: 70vh;
+    height: 75vh;
+    max-height: 75vh;
   }
 }
 

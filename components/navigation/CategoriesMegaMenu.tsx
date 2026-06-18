@@ -129,7 +129,15 @@ export function CategoriesMenuTrigger() {
       >
         {dict.nav.products}
       </span>
-      <NavChevron open={open} placement="below" />
+      {open ? (
+        <span
+          className={cn(
+            navStyles.navCategoriesChevron,
+            navStyles.navCategoriesChevronOpen,
+          )}
+          aria-hidden
+        />
+      ) : null}
     </button>
   );
 }

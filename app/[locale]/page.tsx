@@ -4,19 +4,14 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { FeaturedTabsSection } from "@/components/home/FeaturedTabsSection";
 import { MundoDrijaSlider } from "@/components/home/MundoDrijaSlider";
 import { BlogCard } from "@/components/blog/BlogCard";
-import { FilteredCategoryGrid } from "@/components/catalog/FilteredCategoryGrid";
-import { FilteredProductGrid } from "@/components/catalog/FilteredProductGrid";
+import { HomeCategoryGrid } from "@/components/home/HomeCategoryGrid";
 import { getCms } from "@/lib/cms";
 import { getFullCatalog } from "@/lib/cms/catalog";
 import { getHomeBlogPosts } from "@/lib/blog-home";
 import { getFeaturedSlidesData } from "@/lib/featured-slides";
 import { getHeroSlides } from "@/lib/hero";
 import { getMundoDrijaSlides } from "@/lib/mundo-drija";
-import {
-  buildHomeFeaturedProducts,
-  HOME_FEATURED_MIN,
-  HOME_FEATURED_PRIORITY_SLUG,
-} from "@/lib/home-featured";
+import { buildHomeCategories } from "@/lib/home-categories";
 import { getPageI18n } from "@/lib/i18n/server";
 
 type PageProps = { params: Promise<{ locale: string }> };
@@ -27,11 +22,9 @@ export default async function HomePage({ params }: PageProps) {
     getFullCatalog(locale),
     getCms().getBlogPosts({ locale }),
   ]);
-  const homeFeaturedProducts = buildHomeFeaturedProducts(products);
-
   const homeBlogPosts = getHomeBlogPosts(blogPosts);
 
-  const featuredCategories = categories.filter((category) => category.featured);
+  const homeCategories = buildHomeCategories(categories);
   const heroSlides = getHeroSlides(locale);
   const mundoDrijaSlides = getMundoDrijaSlides();
   const featuredSlides = getFeaturedSlidesData(locale);
@@ -40,7 +33,8 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <HeroSection slides={heroSlides} />
 
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-[#f7f7f7]">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-drija-green">
@@ -57,32 +51,11 @@ export default async function HomePage({ params }: PageProps) {
             {dict.home.viewAll}
           </Link>
         </div>
-        <FilteredCategoryGrid
-          categories={featuredCategories}
+        <HomeCategoryGrid
+          categories={homeCategories}
           products={products}
           emptyMessage={dict.market.emptyCatalog}
-          className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         />
-      </section>
-
-      <section className="border-y border-neutral-200 bg-neutral-50">
-        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-drija-green">
-              {dict.home.newArrivals}
-            </p>
-            <h2 className="mt-2 text-3xl font-bold text-neutral-900">
-              {dict.home.featuredTitle}
-            </h2>
-          </div>
-          <FilteredProductGrid
-            categories={categories}
-            products={homeFeaturedProducts}
-            allProducts={products}
-            fillMin={HOME_FEATURED_MIN}
-            limit={4}
-            prioritySlugs={[HOME_FEATURED_PRIORITY_SLUG]}
-          />
         </div>
       </section>
 

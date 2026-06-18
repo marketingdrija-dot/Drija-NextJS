@@ -1,22 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import {
-  InfiniteCarousel,
-  InfiniteCarouselSlide,
-} from "@/components/ui/InfiniteCarousel";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
-import {
-  CAROUSEL_FEATURED_GAP_PX,
-  useExtendedSlides,
-  useImagesReady,
-  useInfiniteCarousel,
-  useSlidesPerView,
-} from "@/hooks/useInfiniteCarousel";
 import { useI18n } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import type { FeaturedSlide } from "@/types/featured-slide";
+
+import "swiper/css";
 
 import styles from "./FeaturedTabsSection.module.css";
 
@@ -32,82 +26,107 @@ type FeaturedTabsSectionProps = {
   carouselLabel: string;
 };
 
-function FeaturedCarousel({
+function NavArrow({ direction }: { direction: "prev" | "next" }) {
+  return (
+    <svg
+      className={styles.navIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden
+    >
+      {direction === "prev" ? (
+        <path d="M15 6l-6 6 6 6" />
+      ) : (
+        <path d="M9 6l6 6-6 6" />
+      )}
+    </svg>
+  );
+}
+
+function FeaturedSwiper({
   slides,
+  showTitle,
   prevLabel,
   nextLabel,
   carouselLabel,
 }: {
   slides: FeaturedSlide[];
+  showTitle: boolean;
   prevLabel: string;
   nextLabel: string;
   carouselLabel: string;
 }) {
   const { href } = useI18n();
-  const count = slides.length;
-  const slidesPerView = useSlidesPerView();
-  const imageSources = slides.map((slide) => slide.src);
-  const imagesReady = useImagesReady(imageSources);
-  const extendedSlides = useExtendedSlides(slides);
-  const carousel = useInfiniteCarousel(count, {
-    slidesPerView,
-    gapPx: CAROUSEL_FEATURED_GAP_PX,
-    enabled: imagesReady,
-  });
-  const { resetToStart } = carousel;
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
-  useEffect(() => {
-    resetToStart();
-  }, [slidesPerView, count, resetToStart]);
-
-  if (count === 0) return null;
+  if (slides.length === 0) return null;
 
   return (
-    <InfiniteCarousel
-      slideCount={count}
-      trackIndex={carousel.trackIndex}
-      transitionEnabled={carousel.transitionEnabled}
-      slideWidth={carousel.slideWidth}
-      offset={carousel.offset}
-      viewportRef={carousel.viewportRef}
-      onTransitionEnd={carousel.handleTransitionEnd}
-      onMouseEnter={() => carousel.setPaused(true)}
-      onMouseLeave={() => carousel.setPaused(false)}
-      prev={carousel.prev}
-      next={carousel.next}
-      canLoop={carousel.canLoop}
-      carouselLabel={carouselLabel}
-      prevLabel={prevLabel}
-      nextLabel={nextLabel}
-      gapPx={CAROUSEL_FEATURED_GAP_PX}
-      viewportClassName={styles.sliderViewport}
-    >
-      {extendedSlides.map((slide, index) => (
-        <InfiniteCarouselSlide
-          key={`${slide.id}-${index}`}
-          width={carousel.slideWidth}
-          slideClassName={styles.slide}
-          hidden={
-            carousel.canLoop
-              ? index !== carousel.trackIndex
-              : index !== carousel.realIndex
-          }
+    <div className={styles.sliderWrap} aria-label={carouselLabel}>
+      <button
+        type="button"
+        className={cn(styles.nav, styles.navPrev)}
+        aria-label={prevLabel}
+        onClick={() => swiper?.slidePrev()}
+      >
+        <NavArrow direction="prev" />
+      </button>
+
+      <div className={styles.sliderViewport}>
+        <Swiper
+          modules={[Autoplay]}
+          className={styles.swiper}
+          slidesPerView={1}
+          spaceBetween={24}
+          loop={slides.length > 3}
+          speed={600}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          onSwiper={setSwiper}
         >
-          <Link href={href(slide.href)} className={styles.card}>
-            <OptimizedImage
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-              className={styles.cardImage}
-              loading="eager"
-              priority={index === (carousel.canLoop ? 1 : 0)}
-            />
-            <span className={styles.cardTitle}>{slide.title}</span>
-          </Link>
-        </InfiniteCarouselSlide>
-      ))}
-    </InfiniteCarousel>
+          {slides.map((slide, index) => (
+            <SwiperSlide key={slide.id} className={styles.swiperSlide}>
+              <Link href={href(slide.href)} className={styles.card}>
+                <OptimizedImage
+                  src={slide.src}
+                  alt={slide.alt}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  className={styles.cardImage}
+                  loading={index < 3 ? "eager" : "lazy"}
+                  priority={index === 0}
+                />
+                {showTitle ? (
+                  <span className={styles.cardTitle}>{slide.title}</span>
+                ) : null}
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <button
+        type="button"
+        className={cn(styles.nav, styles.navNext)}
+        aria-label={nextLabel}
+        onClick={() => swiper?.slideNext()}
+      >
+        <NavArrow direction="next" />
+      </button>
+    </div>
   );
 }
 
@@ -150,9 +169,10 @@ export function FeaturedTabsSection({
       </div>
 
       <div className={styles.sliderShell} role="tabpanel">
-        <FeaturedCarousel
+        <FeaturedSwiper
           key={activeTab}
           slides={activeSlides}
+          showTitle={activeTab === "categorias"}
           prevLabel={prevLabel}
           nextLabel={nextLabel}
           carouselLabel={carouselLabel}

@@ -36,6 +36,7 @@ export type Dictionary = {
   home: {
     categories: string;
     categoriesTitle: string;
+    viewCategoryAll: string;
     viewAll: string;
     newArrivals: string;
     featuredTitle: string;
