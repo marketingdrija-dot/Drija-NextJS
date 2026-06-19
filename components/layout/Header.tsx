@@ -52,12 +52,17 @@ export function Header() {
         className={cn(
           styles.hero,
           scrolled && styles.heroScrolled,
-          "sticky top-0 z-50 border-b border-transparent",
+          "border-b border-transparent",
         )}
       >
         <MarketBar />
 
-        <div className={`mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8`}>
+        <div
+          className={cn(
+            "mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8",
+            styles.navRow,
+          )}
+        >
           <Link href={href("/")} className="shrink-0" aria-label={dict.common.homeLabel}>
             <Image
               src="/logo.svg"

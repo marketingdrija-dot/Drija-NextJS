@@ -14,7 +14,7 @@ export function HomeCategoryCard({ category }: HomeCategoryCardProps) {
   const categoryHref = href(`/categories/${category.slug}`);
 
   return (
-    <article className="flex overflow-hidden rounded-2xl bg-white">
+    <article className="flex overflow-hidden rounded-2xl bg-white py-5">
       <div className="relative flex min-h-[9.5rem] w-[42%] shrink-0 items-center justify-center bg-white sm:min-h-[10.5rem]">
         <OptimizedImage
           src={category.image.src}

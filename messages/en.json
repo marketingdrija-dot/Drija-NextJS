@@ -137,12 +137,12 @@
     "privacy": "For inquiries about personal data submitted through the contact form, email us at contacto@drijainternational.com."
   },
   "footer": {
-    "tagline": "Appliances designed to elevate your home experience across Central America, the Caribbean and beyond.",
-    "explore": "Explore",
-    "needHelp": "Need help?",
+    "categories": "Categories",
+    "catalogs": "Catalogs",
+    "workWithUs": "Work with us",
+    "socialNetworks": "Social media",
+    "infoNav": "Information",
     "faq": "FAQ",
-    "technicalService": "Technical service",
-    "rights": "All rights reserved.",
     "legal": "Legal notices"
   },
   "common": {

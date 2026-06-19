@@ -2,92 +2,105 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useMemo } from "react";
+import { buildFooterCategories } from "@/lib/footer/build-footer-categories";
 import { useI18n } from "@/lib/i18n/context";
 import { siteConfig } from "@/lib/site";
 
-export function Footer() {
-  const year = new Date().getFullYear();
-  const { dict, href } = useI18n();
+import styles from "./Footer.module.css";
 
-  const footerLinks = [
-    { href: href("/productos"), label: dict.nav.products },
-    { href: href("/blog"), label: dict.nav.blog },
-    { href: href("/donde-comprar"), label: dict.nav.whereToBuy },
-    { href: href("/soporte"), label: dict.nav.support },
-    { href: href("/contacto"), label: dict.nav.contact },
-    { href: href(siteConfig.legal.termsUrl), label: dict.footer.legal },
+export function Footer() {
+  const { dict, href, locale } = useI18n();
+
+  const { left, right } = useMemo(
+    () => buildFooterCategories(locale, href),
+    [href, locale],
+  );
+
+  const infoLinks = [
+    { href: href("/soporte"), label: dict.footer.faq, external: false },
+    { href: href("/productos"), label: dict.footer.catalogs, external: false },
+    { href: href("/contacto"), label: dict.footer.workWithUs, external: false },
+    {
+      href: siteConfig.social.instagram,
+      label: dict.footer.socialNetworks,
+      external: true,
+    },
   ];
 
   return (
-    <footer className="mt-auto border-t border-neutral-200 bg-neutral-900 text-neutral-300">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <Link href={href("/")} aria-label={dict.common.homeLabel}>
-              <Image
-                src="/logo-drija-blanco.svg"
-                alt="DRIJA"
-                width={140}
-                height={36}
-                className="h-9 w-auto"
-              />
-            </Link>
-            <p className="mt-3 max-w-sm text-sm leading-relaxed">
-              {dict.footer.tagline}
-            </p>
-          </div>
-
-          <nav aria-label="Enlaces del sitio">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
-              {dict.footer.explore}
-            </p>
-            <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm transition-colors hover:text-drija-green"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-white">
-              {dict.footer.needHelp}
-            </p>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href={href("/soporte")} className="hover:text-drija-green">
-                  {dict.footer.faq}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={href("/donde-comprar")}
-                  className="hover:text-drija-green"
-                >
-                  {dict.footer.technicalService}
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.contactEmail}`}
-                  className="hover:text-drija-green"
-                >
-                  {siteConfig.contactEmail}
-                </a>
-              </li>
-            </ul>
-          </div>
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <div className={styles.brand}>
+          <Link
+            href={href("/")}
+            className={styles.logoLink}
+            aria-label={dict.common.homeLabel}
+          >
+            <Image
+              src="/logo-drija-blanco.svg"
+              alt="DRIJA"
+              width={151}
+              height={38}
+              className={styles.logo}
+              style={{ width: "auto", height: "2.375rem" }}
+              priority
+            />
+          </Link>
+          <Link href={href(siteConfig.legal.termsUrl)} className={styles.legalLink}>
+            {dict.footer.legal}
+          </Link>
         </div>
 
-        <p className="mt-10 border-t border-neutral-700 pt-6 text-center text-xs text-neutral-500">
-          © {year} {siteConfig.name}. {dict.footer.rights}
-        </p>
+        <div className={styles.categoriesCol}>
+          <p className={styles.categoriesTitle}>{dict.footer.categories}</p>
+          <ul className={styles.categoryList}>
+            {left.map((category) => (
+              <li key={category.href}>
+                <Link href={category.href} className={styles.categoryLink}>
+                  {category.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div
+          className={`${styles.categoriesCol} ${styles.categoriesColContinuation}`}
+        >
+          <ul className={styles.categoryList}>
+            {right.map((category) => (
+              <li key={category.href}>
+                <Link href={category.href} className={styles.categoryLink}>
+                  {category.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <nav className={styles.infoColumn} aria-label={dict.footer.infoNav}>
+          <ul className={styles.infoList}>
+            {infoLinks.map((link) => (
+              <li key={link.href}>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    className={styles.infoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link href={link.href} className={styles.infoLink}>
+                    {link.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </footer>
   );

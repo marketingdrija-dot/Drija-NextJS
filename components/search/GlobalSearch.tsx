@@ -109,8 +109,8 @@ export function GlobalSearchTrigger() {
 }
 
 const searchPanelVariants = {
-  hidden: { opacity: 0, y: -12 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
 };
 
 export function GlobalSearchPanel() {
@@ -123,7 +123,7 @@ export function GlobalSearchPanel() {
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  const { catalog, loading, error } = useProductSearchCatalog(locale, open);
+  const { catalog, loading, error } = useProductSearchCatalog(locale, true);
   const { results, hasHydrated } = useProductSearch(
     catalog?.products ?? [],
     catalog?.categories ?? [],
@@ -188,9 +188,10 @@ export function GlobalSearchPanel() {
 
   useEffect(() => {
     if (!open) return;
-    requestAnimationFrame(() => {
-      inputRef.current?.focus();
-    });
+    const timer = window.setTimeout(() => {
+      inputRef.current?.focus({ preventScroll: true });
+    }, 200);
+    return () => window.clearTimeout(timer);
   }, [open]);
 
   useEffect(() => {
@@ -236,7 +237,7 @@ export function GlobalSearchPanel() {
           animate="visible"
           exit="hidden"
           variants={searchPanelVariants}
-          transition={{ duration: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.18, ease: "easeOut" }}
         >
           <div className="pointer-events-auto relative mx-auto max-w-7xl">
             <div className={styles.inputWrap}>
@@ -321,13 +322,13 @@ export function GlobalSearchPanel() {
                 </div>
               ) : null}
 
-              {loading ? (
+              {loading && query.trim().length > 0 ? (
                 <p className={styles.status} role="status">
                   {dict.search.loading}
                 </p>
               ) : null}
 
-              {error ? (
+              {error && query.trim().length > 0 ? (
                 <p className={styles.status} role="alert">
                   {dict.search.error}
                 </p>

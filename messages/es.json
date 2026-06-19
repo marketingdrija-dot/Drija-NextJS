@@ -137,12 +137,12 @@
     "privacy": "Para consultas sobre tratamiento de datos personales enviados a través del formulario de contacto, escríbenos a contacto@drijainternational.com."
   },
   "footer": {
-    "tagline": "Electrodomésticos diseñados para elevar la experiencia en tu hogar en Centroamérica, el Caribe y más.",
-    "explore": "Explorar",
-    "needHelp": "¿Necesita ayuda?",
+    "categories": "Categorías",
+    "catalogs": "Catálogos",
+    "workWithUs": "Trabaja con nosotros",
+    "socialNetworks": "Redes sociales",
+    "infoNav": "Información",
     "faq": "Preguntas frecuentes",
-    "technicalService": "Servicio técnico",
-    "rights": "Todos los derechos reservados.",
     "legal": "Avisos legales"
   },
   "common": {

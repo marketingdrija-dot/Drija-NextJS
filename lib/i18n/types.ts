@@ -139,12 +139,12 @@ export type Dictionary = {
     privacy: string;
   };
   footer: {
-    tagline: string;
-    explore: string;
-    needHelp: string;
+    categories: string;
+    catalogs: string;
+    workWithUs: string;
+    socialNetworks: string;
+    infoNav: string;
     faq: string;
-    technicalService: string;
-    rights: string;
     legal: string;
   };
   common: {

@@ -1,5 +1,6 @@
 .hero {
-  position: relative;
+  position: sticky;
+  top: 0;
   background-color: #000;
   transition:
     background-color 0.3s ease,
@@ -34,6 +35,8 @@
   .navCluster {
     justify-content: center;
     gap: 1.5rem;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
   }
 }
 
@@ -41,4 +44,11 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .navRow {
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
 }
