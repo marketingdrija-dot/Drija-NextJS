@@ -1,15 +1,7 @@
 "use client";
 
-import {
-  InfiniteCarousel,
-  InfiniteCarouselSlide,
-} from "@/components/ui/InfiniteCarousel";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
-import {
-  useExtendedSlides,
-  useImagesReady,
-  useInfiniteCarousel,
-} from "@/hooks/useInfiniteCarousel";
+import { HomeSwiperCarousel } from "@/components/home/HomeSwiperCarousel";
 import type { MundoDrijaSlide } from "@/types/mundo-drija";
 
 import styles from "./MundoDrijaSlider.module.css";
@@ -29,12 +21,7 @@ export function MundoDrijaSlider({
   nextLabel,
   carouselLabel,
 }: MundoDrijaSliderProps) {
-  const count = slides.length;
-  const imagesReady = useImagesReady(slides.map((slide) => slide.src));
-  const extendedSlides = useExtendedSlides(slides);
-  const carousel = useInfiniteCarousel(count, { enabled: imagesReady });
-
-  if (count === 0) return null;
+  if (slides.length === 0) return null;
 
   return (
     <section className={styles.section} aria-labelledby="mundo-drija-title">
@@ -45,45 +32,34 @@ export function MundoDrijaSlider({
         <div className={styles.titleRule} aria-hidden="true" />
       </div>
 
-      <InfiniteCarousel
-        slideCount={count}
-        trackIndex={carousel.trackIndex}
-        transitionEnabled={carousel.transitionEnabled}
-        slideWidth={carousel.slideWidth}
-        offset={carousel.offset}
-        viewportRef={carousel.viewportRef}
-        onTransitionEnd={carousel.handleTransitionEnd}
-        onMouseEnter={() => carousel.setPaused(true)}
-        onMouseLeave={() => carousel.setPaused(false)}
-        prev={carousel.prev}
-        next={carousel.next}
-        canLoop={carousel.canLoop}
-        carouselLabel={carouselLabel}
-        prevLabel={prevLabel}
-        nextLabel={nextLabel}
-      >
-        {extendedSlides.map((slide, index) => (
-          <InfiniteCarouselSlide
-            key={`${slide.src}-${index}`}
-            width={carousel.slideWidth}
-            hidden={
-              carousel.canLoop
-                ? index !== carousel.trackIndex
-                : index !== carousel.realIndex
-            }
-          >
-            <OptimizedImage
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              sizes="(min-width: 1024px) 80vw, 90vw"
-              className="object-contain object-center"
-              loading="eager"
-              priority={index === (carousel.canLoop ? 1 : 0)}
-            />
-          </InfiniteCarouselSlide>
-        ))}
-      </InfiniteCarousel>
+      <div className={styles.sliderShell}>
+        <HomeSwiperCarousel
+          slideKeys={slides.map((slide) => slide.src)}
+          slideClassName={styles.swiperSlide}
+          swiperClassName={styles.swiper}
+          viewportClassName={styles.sliderViewport}
+          wrapClassName={styles.sliderWrap}
+          loopMinSlides={1}
+          slidesPerView={1}
+          spaceBetween={16}
+          prevLabel={prevLabel}
+          nextLabel={nextLabel}
+          carouselLabel={carouselLabel}
+          renderSlide={(index) => (
+            <div className={styles.slide}>
+              <OptimizedImage
+                src={slides[index].src}
+                alt={slides[index].alt}
+                fill
+                sizes="(min-width: 1024px) 80vw, 90vw"
+                className={styles.slideImage}
+                loading={index === 0 ? "eager" : "lazy"}
+                priority={index === 0}
+              />
+            </div>
+          )}
+        />
+      </div>
     </section>
   );
 }

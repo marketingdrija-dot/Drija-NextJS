@@ -2,15 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import type { Swiper as SwiperInstance } from "swiper";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import { HomeSwiperCarousel } from "@/components/home/HomeSwiperCarousel";
 import { useI18n } from "@/lib/i18n/context";
 import { cn } from "@/lib/utils";
 import type { FeaturedSlide } from "@/types/featured-slide";
-
-import "swiper/css";
 
 import styles from "./FeaturedTabsSection.module.css";
 
@@ -26,25 +22,6 @@ type FeaturedTabsSectionProps = {
   carouselLabel: string;
 };
 
-function NavArrow({ direction }: { direction: "prev" | "next" }) {
-  return (
-    <svg
-      className={styles.navIcon}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      aria-hidden
-    >
-      {direction === "prev" ? (
-        <path d="M15 6l-6 6 6 6" />
-      ) : (
-        <path d="M9 6l6 6-6 6" />
-      )}
-    </svg>
-  );
-}
-
 function FeaturedSwiper({
   slides,
   showTitle,
@@ -59,76 +36,49 @@ function FeaturedSwiper({
   carouselLabel: string;
 }) {
   const { href } = useI18n();
-  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
   if (slides.length === 0) return null;
 
   return (
-    <div className={styles.sliderWrap} aria-label={carouselLabel}>
-      <button
-        type="button"
-        className={cn(styles.nav, styles.navPrev)}
-        aria-label={prevLabel}
-        onClick={() => swiper?.slidePrev()}
-      >
-        <NavArrow direction="prev" />
-      </button>
-
-      <div className={styles.sliderViewport}>
-        <Swiper
-          modules={[Autoplay]}
-          className={styles.swiper}
-          slidesPerView={1}
-          spaceBetween={16}
-          loop={slides.length > 3}
-          speed={600}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-              spaceBetween: 16,
-            },
-            768: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-          }}
-          onSwiper={setSwiper}
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide key={slide.id} className={styles.swiperSlide}>
-              <Link href={href(slide.href)} className={styles.card}>
-                <OptimizedImage
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 90vw"
-                  className={styles.cardImage}
-                  loading={index < 3 ? "eager" : "lazy"}
-                  priority={index === 0}
-                />
-                {showTitle ? (
-                  <span className={styles.cardTitle}>{slide.title}</span>
-                ) : null}
-              </Link>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      <button
-        type="button"
-        className={cn(styles.nav, styles.navNext)}
-        aria-label={nextLabel}
-        onClick={() => swiper?.slideNext()}
-      >
-        <NavArrow direction="next" />
-      </button>
-    </div>
+    <HomeSwiperCarousel
+      slideKeys={slides.map((slide) => slide.id)}
+      slideClassName={styles.swiperSlide}
+      swiperClassName={styles.swiper}
+      viewportClassName={styles.sliderViewport}
+      wrapClassName={styles.sliderWrap}
+      loopMinSlides={3}
+      slidesPerView={1}
+      spaceBetween={16}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      }}
+      prevLabel={prevLabel}
+      nextLabel={nextLabel}
+      carouselLabel={carouselLabel}
+      renderSlide={(index) => (
+        <Link href={href(slides[index].href)} className={styles.card}>
+          <OptimizedImage
+            src={slides[index].src}
+            alt={slides[index].alt}
+            fill
+            sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 90vw"
+            className={styles.cardImage}
+            loading={index < 3 ? "eager" : "lazy"}
+            priority={index === 0}
+          />
+          {showTitle ? (
+            <span className={styles.cardTitle}>{slides[index].title}</span>
+          ) : null}
+        </Link>
+      )}
+    />
   );
 }
 

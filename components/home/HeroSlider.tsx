@@ -1,81 +1,87 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import type { Swiper as SwiperInstance } from "swiper";
 import { OptimizedImage } from "@/components/ui/OptimizedImage";
 import { cn } from "@/lib/utils";
 import type { HeroSlide } from "@/types/hero";
 
-const INTERVAL_MS = 4000;
+import "swiper/css";
+
+import styles from "./HeroSlider.module.css";
 
 type HeroSliderProps = {
   slides: HeroSlide[];
 };
 
 export function HeroSlider({ slides }: HeroSliderProps) {
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const count = slides.length;
-
-  const goTo = useCallback(
-    (index: number) => {
-      if (count === 0) return;
-      setActiveIndex(((index % count) + count) % count);
-    },
-    [count],
-  );
-
-  const next = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
-  const prev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
-
-  useEffect(() => {
-    if (count <= 1 || paused) return;
-
-    const timer = window.setTimeout(() => {
-      setActiveIndex((current) => ((current + 1) % count + count) % count);
-    }, INTERVAL_MS);
-
-    return () => window.clearTimeout(timer);
-  }, [activeIndex, count, paused]);
+  const canLoop = count > 1;
 
   if (count === 0) return null;
 
   return (
     <div
       className="hero-slider relative w-full overflow-hidden"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
       role="region"
       aria-roledescription="carousel"
       aria-label="Hero"
     >
-      {slides.map((slide, index) => (
-        <div
-          key={slide.src}
-          className={cn(
-            "absolute inset-0 h-full w-full transition-opacity duration-700",
-            index === activeIndex
-              ? "opacity-100"
-              : "pointer-events-none opacity-0",
-          )}
-          aria-hidden={index !== activeIndex}
-        >
-          <OptimizedImage
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-      ))}
+      <Swiper
+        modules={[Autoplay]}
+        className={styles.swiper}
+        slidesPerView={1}
+        spaceBetween={0}
+        loop={canLoop}
+        speed={700}
+        allowTouchMove={canLoop}
+        simulateTouch={canLoop}
+        grabCursor={canLoop}
+        followFinger
+        threshold={8}
+        touchRatio={1}
+        longSwipesRatio={0.25}
+        shortSwipes
+        resistance
+        resistanceRatio={0.85}
+        autoplay={
+          canLoop
+            ? {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
+            : false
+        }
+        onSwiper={setSwiper}
+        onSlideChange={(instance) => setActiveIndex(instance.realIndex)}
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={slide.src} className={styles.swiperSlide}>
+            <div className={styles.slide}>
+              <OptimizedImage
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className={cn("object-cover object-center", styles.slideImage)}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {count > 1 && (
+      {canLoop ? (
         <>
           <button
             type="button"
-            onClick={prev}
-            className="hidden absolute left-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:left-6"
+            onClick={() => swiper?.slidePrev()}
+            className={cn(styles.nav, styles.navPrev)}
             aria-label="Imagen anterior"
           >
             <svg
@@ -84,6 +90,9 @@ export function HeroSlider({ slides }: HeroSliderProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
             >
               <path d="M15 6l-6 6 6 6" />
             </svg>
@@ -91,8 +100,8 @@ export function HeroSlider({ slides }: HeroSliderProps) {
 
           <button
             type="button"
-            onClick={next}
-            className="hidden absolute right-4 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-neutral-800 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-drija-green sm:right-6"
+            onClick={() => swiper?.slideNext()}
+            className={cn(styles.nav, styles.navNext)}
             aria-label="Siguiente imagen"
           >
             <svg
@@ -101,22 +110,25 @@ export function HeroSlider({ slides }: HeroSliderProps) {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
             >
               <path d="M9 6l6 6-6 6" />
             </svg>
           </button>
 
-          <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2.5">
+          <div className={styles.pagination}>
             {slides.map((slide, index) => (
               <button
                 key={slide.src}
                 type="button"
-                onClick={() => goTo(index)}
+                onClick={() =>
+                  canLoop ? swiper?.slideToLoop(index) : swiper?.slideTo(index)
+                }
                 className={cn(
-                  "h-2 w-10 shrink-0 rounded-full transition-colors duration-300",
-                  index === activeIndex
-                    ? "bg-drija-green"
-                    : "bg-white/75 hover:bg-white",
+                  styles.dot,
+                  index === activeIndex ? styles.dotActive : styles.dotInactive,
                 )}
                 aria-label={`Ir a imagen ${index + 1}`}
                 aria-current={index === activeIndex}
@@ -124,7 +136,7 @@ export function HeroSlider({ slides }: HeroSliderProps) {
             ))}
           </div>
         </>
-      )}
+      ) : null}
     </div>
   );
 }

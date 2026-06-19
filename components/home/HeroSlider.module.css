@@ -1,0 +1,105 @@
+.swiper {
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.swiper :global(.swiper-wrapper) {
+  align-items: stretch;
+}
+
+.swiperSlide {
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.slideImage {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  transform: translateX(-50%);
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.dot {
+  height: 0.5rem;
+  width: 2.5rem;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dotInactive {
+  background-color: rgb(255 255 255 / 75%);
+}
+
+.dotInactive:hover {
+  background-color: #fff;
+}
+
+.dotActive {
+  background-color: var(--drija-green);
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 9999px;
+  background-color: rgb(255 255 255 / 90%);
+  color: #262626;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.nav:hover {
+  background-color: #fff;
+}
+
+.nav:focus-visible {
+  outline: 2px solid var(--drija-green);
+  outline-offset: 2px;
+}
+
+.navPrev {
+  left: 1rem;
+}
+
+.navNext {
+  right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .navPrev {
+    left: 1.5rem;
+  }
+
+  .navNext {
+    right: 1.5rem;
+  }
+}
