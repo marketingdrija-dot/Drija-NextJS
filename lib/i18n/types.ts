@@ -89,6 +89,10 @@ export type Dictionary = {
     pageTitle: string;
     pageDescription: string;
     backToBlog: string;
+    sidebarTitle: string;
+    allCategories: string;
+    readMore: string;
+    emptyCategory: string;
   };
   retailers: {
     pageTitle: string;

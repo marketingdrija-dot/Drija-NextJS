@@ -86,7 +86,11 @@
   "blog": {
     "pageTitle": "Mundo DRIJA",
     "pageDescription": "Inspiración, recetas y novedades sobre electrodomésticos.",
-    "backToBlog": "← Volver al blog"
+    "backToBlog": "← Volver al blog",
+    "sidebarTitle": "Blog",
+    "allCategories": "Todas",
+    "readMore": "Leer más",
+    "emptyCategory": "No hay artículos en esta categoría por ahora."
   },
   "retailers": {
     "pageTitle": "Dónde comprar",

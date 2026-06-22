@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { PageHeader } from "@/components/layout/PageHeader";
-import { BlogCard } from "@/components/blog/BlogCard";
+import { Suspense } from "react";
+import { BlogPageContent } from "@/components/blog/BlogPageContent";
+import { parseBlogCategoryFilter } from "@/lib/blog/categories";
 import { getCms } from "@/lib/cms";
 import { getPageI18n } from "@/lib/i18n/server";
 
-type PageProps = { params: Promise<{ locale: string }> };
+type PageProps = {
+  params: Promise<{ locale: string }>;
+  searchParams: Promise<{ category?: string }>;
+};
 
 export async function generateMetadata({
   params,
@@ -16,24 +20,20 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPage({ params }: PageProps) {
+export default async function BlogPage({ params, searchParams }: PageProps) {
   const { locale, dict } = await getPageI18n(params);
+  const { category } = await searchParams;
   const posts = await getCms().getBlogPosts({ locale });
+  const initialCategory = parseBlogCategoryFilter(category);
 
   return (
-    <>
-      <PageHeader
-        title={dict.blog.pageTitle}
-        description={dict.blog.pageDescription}
+    <Suspense fallback={null}>
+      <BlogPageContent
+        posts={posts}
+        locale={locale}
+        dict={dict}
+        initialCategory={initialCategory}
       />
-
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} locale={locale} />
-          ))}
-        </div>
-      </section>
-    </>
+    </Suspense>
   );
 }

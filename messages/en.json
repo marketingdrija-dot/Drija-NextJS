@@ -86,7 +86,11 @@
   "blog": {
     "pageTitle": "DRIJA World",
     "pageDescription": "Inspiration, recipes and news about appliances.",
-    "backToBlog": "← Back to blog"
+    "backToBlog": "← Back to blog",
+    "sidebarTitle": "Blog",
+    "allCategories": "All",
+    "readMore": "Read more",
+    "emptyCategory": "There are no posts in this category yet."
   },
   "retailers": {
     "pageTitle": "Where to buy",
