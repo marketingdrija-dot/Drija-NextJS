@@ -1,0 +1,143 @@
+.page {
+  background-color: #fff;
+}
+
+.sections {
+  margin-inline: auto;
+  max-width: 1280px;
+  width: 100%;
+  padding: 2.5rem 1rem 4rem;
+}
+
+@media (min-width: 640px) {
+  .sections {
+    padding-inline: 1.5rem;
+  }
+}
+
+.section + .section {
+  margin-top: 3.5rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  text-align: center;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #171717;
+}
+
+.sectionTitle::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background-color: var(--drija-green);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+}
+
+.filterButton {
+  border: none;
+  border-radius: 9999px;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #525252;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filterButton:hover {
+  color: #171717;
+}
+
+.filterButtonActive {
+  background-color: #171717;
+  color: #fff;
+}
+
+.list {
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+.item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.875rem;
+  border: none;
+  background: transparent;
+  padding: 1rem 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-right: 2px solid #171717;
+  border-bottom: 2px solid #171717;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(45deg);
+}
+
+.itemName {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #171717;
+}
+
+.panel {
+  padding: 0 0 1rem 1.375rem;
+}
+
+.downloadLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.downloadLink:hover .itemName {
+  color: var(--drija-green);
+}
+
+.pdfIcon {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.empty {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #737373;
+}

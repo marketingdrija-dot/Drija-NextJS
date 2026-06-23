@@ -1,0 +1,219 @@
+.hero {
+  padding: 2.5rem 1rem 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+@media (min-width: 640px) {
+  .hero {
+    padding: 3rem 1.5rem 2.5rem;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #171717;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+.searchWrap {
+  margin: 1.5rem auto 0;
+  max-width: 24rem;
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid #d4d4d4;
+  border-radius: 9999px;
+  background-color: #fff;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  color: #171717;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: #737373;
+}
+
+.searchInput:focus {
+  border-color: var(--drija-green);
+}
+
+.noResults {
+  margin: 0 auto 1rem;
+  max-width: 1280px;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: #737373;
+}
+
+.accordionSection {
+  margin-inline: auto;
+  max-width: 1280px;
+  width: 100%;
+  padding: 0 1rem 3rem;
+}
+
+@media (min-width: 640px) {
+  .accordionSection {
+    padding-inline: 1.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+.item {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  background: transparent;
+  padding: 1.125rem 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.iconWrap {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.label {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #171717;
+}
+
+.count {
+  font-weight: 400;
+  color: #525252;
+}
+
+.chevron {
+  width: 0.625rem;
+  height: 0.625rem;
+  flex-shrink: 0;
+  border-right: 2px solid #171717;
+  border-bottom: 2px solid #171717;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(-135deg);
+}
+
+.panel {
+  padding: 0 0 1rem 3.5rem;
+}
+
+.questions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.questionItem + .questionItem {
+  margin-top: 0.75rem;
+}
+
+.questionLink {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #404040;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.questionLink:hover {
+  color: var(--drija-green);
+}
+
+.articlePage {
+  margin-inline: auto;
+  max-width: 42rem;
+  padding: 2.5rem 1rem 4rem;
+}
+
+@media (min-width: 640px) {
+  .articlePage {
+    padding-inline: 1.5rem;
+  }
+}
+
+.backLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--drija-green);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.categoryLabel {
+  margin: 1.5rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--drija-green);
+}
+
+.articleTitle {
+  margin: 0.75rem 0 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #171717;
+}
+
+@media (min-width: 640px) {
+  .articleTitle {
+    font-size: 2.25rem;
+  }
+}
+
+.articleBody {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #404040;
+}
+
+.articleBody p + p {
+  margin-top: 1rem;
+}

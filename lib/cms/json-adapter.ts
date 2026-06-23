@@ -109,6 +109,29 @@ export const jsonCmsAdapter: CmsAdapter = {
 
   async getSupportCategories(locale) {
     const loc = resolveLocale(locale);
-    return support.map((cat) => localizeSupportCategory(cat, loc));
+    return support
+      .map((cat) => localizeSupportCategory(cat, loc))
+      .sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  },
+
+  async getSupportArticleBySlug(categorySlug, articleSlug, locale) {
+    const loc = resolveLocale(locale);
+    const category = support.find((cat) => cat.slug === categorySlug);
+    if (!category) return null;
+
+    const article = category.articles.find((item) => item.slug === articleSlug);
+    if (!article) return null;
+
+    const localizedCategory = localizeSupportCategory(category, loc);
+    const localizedArticle = localizedCategory.articles.find(
+      (item) => item.slug === articleSlug,
+    );
+
+    if (!localizedArticle) return null;
+
+    return {
+      category: localizedCategory,
+      article: localizedArticle,
+    };
   },
 };

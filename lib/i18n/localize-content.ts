@@ -99,22 +99,23 @@ export function localizeSupportCategory(
   category: WithTranslations<SupportCategory>,
   locale: Locale,
 ): SupportCategory {
-  if (locale === "es" || !category.translations?.en) {
-    const { translations: _, ...base } = category;
+  const { translations, ...base } = category;
+  const localizedArticles = category.articles.map((article) =>
+    localizeSupportArticle(article, locale),
+  );
+
+  if (locale === "es" || !translations?.en) {
     return {
       ...base,
-      articles: category.articles,
+      articles: localizedArticles,
     };
   }
 
-  const enCat = category.translations.en;
+  const enCat = translations.en;
   return {
-    id: category.id,
-    slug: category.slug,
+    ...base,
     name: enCat.name ?? category.name,
-    articles: category.articles.map((article) =>
-      localizeSupportArticle(article, locale),
-    ),
+    articles: localizedArticles,
   };
 }
 
@@ -132,5 +133,6 @@ function localizeSupportArticle(
     slug: article.slug,
     question: en.question ?? article.question,
     answer: en.answer ?? article.answer,
+    tags: en.tags ?? article.tags,
   };
 }

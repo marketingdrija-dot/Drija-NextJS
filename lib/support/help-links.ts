@@ -15,7 +15,7 @@ export function buildSupportHelpItems(
   return [
     {
       label: dict.support.manuals,
-      href: href("/soporte"),
+      href: href("/manuales"),
       iconSrc: SUPPORT_ICONS.manuals,
       iconAlt: dict.support.manuals,
     },

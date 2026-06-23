@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "es": {
+      "src": "/images/manuals/hero.jpg",
+      "alt": "Manuales de productos DRIJA"
+    },
+    "en": {
+      "src": "/images/manuals/hero.jpg",
+      "alt": "DRIJA product manuals"
+    }
+  },
+  "sections": [
+    {
+      "id": "manuals-extractores",
+      "slug": "extractores",
+      "name": "Extractores",
+      "order": 1,
+      "filters": [
+        { "id": "all", "label": "Todos" },
+        { "id": "vetro-60", "label": "VETRO 60" },
+        { "id": "slim-touch-90", "label": "SLIM TOUCH 90" },
+        { "id": "compatto-90", "label": "COMPATTO 90" }
+      ],
+      "items": [
+        {
+          "id": "ext-vetro-60",
+          "slug": "vetro-60",
+          "name": "VETRO 60",
+          "filterId": "vetro-60",
+          "pdf": {
+            "src": "/manuals/extractores/vetro-60.pdf",
+            "filename": "DRIJA-VETRO-60-manual.pdf"
+          }
+        },
+        {
+          "id": "ext-slim-touch-90",
+          "slug": "slim-touch-90-acero",
+          "name": "SLIM TOUCH 90 ACERO",
+          "filterId": "slim-touch-90",
+          "pdf": {
+            "src": "/manuals/extractores/slim-touch-90-acero.pdf",
+            "filename": "DRIJA-SLIM-TOUCH-90-ACERO-manual.pdf"
+          }
+        },
+        {
+          "id": "ext-compatto-90",
+          "slug": "compatto-90-black",
+          "name": "COMPATTO 90 BLACK",
+          "filterId": "compatto-90",
+          "pdf": {
+            "src": "/manuals/extractores/compatto-90-black.pdf",
+            "filename": "DRIJA-COMPATTO-90-BLACK-manual.pdf"
+          }
+        }
+      ],
+      "translations": {
+        "en": {
+          "name": "Range Hoods"
+        }
+      }
+    },
+    {
+      "id": "manuals-estufas",
+      "slug": "estufas",
+      "name": "Estufas",
+      "order": 2,
+      "filters": [
+        { "id": "all", "label": "Todos" },
+        { "id": "gourmet-60", "label": "GOURMET 60" },
+        { "id": "premium-76", "label": "PREMIUM 76" }
+      ],
+      "items": [
+        {
+          "id": "est-gourmet-60",
+          "slug": "gourmet-60",
+          "name": "GOURMET 60",
+          "filterId": "gourmet-60",
+          "pdf": {
+            "src": "/manuals/estufas/gourmet-60.pdf",
+            "filename": "DRIJA-GOURMET-60-manual.pdf"
+          }
+        },
+        {
+          "id": "est-premium-76",
+          "slug": "premium-76",
+          "name": "PREMIUM 76",
+          "filterId": "premium-76",
+          "pdf": {
+            "src": "/manuals/estufas/premium-76.pdf",
+            "filename": "DRIJA-PREMIUM-76-manual.pdf"
+          }
+        }
+      ],
+      "translations": {
+        "en": {
+          "name": "Ranges"
+        }
+      }
+    },
+    {
+      "id": "manuals-refrigeradores",
+      "slug": "refrigeradores",
+      "name": "Neveras",
+      "order": 3,
+      "filters": [
+        { "id": "all", "label": "Todos" },
+        { "id": "french-door", "label": "FRENCH DOOR" },
+        { "id": "top-freezer", "label": "TOP FREEZER" }
+      ],
+      "items": [
+        {
+          "id": "ref-french-door",
+          "slug": "french-door-25",
+          "name": "FRENCH DOOR 25",
+          "filterId": "french-door",
+          "pdf": {
+            "src": "/manuals/refrigeradores/french-door-25.pdf",
+            "filename": "DRIJA-FRENCH-DOOR-25-manual.pdf"
+          }
+        },
+        {
+          "id": "ref-top-freezer",
+          "slug": "top-freezer-18",
+          "name": "TOP FREEZER 18",
+          "filterId": "top-freezer",
+          "pdf": {
+            "src": "/manuals/refrigeradores/top-freezer-18.pdf",
+            "filename": "DRIJA-TOP-FREEZER-18-manual.pdf"
+          }
+        }
+      ],
+      "translations": {
+        "en": {
+          "name": "Refrigerators"
+        }
+      }
+    }
+  ]
+}

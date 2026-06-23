@@ -110,7 +110,17 @@
     "catalogs": "Catalogs",
     "warranties": "Warranties",
     "needHelp": "Need help?",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "backToSupport": "← Back to support",
+    "searchPlaceholder": "Search",
+    "noSearchResults": "No results found for your search."
+  },
+  "productManuals": {
+    "pageTitle": "Product manuals",
+    "pageDescription": "Download PDF manuals by product line.",
+    "allFilter": "All",
+    "emptySection": "No manuals available in this category.",
+    "downloadManual": "Download manual for {product}"
   },
   "contact": {
     "pageTitle": "Contact us",

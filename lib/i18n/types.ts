@@ -113,6 +113,16 @@ export type Dictionary = {
     warranties: string;
     needHelp: string;
     faq: string;
+    backToSupport: string;
+    searchPlaceholder: string;
+    noSearchResults: string;
+  };
+  productManuals: {
+    pageTitle: string;
+    pageDescription: string;
+    allFilter: string;
+    emptySection: string;
+    downloadManual: string;
   };
   contact: {
     pageTitle: string;

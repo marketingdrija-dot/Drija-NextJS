@@ -1,37 +1,288 @@
 [
   {
-    "id": "sup-refrigeradores",
-    "slug": "refrigeradores",
-    "name": "Refrigeradores",
+    "id": "sup-air-fryers",
+    "slug": "air-fryers",
+    "name": "Air Fryers",
+    "order": 1,
+    "icon": {
+      "src": "/images/support/categories/air-fryers.png",
+      "alt": "Air Fryers"
+    },
     "articles": [
       {
-        "id": "rf-temp-ideal",
-        "slug": "cual-es-la-temperatura-ideal",
-        "question": "¿Cuál es la temperatura ideal?",
-        "answer": "Mantén el refrigerador entre 3°C y 5°C y el congelador a -18°C. Usa un termómetro interno para verificar tras ajustes.",
+        "id": "af-error",
+        "slug": "que-hacer-si-presenta-error",
+        "question": "¿Qué hacer si presenta error?",
+        "answer": "Desconecta el equipo 5 minutos y reinicia. Si el código persiste, anota el número de error y contacta soporte con el modelo y fecha de compra.",
+        "tags": ["error", "reinicio", "código"],
         "translations": {
           "en": {
-            "question": "What is the ideal temperature?",
-            "answer": "Keep the refrigerator between 3°C and 5°C and the freezer at -18°C. Use an internal thermometer to verify after making adjustments."
+            "question": "What should I do if it displays an error?",
+            "answer": "Unplug the unit for 5 minutes and restart it. If the error code persists, note the error number and contact support with the model and purchase date."
           }
         }
       },
       {
-        "id": "rf-no-enfria",
-        "slug": "por-que-no-enfria",
-        "question": "¿Por qué no enfría si está recién comprado?",
-        "answer": "Tras la instalación, espera de 4 a 6 horas antes de cargar alimentos. Verifica que la puerta cierre herméticamente y que el equipo tenga espacio de ventilación posterior.",
+        "id": "af-no-calienta",
+        "slug": "que-hacer-si-no-calienta",
+        "question": "¿Qué hacer si no calienta?",
+        "answer": "Verifica que la bandeja esté correctamente colocada y que la puerta cierre por completo. Limpia el resistencia según el manual y evita sobrecargar la cesta.",
         "translations": {
           "en": {
-            "question": "Why doesn't it cool if it was just purchased?",
-            "answer": "After installation, wait 4 to 6 hours before loading food. Verify that the door seals tightly and that the unit has adequate rear ventilation clearance."
+            "question": "What should I do if it does not heat?",
+            "answer": "Verify that the tray is properly placed and the door closes completely. Clean the heating element according to the manual and avoid overloading the basket."
           }
         }
       }
     ],
     "translations": {
       "en": {
-        "name": "Refrigerators"
+        "name": "Air Fryers"
+      }
+    }
+  },
+  {
+    "id": "sup-cafeteras",
+    "slug": "cafeteras",
+    "name": "Cafeteras",
+    "order": 2,
+    "icon": {
+      "src": "/images/support/categories/cafeteras.png",
+      "alt": "Cafeteras"
+    },
+    "articles": [
+      {
+        "id": "cf-no-funciona",
+        "slug": "por-que-no-funciona",
+        "question": "¿Por qué no funciona la cafetera?",
+        "answer": "Revisa que el depósito tenga agua suficiente y que la cafetera esté bien conectada. Descalcifica según las indicaciones del manual si el flujo es lento.",
+        "translations": {
+          "en": {
+            "question": "Why is the coffee maker not working?",
+            "answer": "Check that the tank has enough water and that the unit is properly plugged in. Descale according to the manual if the flow is slow."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Coffee Makers"
+      }
+    }
+  },
+  {
+    "id": "sup-calentadores",
+    "slug": "calentadores-de-agua",
+    "name": "Calentadores de agua",
+    "order": 3,
+    "icon": {
+      "src": "/images/support/categories/calentadores-de-agua.png",
+      "alt": "Calentadores de agua"
+    },
+    "articles": [
+      {
+        "id": "ca-agua-fria",
+        "slug": "por-que-sale-agua-fria",
+        "question": "¿Por qué sale agua fría?",
+        "answer": "Espera el tiempo de calentamiento inicial tras encender el equipo. Si persiste, revisa el termostato y la conexión eléctrica.",
+        "translations": {
+          "en": {
+            "question": "Why is the water coming out cold?",
+            "answer": "Allow the initial heating time after turning on the unit. If it persists, check the thermostat and electrical connection."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Water Heaters"
+      }
+    }
+  },
+  {
+    "id": "sup-dispensador",
+    "slug": "dispensador-agua-hielo",
+    "name": "Dispensador (Agua / Hielo)",
+    "order": 4,
+    "icon": {
+      "src": "/images/support/categories/dispensador-agua-hielo.png",
+      "alt": "Dispensador de agua e hielo"
+    },
+    "articles": [
+      {
+        "id": "di-no-hielo",
+        "slug": "por-que-no-hace-hielo",
+        "question": "¿Por qué no hace hielo?",
+        "answer": "Confirma que la línea de agua esté abierta y que el filtro no esté obstruido. Deja 24 horas para el primer ciclo de hielo tras la instalación.",
+        "translations": {
+          "en": {
+            "question": "Why is it not making ice?",
+            "answer": "Confirm the water line is open and the filter is not clogged. Allow 24 hours for the first ice cycle after installation."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Water / Ice Dispenser"
+      }
+    }
+  },
+  {
+    "id": "sup-estufas",
+    "slug": "estufas",
+    "name": "Estufas",
+    "order": 5,
+    "icon": {
+      "src": "/images/support/categories/estufas.png",
+      "alt": "Estufas"
+    },
+    "articles": [
+      {
+        "id": "es-flama-amarilla",
+        "slug": "por-que-flama-amarilla",
+        "question": "¿Por qué la flama es amarilla?",
+        "answer": "Una flama amarilla suele indicar obstrucción en el quemador o inyección incorrecta de aire. Limpia las ranuras y contacta servicio técnico si persiste.",
+        "translations": {
+          "en": {
+            "question": "Why is the flame yellow?",
+            "answer": "A yellow flame usually indicates a clogged burner or incorrect air injection. Clean the slots and contact technical service if the issue persists."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Ranges"
+      }
+    }
+  },
+  {
+    "id": "sup-extractores",
+    "slug": "extractores",
+    "name": "Extractores",
+    "order": 6,
+    "icon": {
+      "src": "/images/support/categories/extractores.png",
+      "alt": "Extractores"
+    },
+    "articles": [
+      {
+        "id": "ex-poco-aspiracion",
+        "slug": "por-que-aspira-poco",
+        "question": "¿Por qué aspira poco?",
+        "answer": "Limpia o reemplaza los filtros de grasa y carbón según el manual. Verifica que la ductería no esté obstruida.",
+        "translations": {
+          "en": {
+            "question": "Why is suction weak?",
+            "answer": "Clean or replace grease and carbon filters according to the manual. Verify that the ductwork is not obstructed."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Range Hoods"
+      }
+    }
+  },
+  {
+    "id": "sup-hielo",
+    "slug": "fabricador-de-hielo",
+    "name": "Fabricadores de hielo",
+    "order": 7,
+    "icon": {
+      "src": "/images/support/categories/fabricador-de-hielo.png",
+      "alt": "Fabricadores de hielo"
+    },
+    "articles": [
+      {
+        "id": "fh-ciclo-lento",
+        "slug": "por-que-el-ciclo-es-lento",
+        "question": "¿Por qué el ciclo de hielo es lento?",
+        "answer": "Revisa la temperatura ambiente y la ventilación posterior. Limpia la máquina de hielo y el filtro de agua si aplica.",
+        "translations": {
+          "en": {
+            "question": "Why is the ice cycle slow?",
+            "answer": "Check ambient temperature and rear ventilation. Clean the ice maker and water filter if applicable."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Ice Makers"
+      }
+    }
+  },
+  {
+    "id": "sup-fregaderos",
+    "slug": "fregaderos",
+    "name": "Fregaderos",
+    "order": 8,
+    "icon": {
+      "src": "/images/support/categories/fregaderos.png",
+      "alt": "Fregaderos"
+    },
+    "articles": [
+      {
+        "id": "fr-manchas",
+        "slug": "como-eliminar-manchas",
+        "question": "¿Cómo eliminar manchas en acero inoxidable?",
+        "answer": "Usa un paño suave con jabón neutro y seca inmediatamente. Evita estropajos metálicos o cloro concentrado.",
+        "translations": {
+          "en": {
+            "question": "How do I remove stains on stainless steel?",
+            "answer": "Use a soft cloth with mild soap and dry immediately. Avoid metal scouring pads or concentrated bleach."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Sinks"
+      }
+    }
+  },
+  {
+    "id": "sup-garantia",
+    "slug": "garantia-y-servicio-tecnico",
+    "name": "Garantía y servicio técnico",
+    "order": 9,
+    "icon": {
+      "src": "/images/support/categories/garantia-servicio-tecnico.png",
+      "alt": "Garantía y servicio técnico"
+    },
+    "articles": [
+      {
+        "id": "ga-duracion",
+        "slug": "cuanto-dura-la-garantia",
+        "question": "¿Cuánto tiempo dura la garantía?",
+        "answer": "La mayoría de productos DRIJA incluyen 12 meses de garantía contra defectos de fabricación. Consulta la ficha del producto para coberturas específicas.",
+        "tags": ["garantía", "cobertura"],
+        "translations": {
+          "en": {
+            "question": "How long does the warranty last?",
+            "answer": "Most DRIJA products include a 12-month warranty against manufacturing defects. Check the product sheet for specific coverage details."
+          }
+        }
+      },
+      {
+        "id": "ga-activar",
+        "slug": "como-activar-garantia",
+        "question": "¿Cómo activar la garantía y qué cubre?",
+        "answer": "Conserva factura y registro de instalación. La garantía cubre fallas de fábrica; no incluye daños por mal uso o instalación no autorizada.",
+        "translations": {
+          "en": {
+            "question": "How do I activate the warranty and what does it cover?",
+            "answer": "Keep your invoice and installation record. The warranty covers factory defects; it does not include damage from misuse or unauthorized installation."
+          }
+        }
+      }
+    ],
+    "translations": {
+      "en": {
+        "name": "Warranty and Technical Service"
       }
     }
   },
@@ -39,6 +290,11 @@
     "id": "sup-hornos",
     "slug": "hornos",
     "name": "Hornos",
+    "order": 10,
+    "icon": {
+      "src": "/images/support/categories/hornos.png",
+      "alt": "Hornos"
+    },
     "articles": [
       {
         "id": "ho-no-enciende",
@@ -72,86 +328,101 @@
     }
   },
   {
-    "id": "sup-estufas",
-    "slug": "estufas",
-    "name": "Estufas",
+    "id": "sup-lavadoras",
+    "slug": "lavadoras",
+    "name": "Lava-Seca / Lavadoras",
+    "order": 11,
+    "icon": {
+      "src": "/images/support/categories/lavadoras.png",
+      "alt": "Lavadoras"
+    },
     "articles": [
       {
-        "id": "es-flama-amarilla",
-        "slug": "por-que-flama-amarilla",
-        "question": "¿Por qué la flama es amarilla?",
-        "answer": "Una flama amarilla suele indicar obstrucción en el quemador o inyección incorrecta de aire. Limpia las ranuras y contacta servicio técnico si persiste.",
+        "id": "lv-no-centrifuga",
+        "slug": "por-que-no-centrifuga",
+        "question": "¿Por qué no centrifuga?",
+        "answer": "Verifica que la carga esté balanceada y que la puerta cierre correctamente. Revisa filtros obstruidos y drenaje.",
         "translations": {
           "en": {
-            "question": "Why is the flame yellow?",
-            "answer": "A yellow flame usually indicates a clogged burner or incorrect air injection. Clean the slots and contact technical service if the issue persists."
+            "question": "Why won't it spin?",
+            "answer": "Verify the load is balanced and the door closes properly. Check for clogged filters and drainage issues."
           }
         }
       }
     ],
     "translations": {
       "en": {
-        "name": "Ranges"
+        "name": "Washers / Washer-Dryers"
       }
     }
   },
   {
-    "id": "sup-garantia",
-    "slug": "garantia-y-servicio-tecnico",
-    "name": "Garantía y servicio técnico",
+    "id": "sup-refrigeradores",
+    "slug": "refrigeradores",
+    "name": "Refrigeradores",
+    "order": 12,
+    "icon": {
+      "src": "/images/support/categories/refrigeradores.png",
+      "alt": "Refrigeradores"
+    },
     "articles": [
       {
-        "id": "ga-duracion",
-        "slug": "cuanto-dura-la-garantia",
-        "question": "¿Cuánto tiempo dura la garantía?",
-        "answer": "La mayoría de productos DRIJA incluyen 12 meses de garantía contra defectos de fabricación. Consulta la ficha del producto para coberturas específicas.",
+        "id": "rf-temp-ideal",
+        "slug": "cual-es-la-temperatura-ideal",
+        "question": "¿Cuál es la temperatura ideal?",
+        "answer": "Mantén el refrigerador entre 3°C y 5°C y el congelador a -18°C. Usa un termómetro interno para verificar tras ajustes.",
         "translations": {
           "en": {
-            "question": "How long does the warranty last?",
-            "answer": "Most DRIJA products include a 12-month warranty against manufacturing defects. Check the product sheet for specific coverage details."
+            "question": "What is the ideal temperature?",
+            "answer": "Keep the refrigerator between 3°C and 5°C and the freezer at -18°C. Use an internal thermometer to verify after making adjustments."
           }
         }
       },
       {
-        "id": "ga-activar",
-        "slug": "como-activar-garantia",
-        "question": "¿Cómo activar la garantía y qué cubre?",
-        "answer": "Conserva factura y registro de instalación. La garantía cubre fallas de fábrica; no incluye daños por mal uso o instalación no autorizada.",
+        "id": "rf-no-enfria",
+        "slug": "por-que-no-enfria",
+        "question": "¿Por qué no enfría si está recién comprado?",
+        "answer": "Tras la instalación, espera de 4 a 6 horas antes de cargar alimentos. Verifica que la puerta cierre herméticamente y que el equipo tenga espacio de ventilación posterior.",
         "translations": {
           "en": {
-            "question": "How do I activate the warranty and what does it cover?",
-            "answer": "Keep your invoice and installation record. The warranty covers factory defects; it does not include damage from misuse or unauthorized installation."
+            "question": "Why doesn't it cool if it was just purchased?",
+            "answer": "After installation, wait 4 to 6 hours before loading food. Verify that the door seals tightly and that the unit has adequate rear ventilation clearance."
           }
         }
       }
     ],
     "translations": {
       "en": {
-        "name": "Warranty and Technical Service"
+        "name": "Refrigerators"
       }
     }
   },
   {
-    "id": "sup-air-fryers",
-    "slug": "air-fryers",
-    "name": "Air Fryers",
+    "id": "sup-triturador",
+    "slug": "triturador",
+    "name": "Triturador",
+    "order": 13,
+    "icon": {
+      "src": "/images/support/categories/triturador.png",
+      "alt": "Triturador"
+    },
     "articles": [
       {
-        "id": "af-error",
-        "slug": "que-hacer-si-presenta-error",
-        "question": "¿Qué hacer si presenta error?",
-        "answer": "Desconecta el equipo 5 minutos y reinicia. Si el código persiste, anota el número de error y contacta soporte con el modelo y fecha de compra.",
+        "id": "tr-atascado",
+        "slug": "que-hacer-si-se-atasca",
+        "question": "¿Qué hacer si se atasca?",
+        "answer": "Desconecta el equipo antes de revisar. Usa la llave hexagonal incluida para liberar el tambor y retira objetos duros que no deben procesarse.",
         "translations": {
           "en": {
-            "question": "What should I do if it displays an error?",
-            "answer": "Unplug the unit for 5 minutes and restart it. If the error code persists, note the error number and contact support with the model and purchase date."
+            "question": "What should I do if it jams?",
+            "answer": "Unplug the unit before inspecting. Use the included hex key to free the drum and remove hard objects that should not be processed."
           }
         }
       }
     ],
     "translations": {
       "en": {
-        "name": "Air Fryers"
+        "name": "Disposal"
       }
     }
   }
