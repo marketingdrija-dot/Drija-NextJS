@@ -29,6 +29,7 @@ type CategoriesMenuContextValue = {
   toggle: () => void;
   close: () => void;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
+  panelRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const CategoriesMenuContext = createContext<CategoriesMenuContextValue | null>(
@@ -43,6 +44,10 @@ function useCategoriesMenuContext() {
     );
   }
   return context;
+}
+
+export function useCategoriesMenuControl() {
+  return useCategoriesMenuContext();
 }
 
 function isCategoriesSectionActive(pathname: string): boolean {
@@ -85,8 +90,10 @@ function NavChevron({
 }
 
 export function CategoriesMenuRoot({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   const toggle = useCallback(() => {
     setOpen((value) => !value);
@@ -96,9 +103,40 @@ export function CategoriesMenuRoot({ children }: { children: ReactNode }) {
     setOpen(false);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (
+        triggerRef.current?.contains(target) ||
+        panelRef.current?.contains(target)
+      ) {
+        return;
+      }
+      close();
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") close();
+    };
+
+    document.addEventListener("pointerdown", onPointerDown, true);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown, true);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [close, open]);
+
+  useEffect(() => {
+    close();
+  }, [close, pathname]);
+
   return (
     <CategoriesMenuContext.Provider
-      value={{ open, toggle, close, triggerRef }}
+      value={{ open, toggle, close, triggerRef, panelRef }}
     >
       {children}
     </CategoriesMenuContext.Provider>
@@ -190,39 +228,11 @@ function MegaMenuContent({ onNavigate }: { onNavigate: () => void }) {
 }
 
 export function CategoriesMegaMenuPanel() {
-  const panelRef = useRef<HTMLDivElement>(null);
-  const { open, close, triggerRef } = useCategoriesMenuContext();
+  const { open, close, panelRef } = useCategoriesMenuContext();
 
   const handleClose = useCallback(() => {
     close();
   }, [close]);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const onPointerDown = (event: MouseEvent) => {
-      const target = event.target as Node;
-      if (
-        panelRef.current?.contains(target) ||
-        triggerRef.current?.contains(target)
-      ) {
-        return;
-      }
-      handleClose();
-    };
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") handleClose();
-    };
-
-    document.addEventListener("mousedown", onPointerDown);
-    document.addEventListener("keydown", onKeyDown);
-
-    return () => {
-      document.removeEventListener("mousedown", onPointerDown);
-      document.removeEventListener("keydown", onKeyDown);
-    };
-  }, [handleClose, open, triggerRef]);
 
   return (
     <AnimatePresence>

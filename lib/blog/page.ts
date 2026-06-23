@@ -1,16 +1,17 @@
+import blogPageData from "@/data/blog-page.json";
 import type { Locale } from "@/lib/i18n/config";
 
-const BLOG_HERO: Record<Locale, { src: string; alt: string }> = {
-  es: {
-    src: "/images/blog/pizza-casera.jpg",
-    alt: "Cocina moderna DRIJA",
-  },
-  en: {
-    src: "/images/blog/pizza-casera.jpg",
-    alt: "Modern DRIJA kitchen",
-  },
+type BlogPageHeroImage = {
+  src: string;
+  alt: string;
 };
 
-export function getBlogHero(locale: Locale) {
-  return BLOG_HERO[locale];
+type BlogPageConfig = {
+  hero: Record<Locale, BlogPageHeroImage>;
+};
+
+const config = blogPageData as BlogPageConfig;
+
+export function getBlogHero(locale: Locale): BlogPageHeroImage {
+  return config.hero[locale];
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CategoriesMenuTrigger } from "@/components/navigation/CategoriesMegaMenu";
+import { CategoriesMenuTrigger, useCategoriesMenuControl } from "@/components/navigation/CategoriesMegaMenu";
 import { useI18n } from "@/lib/i18n/context";
 import { isActivePath, stripLocalePrefix } from "@/lib/i18n/paths";
 import { cn } from "@/lib/utils";
@@ -24,6 +24,7 @@ function isNavItemActive(pathname: string, href: string): boolean {
 export function Navigation() {
   const pathname = usePathname();
   const { dict, href } = useI18n();
+  const { close: closeCategoriesMenu } = useCategoriesMenuControl();
 
   const links = [
     { href: href("/blog"), label: dict.nav.blog },
@@ -50,6 +51,7 @@ export function Navigation() {
                   active && styles.navLinkActive,
                 )}
                 aria-current={active ? "page" : undefined}
+                onClick={closeCategoriesMenu}
               >
                 {link.label}
               </Link>

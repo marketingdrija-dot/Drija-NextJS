@@ -1,0 +1,12 @@
+{
+  "hero": {
+    "es": {
+      "src": "/images/blog/hero/es.jpg",
+      "alt": "Cocina moderna DRIJA"
+    },
+    "en": {
+      "src": "/images/blog/hero/en.jpg",
+      "alt": "Modern DRIJA kitchen"
+    }
+  }
+}
