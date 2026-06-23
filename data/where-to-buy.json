@@ -1,11 +1,11 @@
 {
   "hero": {
     "es": {
-      "src": "/images/where-to-buy/hero-es.jpg",
+      "src": "/images/where-to-buy/hero.jpg",
       "alt": "Dónde comprar DRIJA"
     },
     "en": {
-      "src": "/images/where-to-buy/hero-en.jpg",
+      "src": "/images/where-to-buy/hero.jpg",
       "alt": "Where to buy DRIJA"
     }
   }

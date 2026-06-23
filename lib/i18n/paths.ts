@@ -38,3 +38,20 @@ export function isActivePath(pathname: string, href: string): boolean {
   if (target === "/") return current === "/";
   return current === target || current.startsWith(`${target}/`);
 }
+
+/** Localized href preserving optional query string (e.g. blog ?category=) */
+export function buildLocalizedHref(
+  pathname: string,
+  locale: Locale,
+  query?: string | URLSearchParams | null,
+): string {
+  const base = localizePath(stripLocalePrefix(pathname), locale);
+  const qs =
+    query instanceof URLSearchParams
+      ? query.toString()
+      : typeof query === "string"
+        ? query.trim()
+        : "";
+
+  return qs ? `${base}?${qs}` : base;
+}

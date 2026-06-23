@@ -13,36 +13,38 @@ import {
   type BlogCategoryFilter,
 } from "@/lib/blog/categories";
 import type { Locale } from "@/lib/i18n/config";
-import type { Dictionary } from "@/lib/i18n/types";
-import type { BlogPost } from "@/types/blog";
+import { useBlogLocaleStore } from "@/stores/blog-locale-store";
+import type { BlogLabelsByLocale, BlogPostsByLocale } from "@/types/blog-page";
 
 import styles from "./BlogPageContent.module.css";
 
 type BlogPageContentProps = {
-  posts: BlogPost[];
-  locale: Locale;
-  dict: Dictionary;
+  postsByLocale: BlogPostsByLocale;
+  blogLabelsByLocale: BlogLabelsByLocale;
   initialCategory: BlogCategoryFilter;
 };
 
 export function BlogPageContent({
-  posts,
-  locale,
-  dict,
+  postsByLocale,
+  blogLabelsByLocale,
   initialCategory,
 }: BlogPageContentProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
+  const displayLocale = useBlogLocaleStore((state) => state.displayLocale);
 
   const activeCategory = parseBlogCategoryFilter(
     searchParams.get("category") ?? initialCategory,
   );
 
+  const posts = postsByLocale[displayLocale];
+  const blogLabels = blogLabelsByLocale[displayLocale];
+
   const categories = useMemo(
-    () => getBlogCategoryOptions(posts, dict.blog.allCategories),
-    [dict.blog.allCategories, posts],
+    () => getBlogCategoryOptions(posts, blogLabels.allCategories),
+    [blogLabels.allCategories, posts],
   );
 
   const filteredPosts = useMemo(
@@ -69,7 +71,7 @@ export function BlogPageContent({
 
   return (
     <div className={styles.page}>
-      {isAllView ? <BlogHero locale={locale} /> : null}
+      {isAllView ? <BlogHero locale={displayLocale} /> : null}
 
       {isAllView ? (
         <BlogCategoryTabs
@@ -80,17 +82,17 @@ export function BlogPageContent({
       ) : null}
 
       {isAllView ? (
-        <section className={styles.gridSection} aria-label={dict.blog.pageTitle}>
+        <section className={styles.gridSection} aria-label={blogLabels.pageTitle}>
           {filteredPosts.length === 0 ? (
-            <p className={styles.empty}>{dict.blog.emptyCategory}</p>
+            <p className={styles.empty}>{blogLabels.emptyCategory}</p>
           ) : (
             <div className={styles.grid}>
               {filteredPosts.map((post) => (
                 <BlogPostCard
                   key={post.id}
                   post={post}
-                  locale={locale}
-                  readMoreLabel={dict.blog.readMore}
+                  locale={displayLocale}
+                  readMoreLabel={blogLabels.readMore}
                 />
               ))}
             </div>
@@ -99,22 +101,25 @@ export function BlogPageContent({
       ) : (
         <div className={styles.categoryLayout}>
           <BlogSidebar
-            sidebarTitle={dict.blog.sidebarTitle}
+            sidebarTitle={blogLabels.sidebarTitle}
             categories={categories}
             activeCategory={activeCategory}
             onSelect={handleCategoryChange}
           />
 
-          <section className={styles.categoryPosts} aria-label={dict.blog.pageTitle}>
+          <section
+            className={styles.categoryPosts}
+            aria-label={blogLabels.pageTitle}
+          >
             {filteredPosts.length === 0 ? (
-              <p className={styles.empty}>{dict.blog.emptyCategory}</p>
+              <p className={styles.empty}>{blogLabels.emptyCategory}</p>
             ) : (
               filteredPosts.map((post) => (
                 <BlogPostCard
                   key={post.id}
                   post={post}
-                  locale={locale}
-                  readMoreLabel={dict.blog.readMore}
+                  locale={displayLocale}
+                  readMoreLabel={blogLabels.readMore}
                   variant="featured"
                 />
               ))

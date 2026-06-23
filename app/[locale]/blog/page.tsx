@@ -3,7 +3,9 @@ import { Suspense } from "react";
 import { BlogPageContent } from "@/components/blog/BlogPageContent";
 import { parseBlogCategoryFilter } from "@/lib/blog/categories";
 import { getCms } from "@/lib/cms";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getPageI18n } from "@/lib/i18n/server";
+import type { BlogLabelsByLocale, BlogPostsByLocale } from "@/types/blog-page";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -21,17 +23,31 @@ export async function generateMetadata({
 }
 
 export default async function BlogPage({ params, searchParams }: PageProps) {
-  const { locale, dict } = await getPageI18n(params);
   const { category } = await searchParams;
-  const posts = await getCms().getBlogPosts({ locale });
   const initialCategory = parseBlogCategoryFilter(category);
+
+  const [postsEs, postsEn, dictEs, dictEn] = await Promise.all([
+    getCms().getBlogPosts({ locale: "es" }),
+    getCms().getBlogPosts({ locale: "en" }),
+    getDictionary("es"),
+    getDictionary("en"),
+  ]);
+
+  const postsByLocale: BlogPostsByLocale = {
+    es: postsEs,
+    en: postsEn,
+  };
+
+  const blogLabelsByLocale: BlogLabelsByLocale = {
+    es: dictEs.blog,
+    en: dictEn.blog,
+  };
 
   return (
     <Suspense fallback={null}>
       <BlogPageContent
-        posts={posts}
-        locale={locale}
-        dict={dict}
+        postsByLocale={postsByLocale}
+        blogLabelsByLocale={blogLabelsByLocale}
         initialCategory={initialCategory}
       />
     </Suspense>

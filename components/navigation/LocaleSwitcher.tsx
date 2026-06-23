@@ -2,16 +2,21 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useId } from "react";
-import { locales } from "@/lib/i18n/config";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useId } from "react";
+import { isBlogPath } from "@/lib/blog/locale-path";
+import { locales, type Locale } from "@/lib/i18n/config";
 import {
   getLocaleFlagSrc,
   getLocaleLabel,
 } from "@/lib/i18n/locale-flags";
-import { getLocaleFromPathname, localizePath } from "@/lib/i18n/paths";
+import {
+  buildLocalizedHref,
+  getLocaleFromPathname,
+} from "@/lib/i18n/paths";
 import { useI18n } from "@/lib/i18n/context";
 import { useDropdownMenu } from "@/hooks/useDropdownMenu";
+import { useBlogLocaleStore } from "@/stores/blog-locale-store";
 import { cn } from "@/lib/utils";
 
 import styles from "./HeaderDropdown.module.css";
@@ -20,13 +25,32 @@ type LocaleSwitcherProps = {
   menuAlign?: "start" | "end";
 };
 
-export function LocaleSwitcher({ menuAlign = "end" }: LocaleSwitcherProps) {
+function LocaleSwitcherMenu({ menuAlign = "end" }: LocaleSwitcherProps) {
   const pathname = usePathname();
-  const { dict } = useI18n();
+  const searchParams = useSearchParams();
+  const { dict, locale: routeLocale } = useI18n();
   const listboxId = useId();
   const { rootRef, open, toggle, close } = useDropdownMenu();
-  const currentLocale = getLocaleFromPathname(pathname);
+  const displayLocale = useBlogLocaleStore((state) => state.displayLocale);
+  const setDisplayLocale = useBlogLocaleStore((state) => state.setDisplayLocale);
+
+  const onBlog = isBlogPath(pathname);
+  const currentLocale = onBlog ? displayLocale : getLocaleFromPathname(pathname);
   const selectedLabel = getLocaleLabel(currentLocale);
+  const queryString = searchParams.toString();
+
+  useEffect(() => {
+    if (onBlog) {
+      setDisplayLocale(routeLocale);
+    }
+  }, [onBlog, routeLocale, setDisplayLocale]);
+
+  const handleBlogLocaleChange = (locale: Locale) => {
+    setDisplayLocale(locale);
+    const href = buildLocalizedHref(pathname, locale, queryString);
+    window.history.replaceState(null, "", href);
+    close();
+  };
 
   return (
     <div className={styles.root} ref={rootRef}>
@@ -62,7 +86,35 @@ export function LocaleSwitcher({ menuAlign = "end" }: LocaleSwitcherProps) {
         >
           {locales.map((locale) => {
             const isSelected = locale === currentLocale;
-            const href = localizePath(pathname, locale);
+            const href = buildLocalizedHref(pathname, locale, queryString);
+
+            if (onBlog) {
+              return (
+                <button
+                  key={locale}
+                  type="button"
+                  role="option"
+                  aria-selected={isSelected}
+                  className={cn(
+                    styles.option,
+                    isSelected && styles.optionSelected,
+                  )}
+                  onClick={() => handleBlogLocaleChange(locale)}
+                >
+                  <Image
+                    src={getLocaleFlagSrc(locale)}
+                    alt=""
+                    width={32}
+                    height={20}
+                    className={styles.flag}
+                    aria-hidden
+                  />
+                  <span className={styles.optionLabel}>
+                    {getLocaleLabel(locale)}
+                  </span>
+                </button>
+              );
+            }
 
             return (
               <Link
@@ -91,5 +143,32 @@ export function LocaleSwitcher({ menuAlign = "end" }: LocaleSwitcherProps) {
         </div>
       ) : null}
     </div>
+  );
+}
+
+function LocaleSwitcherFallback() {
+  const pathname = usePathname();
+  const currentLocale = getLocaleFromPathname(pathname);
+
+  return (
+    <div className={styles.root} aria-hidden>
+      <span className={styles.trigger}>
+        <Image
+          src={getLocaleFlagSrc(currentLocale)}
+          alt=""
+          width={32}
+          height={20}
+          className={styles.flag}
+        />
+      </span>
+    </div>
+  );
+}
+
+export function LocaleSwitcher(props: LocaleSwitcherProps) {
+  return (
+    <Suspense fallback={<LocaleSwitcherFallback />}>
+      <LocaleSwitcherMenu {...props} />
+    </Suspense>
   );
 }
