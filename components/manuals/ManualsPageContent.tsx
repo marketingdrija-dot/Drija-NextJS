@@ -7,14 +7,12 @@ import styles from "./ManualsSection.module.css";
 
 type ManualsPageContentProps = {
   sections: ProductManualSection[];
-  allFilterLabel: string;
   emptySectionLabel: string;
   downloadManualTemplate: string;
 };
 
 export function ManualsPageContent({
   sections,
-  allFilterLabel,
   emptySectionLabel,
   downloadManualTemplate,
 }: ManualsPageContentProps) {
@@ -25,7 +23,6 @@ export function ManualsPageContent({
           <ManualsCategorySection
             key={section.id}
             section={section}
-            allFilterLabel={allFilterLabel}
             emptyLabel={emptySectionLabel}
             downloadManualTemplate={downloadManualTemplate}
           />

@@ -29,7 +29,6 @@ export default async function ManualesPage({ params }: PageProps) {
       <ManualsHero title={dict.productManuals.pageTitle} image={hero} />
       <ManualsPageContent
         sections={sections}
-        allFilterLabel={dict.productManuals.allFilter}
         emptySectionLabel={dict.productManuals.emptySection}
         downloadManualTemplate={dict.productManuals.downloadManual}
       />

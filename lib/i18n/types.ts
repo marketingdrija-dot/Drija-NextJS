@@ -120,7 +120,6 @@ export type Dictionary = {
   productManuals: {
     pageTitle: string;
     pageDescription: string;
-    allFilter: string;
     emptySection: string;
     downloadManual: string;
   };

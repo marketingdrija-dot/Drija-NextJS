@@ -15,125 +15,836 @@
       "slug": "extractores",
       "name": "Extractores",
       "order": 1,
-      "filters": [
-        { "id": "all", "label": "Todos" },
-        { "id": "vetro-60", "label": "VETRO 60" },
-        { "id": "slim-touch-90", "label": "SLIM TOUCH 90" },
-        { "id": "compatto-90", "label": "COMPATTO 90" }
-      ],
-      "items": [
-        {
-          "id": "ext-vetro-60",
-          "slug": "vetro-60",
-          "name": "VETRO 60",
-          "filterId": "vetro-60",
-          "pdf": {
-            "src": "/manuals/extractores/vetro-60.pdf",
-            "filename": "DRIJA-VETRO-60-manual.pdf"
-          }
-        },
-        {
-          "id": "ext-slim-touch-90",
-          "slug": "slim-touch-90-acero",
-          "name": "SLIM TOUCH 90 ACERO",
-          "filterId": "slim-touch-90",
-          "pdf": {
-            "src": "/manuals/extractores/slim-touch-90-acero.pdf",
-            "filename": "DRIJA-SLIM-TOUCH-90-ACERO-manual.pdf"
-          }
-        },
-        {
-          "id": "ext-compatto-90",
-          "slug": "compatto-90-black",
-          "name": "COMPATTO 90 BLACK",
-          "filterId": "compatto-90",
-          "pdf": {
-            "src": "/manuals/extractores/compatto-90-black.pdf",
-            "filename": "DRIJA-COMPATTO-90-BLACK-manual.pdf"
-          }
-        }
-      ],
       "translations": {
         "en": {
           "name": "Range Hoods"
         }
-      }
+      },
+      "groups": [
+        {
+          "id": "extractores-compactas",
+          "slug": "compactas",
+          "name": "COMPACTAS",
+          "order": 1,
+          "items": [
+            {
+              "id": "extractores-compactas-compatto-60-76-90-acero-black",
+              "slug": "compatto-60-76-90-acero-black",
+              "name": "COMPATTO 60 - 76 - 90 ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/compactas/compatto-60-76-90-acero-black.pdf",
+                "filename": "DRIJA-compatto-60-76-90-acero-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-compactas-slim-touch-60-70-90-acero-black",
+              "slug": "slim-touch-60-70-90-acero-black",
+              "name": "SLIM TOUCH 60 - 70 - 90 - ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/compactas/slim-touch-60-70-90-acero-black.pdf",
+                "filename": "DRIJA-slim-touch-60-70-90-acero-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-compactas-retractil-touch-60-76-90",
+              "slug": "retractil-touch-60-76-90",
+              "name": "RETRACTIL TOUCH 60 - 76 - 90",
+              "pdf": {
+                "src": "/manuals/extractores/compactas/retractil-touch-60-76-90.pdf",
+                "filename": "DRIJA-retractil-touch-60-76-90.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "extractores-islas",
+          "slug": "islas",
+          "name": "ISLAS",
+          "order": 2,
+          "items": [
+            {
+              "id": "extractores-islas-prisma-isla-touch-90-black",
+              "slug": "prisma-isla-touch-90-black",
+              "name": "PRISMA ISLA TOUCH 90 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/islas/prisma-isla-touch-90-black.pdf",
+                "filename": "DRIJA-prisma-isla-touch-90-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-islas-quadrato-isla-76-acero-black",
+              "slug": "quadrato-isla-76-acero-black",
+              "name": "QUADRATO ISLA 76 ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/islas/quadrato-isla-76-acero-black.pdf",
+                "filename": "DRIJA-quadrato-isla-76-acero-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-islas-quadrato-isla-90-black",
+              "slug": "quadrato-isla-90-black",
+              "name": "QUADRATO ISLA 90 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/islas/quadrato-isla-90-black.pdf",
+                "filename": "DRIJA-quadrato-isla-90-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-islas-quadrato-isla-90-acero-black",
+              "slug": "quadrato-isla-90-acero-black",
+              "name": "QUADRATO ISLA 90 ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/islas/quadrato-isla-90-acero-black.pdf",
+                "filename": "DRIJA-quadrato-isla-90-acero-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-islas-arco-isla-90",
+              "slug": "arco-isla-90",
+              "name": "ARCO ISLA 90",
+              "pdf": {
+                "src": "/manuals/extractores/islas/arco-isla-90.pdf",
+                "filename": "DRIJA-arco-isla-90.pdf"
+              }
+            },
+            {
+              "id": "extractores-islas-pendente-90-b",
+              "slug": "pendente-90-b",
+              "name": "PENDENTE 90-B",
+              "pdf": {
+                "src": "/manuals/extractores/islas/pendente-90-b.pdf",
+                "filename": "DRIJA-pendente-90-b.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "extractores-pared",
+          "slug": "pared",
+          "name": "PARED",
+          "order": 3,
+          "items": [
+            {
+              "id": "extractores-pared-rectagulo-76-black",
+              "slug": "rectagulo-76-black",
+              "name": "RECTÁGULO 76 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/rectagulo-76-black.pdf",
+                "filename": "DRIJA-rectagulo-76-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-rectagulo-90-black",
+              "slug": "rectagulo-90-black",
+              "name": "RECTÁGULO 90 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/rectagulo-90-black.pdf",
+                "filename": "DRIJA-rectagulo-90-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-triangolo-60-76-90",
+              "slug": "triangolo-60-76-90",
+              "name": "TRIANGOLO 60 - 76 - 90",
+              "pdf": {
+                "src": "/manuals/extractores/pared/triangolo-60-76-90.pdf",
+                "filename": "DRIJA-triangolo-60-76-90.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-piramide-90-black",
+              "slug": "piramide-90-black",
+              "name": "PIRÁMIDE 90 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/piramide-90-black.pdf",
+                "filename": "DRIJA-piramide-90-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-trapezio-90-black",
+              "slug": "trapezio-90-black",
+              "name": "TRAPEZIO 90 BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/trapezio-90-black.pdf",
+                "filename": "DRIJA-trapezio-90-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-prisma-touch-60",
+              "slug": "prisma-touch-60",
+              "name": "PRISMA TOUCH 60",
+              "pdf": {
+                "src": "/manuals/extractores/pared/prisma-touch-60.pdf",
+                "filename": "DRIJA-prisma-touch-60.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-prisma-touch-76",
+              "slug": "prisma-touch-76",
+              "name": "PRISMA TOUCH 76",
+              "pdf": {
+                "src": "/manuals/extractores/pared/prisma-touch-76.pdf",
+                "filename": "DRIJA-prisma-touch-76.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-prisma-touch-90",
+              "slug": "prisma-touch-90",
+              "name": "PRISMA TOUCH 90",
+              "pdf": {
+                "src": "/manuals/extractores/pared/prisma-touch-90.pdf",
+                "filename": "DRIJA-prisma-touch-90.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-galaxy-76",
+              "slug": "galaxy-76",
+              "name": "GALAXY 76",
+              "pdf": {
+                "src": "/manuals/extractores/pared/galaxy-76.pdf",
+                "filename": "DRIJA-galaxy-76.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-galaxy-90",
+              "slug": "galaxy-90",
+              "name": "GALAXY 90",
+              "pdf": {
+                "src": "/manuals/extractores/pared/galaxy-90.pdf",
+                "filename": "DRIJA-galaxy-90.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-quadrato-76-acero-black",
+              "slug": "quadrato-76-acero-black",
+              "name": "QUADRATO 76 ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/quadrato-76-acero-black.pdf",
+                "filename": "DRIJA-quadrato-76-acero-black.pdf"
+              }
+            },
+            {
+              "id": "extractores-pared-quadrato-90-acero-black",
+              "slug": "quadrato-90-acero-black",
+              "name": "QUADRATO 90 ACERO / BLACK",
+              "pdf": {
+                "src": "/manuals/extractores/pared/quadrato-90-acero-black.pdf",
+                "filename": "DRIJA-quadrato-90-acero-black.pdf"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "manuals-estufas",
       "slug": "estufas",
       "name": "Estufas",
       "order": 2,
-      "filters": [
-        { "id": "all", "label": "Todos" },
-        { "id": "gourmet-60", "label": "GOURMET 60" },
-        { "id": "premium-76", "label": "PREMIUM 76" }
-      ],
-      "items": [
-        {
-          "id": "est-gourmet-60",
-          "slug": "gourmet-60",
-          "name": "GOURMET 60",
-          "filterId": "gourmet-60",
-          "pdf": {
-            "src": "/manuals/estufas/gourmet-60.pdf",
-            "filename": "DRIJA-GOURMET-60-manual.pdf"
-          }
-        },
-        {
-          "id": "est-premium-76",
-          "slug": "premium-76",
-          "name": "PREMIUM 76",
-          "filterId": "premium-76",
-          "pdf": {
-            "src": "/manuals/estufas/premium-76.pdf",
-            "filename": "DRIJA-PREMIUM-76-manual.pdf"
-          }
-        }
-      ],
       "translations": {
         "en": {
           "name": "Ranges"
         }
-      }
-    },
-    {
-      "id": "manuals-refrigeradores",
-      "slug": "refrigeradores",
-      "name": "Neveras",
-      "order": 3,
-      "filters": [
-        { "id": "all", "label": "Todos" },
-        { "id": "french-door", "label": "FRENCH DOOR" },
-        { "id": "top-freezer", "label": "TOP FREEZER" }
-      ],
-      "items": [
+      },
+      "groups": [
         {
-          "id": "ref-french-door",
-          "slug": "french-door-25",
-          "name": "FRENCH DOOR 25",
-          "filterId": "french-door",
-          "pdf": {
-            "src": "/manuals/refrigeradores/french-door-25.pdf",
-            "filename": "DRIJA-FRENCH-DOOR-25-manual.pdf"
-          }
+          "id": "estufas-tope-gas",
+          "slug": "tope-gas",
+          "name": "TOPE GAS",
+          "order": 1,
+          "items": [
+            {
+              "id": "estufas-tope-gas-potenza-76",
+              "slug": "potenza-76",
+              "name": "POTENZA 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/potenza-76.pdf",
+                "filename": "DRIJA-potenza-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-turin-60",
+              "slug": "turin-60",
+              "name": "TURÍN 60",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/turin-60.pdf",
+                "filename": "DRIJA-turin-60.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-milan-30",
+              "slug": "milan-30",
+              "name": "MILÁN 30",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/milan-30.pdf",
+                "filename": "DRIJA-milan-30.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-milan-91",
+              "slug": "milan-91",
+              "name": "MILÁN 91",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/milan-91.pdf",
+                "filename": "DRIJA-milan-91.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-milan-60-pro",
+              "slug": "milan-60-pro",
+              "name": "MILÁN 60 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/milan-60-pro.pdf",
+                "filename": "DRIJA-milan-60-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-milan-76-pro",
+              "slug": "milan-76-pro",
+              "name": "MILÁN 76 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/milan-76-pro.pdf",
+                "filename": "DRIJA-milan-76-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-toscana-30",
+              "slug": "toscana-30",
+              "name": "TOSCANA 30",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/toscana-30.pdf",
+                "filename": "DRIJA-toscana-30.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-toscana-91",
+              "slug": "toscana-91",
+              "name": "TOSCANA 91",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/toscana-91.pdf",
+                "filename": "DRIJA-toscana-91.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-toscana-60-pro",
+              "slug": "toscana-60-pro",
+              "name": "TOSCANA 60 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/toscana-60-pro.pdf",
+                "filename": "DRIJA-toscana-60-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-toscana-76-pro",
+              "slug": "toscana-76-pro",
+              "name": "TOSCANA 76 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/toscana-76-pro.pdf",
+                "filename": "DRIJA-toscana-76-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-ferrara-60-pro",
+              "slug": "ferrara-60-pro",
+              "name": "FERRARA 60 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/ferrara-60-pro.pdf",
+                "filename": "DRIJA-ferrara-60-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-ferrara-76-pro",
+              "slug": "ferrara-76-pro",
+              "name": "FERRARA 76 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/ferrara-76-pro.pdf",
+                "filename": "DRIJA-ferrara-76-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-ferrara-90-pro",
+              "slug": "ferrara-90-pro",
+              "name": "FERRARA 90 PRO",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/ferrara-90-pro.pdf",
+                "filename": "DRIJA-ferrara-90-pro.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-lazio-90",
+              "slug": "lazio-90",
+              "name": "LAZIO 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/lazio-90.pdf",
+                "filename": "DRIJA-lazio-90.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-italia-76",
+              "slug": "italia-76",
+              "name": "ITALIA 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/italia-76.pdf",
+                "filename": "DRIJA-italia-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-gas-italia-90",
+              "slug": "italia-90",
+              "name": "ITALIA 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-gas/italia-90.pdf",
+                "filename": "DRIJA-italia-90.pdf"
+              }
+            }
+          ]
         },
         {
-          "id": "ref-top-freezer",
-          "slug": "top-freezer-18",
-          "name": "TOP FREEZER 18",
-          "filterId": "top-freezer",
-          "pdf": {
-            "src": "/manuals/refrigeradores/top-freezer-18.pdf",
-            "filename": "DRIJA-TOP-FREEZER-18-manual.pdf"
-          }
+          "id": "estufas-tope-electrico",
+          "slug": "tope-electrico",
+          "name": "TOPE ELÉCTRICO",
+          "order": 2,
+          "items": [
+            {
+              "id": "estufas-tope-electrico-bari-60",
+              "slug": "bari-60",
+              "name": "BARI 60",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/bari-60.pdf",
+                "filename": "DRIJA-bari-60.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-bari-76",
+              "slug": "bari-76",
+              "name": "BARI 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/bari-76.pdf",
+                "filename": "DRIJA-bari-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-bari-90",
+              "slug": "bari-90",
+              "name": "BARI 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/bari-90.pdf",
+                "filename": "DRIJA-bari-90.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-berlin-30",
+              "slug": "berlin-30",
+              "name": "BERLÍN 30",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/berlin-30.pdf",
+                "filename": "DRIJA-berlin-30.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-berlin-60",
+              "slug": "berlin-60",
+              "name": "BERLÍN 60",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/berlin-60.pdf",
+                "filename": "DRIJA-berlin-60.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-berlin-76",
+              "slug": "berlin-76",
+              "name": "BERLÍN 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/berlin-76.pdf",
+                "filename": "DRIJA-berlin-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-electrico-berlin-90",
+              "slug": "berlin-90",
+              "name": "BERLÍN 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-electrico/berlin-90.pdf",
+                "filename": "DRIJA-berlin-90.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "estufas-tope-dual",
+          "slug": "tope-dual",
+          "name": "TOPE DUAL",
+          "order": 3,
+          "items": [
+            {
+              "id": "estufas-tope-dual-sicilia-30",
+              "slug": "sicilia-30",
+              "name": "SICILIA 30",
+              "pdf": {
+                "src": "/manuals/estufas/tope-dual/sicilia-30.pdf",
+                "filename": "DRIJA-sicilia-30.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-dual-sicilia-76",
+              "slug": "sicilia-76",
+              "name": "SICILIA 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-dual/sicilia-76.pdf",
+                "filename": "DRIJA-sicilia-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-dual-sicilia-touch-60",
+              "slug": "sicilia-touch-60",
+              "name": "SICILIA TOUCH 60",
+              "pdf": {
+                "src": "/manuals/estufas/tope-dual/sicilia-touch-60.pdf",
+                "filename": "DRIJA-sicilia-touch-60.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-dual-sicilia-touch-90",
+              "slug": "sicilia-touch-90",
+              "name": "SICILIA TOUCH 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-dual/sicilia-touch-90.pdf",
+                "filename": "DRIJA-sicilia-touch-90.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "estufas-tope-induccion",
+          "slug": "tope-induccion",
+          "name": "TOPE INDUCCIÓN",
+          "order": 4,
+          "items": [
+            {
+              "id": "estufas-tope-induccion-munich-60",
+              "slug": "munich-60",
+              "name": "MÚNICH 60",
+              "pdf": {
+                "src": "/manuals/estufas/tope-induccion/munich-60.pdf",
+                "filename": "DRIJA-munich-60.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-induccion-munich-76",
+              "slug": "munich-76",
+              "name": "MÚNICH 76",
+              "pdf": {
+                "src": "/manuals/estufas/tope-induccion/munich-76.pdf",
+                "filename": "DRIJA-munich-76.pdf"
+              }
+            },
+            {
+              "id": "estufas-tope-induccion-munich-90",
+              "slug": "munich-90",
+              "name": "MÚNICH 90",
+              "pdf": {
+                "src": "/manuals/estufas/tope-induccion/munich-90.pdf",
+                "filename": "DRIJA-munich-90.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "estufas-piso",
+          "slug": "piso",
+          "name": "PISO",
+          "order": 5,
+          "items": [
+            {
+              "id": "estufas-piso-venecia-90",
+              "slug": "venecia-90",
+              "name": "VENECIA 90",
+              "pdf": {
+                "src": "/manuals/estufas/piso/venecia-90.pdf",
+                "filename": "DRIJA-venecia-90.pdf"
+              }
+            }
+          ]
         }
-      ],
+      ]
+    },
+    {
+      "id": "manuals-neveras",
+      "slug": "neveras",
+      "name": "Neveras",
+      "order": 3,
       "translations": {
         "en": {
           "name": "Refrigerators"
         }
-      }
+      },
+      "groups": [
+        {
+          "id": "neveras-empotrables",
+          "slug": "empotrables",
+          "name": "EMPOTRABLES",
+          "order": 1,
+          "items": [
+            {
+              "id": "neveras-empotrables-glass-b-18fd4p",
+              "slug": "glass-b-18fd4p",
+              "name": "GLASS-B 18FD4P",
+              "pdf": {
+                "src": "/manuals/neveras/empotrables/glass-b-18fd4p.pdf",
+                "filename": "DRIJA-glass-b-18fd4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-empotrables-glass-b-18cd4p",
+              "slug": "glass-b-18cd4p",
+              "name": "GLASS-B 18CD4P",
+              "pdf": {
+                "src": "/manuals/neveras/empotrables/glass-b-18cd4p.pdf",
+                "filename": "DRIJA-glass-b-18cd4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-empotrables-dark-i-18fd4p",
+              "slug": "dark-i-18fd4p",
+              "name": "DARK-I 18FD4P",
+              "pdf": {
+                "src": "/manuals/neveras/empotrables/dark-i-18fd4p.pdf",
+                "filename": "DRIJA-dark-i-18fd4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-empotrables-dark-i-18cd4p",
+              "slug": "dark-i-18cd4p",
+              "name": "DARK-I 18CD4P",
+              "pdf": {
+                "src": "/manuals/neveras/empotrables/dark-i-18cd4p.pdf",
+                "filename": "DRIJA-dark-i-18cd4p.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neveras-ejecutivas",
+          "slug": "ejecutivas",
+          "name": "EJECUTIVAS",
+          "order": 2,
+          "items": [
+            {
+              "id": "neveras-ejecutivas-black-3",
+              "slug": "black-3",
+              "name": "BLACK - 3",
+              "pdf": {
+                "src": "/manuals/neveras/ejecutivas/black-3.pdf",
+                "filename": "DRIJA-black-3.pdf"
+              }
+            },
+            {
+              "id": "neveras-ejecutivas-mirror-3",
+              "slug": "mirror-3",
+              "name": "MIRROR - 3",
+              "pdf": {
+                "src": "/manuals/neveras/ejecutivas/mirror-3.pdf",
+                "filename": "DRIJA-mirror-3.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neveras-side-by-side",
+          "slug": "side-by-side",
+          "name": "SIDE BY SIDE",
+          "order": 3,
+          "items": [
+            {
+              "id": "neveras-side-by-side-silver",
+              "slug": "silver",
+              "name": "SILVER",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/silver.pdf",
+                "filename": "DRIJA-silver.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-inox",
+              "slug": "inox",
+              "name": "INOX",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/inox.pdf",
+                "filename": "DRIJA-inox.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-inox-18",
+              "slug": "inox-18",
+              "name": "INOX - 18",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/inox-18.pdf",
+                "filename": "DRIJA-inox-18.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-inox-23",
+              "slug": "inox-23",
+              "name": "INOX - 23",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/inox-23.pdf",
+                "filename": "DRIJA-inox-23.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-black",
+              "slug": "black",
+              "name": "BLACK",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/black.pdf",
+                "filename": "DRIJA-black.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-black-18",
+              "slug": "black-18",
+              "name": "BLACK - 18",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/black-18.pdf",
+                "filename": "DRIJA-black-18.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-black-20cfah",
+              "slug": "black-20cfah",
+              "name": "BLACK - 20CFAH",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/black-20cfah.pdf",
+                "filename": "DRIJA-black-20cfah.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-black-23",
+              "slug": "black-23",
+              "name": "BLACK - 23",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/black-23.pdf",
+                "filename": "DRIJA-black-23.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-mirror",
+              "slug": "mirror",
+              "name": "MIRROR",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/mirror.pdf",
+                "filename": "DRIJA-mirror.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-mirror-18",
+              "slug": "mirror-18",
+              "name": "MIRROR - 18",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/mirror-18.pdf",
+                "filename": "DRIJA-mirror-18.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-mirror-20cfah",
+              "slug": "mirror-20cfah",
+              "name": "MIRROR - 20CFAH",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/mirror-20cfah.pdf",
+                "filename": "DRIJA-mirror-20cfah.pdf"
+              }
+            },
+            {
+              "id": "neveras-side-by-side-white-23",
+              "slug": "white-23",
+              "name": "WHITE - 23",
+              "pdf": {
+                "src": "/manuals/neveras/side-by-side/white-23.pdf",
+                "filename": "DRIJA-white-23.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neveras-french-door",
+          "slug": "french-door",
+          "name": "FRENCH DOOR",
+          "order": 4,
+          "items": [
+            {
+              "id": "neveras-french-door-inox-18d3p",
+              "slug": "inox-18d3p",
+              "name": "INOX - 18D3P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/inox-18d3p.pdf",
+                "filename": "DRIJA-inox-18d3p.pdf"
+              }
+            },
+            {
+              "id": "neveras-french-door-inox-20d3p",
+              "slug": "inox-20d3p",
+              "name": "INOX - 20D3P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/inox-20d3p.pdf",
+                "filename": "DRIJA-inox-20d3p.pdf"
+              }
+            },
+            {
+              "id": "neveras-french-door-inox-18d4p",
+              "slug": "inox-18d4p",
+              "name": "INOX - 18D4P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/inox-18d4p.pdf",
+                "filename": "DRIJA-inox-18d4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-french-door-black-18d4p",
+              "slug": "black-18d4p",
+              "name": "BLACK - 18D4P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/black-18d4p.pdf",
+                "filename": "DRIJA-black-18d4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-french-door-mirror-18d4p",
+              "slug": "mirror-18d4p",
+              "name": "MIRROR - 18D4P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/mirror-18d4p.pdf",
+                "filename": "DRIJA-mirror-18d4p.pdf"
+              }
+            },
+            {
+              "id": "neveras-french-door-black-19d4p",
+              "slug": "black-19d4p",
+              "name": "BLACK - 19D4P",
+              "pdf": {
+                "src": "/manuals/neveras/french-door/black-19d4p.pdf",
+                "filename": "DRIJA-black-19d4p.pdf"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neveras-twin",
+          "slug": "twin",
+          "name": "TWIN",
+          "order": 5,
+          "items": [
+            {
+              "id": "neveras-twin-twin-36d4pd-36d4pifh",
+              "slug": "twin-36d4pd-36d4pifh",
+              "name": "TWIN 36D4PD / 36D4PIFH",
+              "pdf": {
+                "src": "/manuals/neveras/twin/twin-36d4pd-36d4pifh.pdf",
+                "filename": "DRIJA-twin-36d4pd-36d4pifh.pdf"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

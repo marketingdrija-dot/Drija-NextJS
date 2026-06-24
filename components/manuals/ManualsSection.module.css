@@ -119,13 +119,7 @@
 .downloadLink {
   display: inline-flex;
   align-items: center;
-  gap: 0.875rem;
   text-decoration: none;
-  color: inherit;
-}
-
-.downloadLink:hover .itemName {
-  color: var(--drija-green);
 }
 
 .pdfIcon {

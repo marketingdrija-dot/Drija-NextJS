@@ -5,26 +5,28 @@ export type ProductManualPdf = {
   filename: string;
 };
 
-export type ProductManualFilter = {
-  id: string;
-  label: string;
-};
-
-export type ProductManualFilterTranslations = {
-  label?: string;
-};
-
 export type ProductManualItem = {
   id: string;
   slug: string;
   name: string;
-  filterId: string;
   pdf: ProductManualPdf;
+};
+
+export type ProductManualGroupTranslations = {
+  name?: string;
+};
+
+export type ProductManualGroup = {
+  id: string;
+  slug: string;
+  name: string;
+  order: number;
+  items: ProductManualItem[];
+  translations?: ContentTranslations<ProductManualGroupTranslations>;
 };
 
 export type ProductManualSectionTranslations = {
   name?: string;
-  filters?: ContentTranslations<ProductManualFilterTranslations>[];
 };
 
 export type ProductManualSection = {
@@ -32,8 +34,7 @@ export type ProductManualSection = {
   slug: string;
   name: string;
   order: number;
-  filters: ProductManualFilter[];
-  items: ProductManualItem[];
+  groups: ProductManualGroup[];
   translations?: ContentTranslations<ProductManualSectionTranslations>;
 };
 

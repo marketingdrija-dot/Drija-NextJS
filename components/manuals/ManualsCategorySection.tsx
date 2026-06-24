@@ -2,48 +2,45 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import type { ProductManualItem, ProductManualSection } from "@/types/product-manual";
+import type { ProductManualGroup, ProductManualSection } from "@/types/product-manual";
 import { cn } from "@/lib/utils";
 
 import styles from "./ManualsSection.module.css";
 
 type ManualsCategorySectionProps = {
   section: ProductManualSection;
-  allFilterLabel: string;
   emptyLabel: string;
   downloadManualTemplate: string;
 };
 
 export function ManualsCategorySection({
   section,
-  allFilterLabel,
   emptyLabel,
   downloadManualTemplate,
 }: ManualsCategorySectionProps) {
-  const [activeFilterId, setActiveFilterId] = useState("all");
+  const defaultGroupId = section.groups[0]?.id ?? "";
+  const [activeGroupId, setActiveGroupId] = useState(defaultGroupId);
   const [openSlug, setOpenSlug] = useState<string | null>(null);
 
-  const filters = useMemo(
-    () =>
-      section.filters.map((filter) =>
-        filter.id === "all" ? { ...filter, label: allFilterLabel } : filter,
-      ),
-    [allFilterLabel, section.filters],
+  const activeGroup = useMemo(
+    () => section.groups.find((group) => group.id === activeGroupId) ?? section.groups[0],
+    [activeGroupId, section.groups],
   );
 
-  const visibleItems = useMemo(() => {
-    if (activeFilterId === "all") return section.items;
-    return section.items.filter((item) => item.filterId === activeFilterId);
-  }, [activeFilterId, section.items]);
+  const visibleItems = activeGroup?.items ?? [];
 
   const toggleItem = (slug: string) => {
     setOpenSlug((current) => (current === slug ? null : slug));
   };
 
-  const handleFilterChange = (filterId: string) => {
-    setActiveFilterId(filterId);
+  const handleGroupChange = (group: ProductManualGroup) => {
+    setActiveGroupId(group.id);
     setOpenSlug(null);
   };
+
+  if (section.groups.length === 0) {
+    return null;
+  }
 
   return (
     <section className={styles.section} aria-labelledby={`manuals-${section.slug}`}>
@@ -52,19 +49,19 @@ export function ManualsCategorySection({
       </h2>
 
       <div className={styles.filters} role="tablist" aria-label={section.name}>
-        {filters.map((filter) => (
+        {section.groups.map((group) => (
           <button
-            key={filter.id}
+            key={group.id}
             type="button"
             role="tab"
-            aria-selected={activeFilterId === filter.id}
+            aria-selected={activeGroupId === group.id}
             className={cn(
               styles.filterButton,
-              activeFilterId === filter.id && styles.filterButtonActive,
+              activeGroupId === group.id && styles.filterButtonActive,
             )}
-            onClick={() => handleFilterChange(filter.id)}
+            onClick={() => handleGroupChange(group)}
           >
-            {filter.label}
+            {group.name}
           </button>
         ))}
       </div>
@@ -91,7 +88,12 @@ export function ManualsCategorySection({
 }
 
 type ManualsAccordionItemProps = {
-  item: ProductManualItem;
+  item: {
+    id: string;
+    slug: string;
+    name: string;
+    pdf: { src: string; filename: string };
+  };
   isOpen: boolean;
   onToggle: () => void;
   downloadLabel: string;
@@ -139,7 +141,6 @@ function ManualsAccordionItem({
               className={styles.pdfIcon}
               aria-hidden
             />
-            <span className={styles.itemName}>{item.name}</span>
           </a>
         </div>
       ) : null}

@@ -118,7 +118,6 @@
   "productManuals": {
     "pageTitle": "Manuales de productos",
     "pageDescription": "Descarga manuales PDF por línea de producto.",
-    "allFilter": "Todos",
     "emptySection": "No hay manuales disponibles en esta categoría.",
     "downloadManual": "Descargar manual de {product}"
   },
